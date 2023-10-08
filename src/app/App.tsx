@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom"
 import { Navigation } from "./Navigation"
 
 
@@ -6,6 +7,7 @@ function App() {
     <>
       Universal components
       <Navigation />
+      <Outlet />
     </>
   )
 }

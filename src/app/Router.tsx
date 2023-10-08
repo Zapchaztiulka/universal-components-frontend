@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import TypesOfComponents from "./TypesOfComponents.ts";
-import { Buttons } from '../components/buttons/Buttons.tsx';
 import App from "./App.tsx";
+import { Buttons, Icons, Inputs, Loader, Notifications, Selects, Tooltips } from "../components/index.ts";
 
 export const router = createBrowserRouter([
     {
@@ -14,23 +14,27 @@ export const router = createBrowserRouter([
         },
         {
           path: TypesOfComponents.icons,
-          element: <div>Element</div>,
+          element: <Icons />,
         },
         {
           path: TypesOfComponents.inputs,
-          element: <div>Element</div>,
+          element: <Inputs />,
         },
         {
           path: TypesOfComponents.loader,
-          element: <div>Element</div>,
+          element: <Loader />,
         },
         {
           path: TypesOfComponents.notifications,
-          element: <div>Element</div>,
+          element: <Notifications />,
         },
         {
           path: TypesOfComponents.selects,
-          element: <div>Element</div>,
+          element: <Selects />,
+        },
+        {
+          path: TypesOfComponents.tooltips,
+          element: <Tooltips />,
         },
       ],
     }
