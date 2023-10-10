@@ -1,5 +1,5 @@
-import Button from "./universalComponents/button";
+import DestructiveBtn from "./universalComponents/DestructiveBtn";
 
 export default {
-    Button
+    DestructiveBtn
 }
