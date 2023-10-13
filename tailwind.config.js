@@ -9,10 +9,6 @@ export default {
   ],
   theme: {
     extend: {},
-    boxShadow: {
-      btFocus: "0 0 0 4px rgba(46, 144, 250, 1)", // #2E90FA
-      loading: "20px 0 rgba(46, 144, 250, 1)",
-    },
     colors: {
       // bg
       bgWhite: "#FFFFFF",
@@ -81,9 +77,41 @@ export default {
       staticBlack: "#000000",
       staticWhite: "#FFFFFF",
 
+      // brand (color primitives)
+      brand25: "#FAFDFF",
+
+      // gray (color primitives)
+
+
+      // yellow (color primitives)
+
+
+      // green (color primitives)
+
+
+      // red (color primitives)
+
+
       // additional
       aditional1: "rgba(42, 43, 48, 0.4)",
       transparent: "transparent",
+    },
+
+    spacing: {
+      xs4: "2px",
+      xs3: "4px",
+      xs2: "8px",
+      xs: "12px",
+      s: "16px",
+      sPlus: "20px",
+      m: "24px",
+      m1: "38px",
+      m2: "32px",
+      l: "40px",
+      xl: "48px",
+      xl2: "56px",
+      xl3: "64px",
+      xl4: "72px",
     },
 
     borderRadius: {
@@ -97,6 +125,7 @@ export default {
     },
 
     screens: {
+      mobile320: "320px",
       mobile375: "375px",
       mobile480: "480px",
       tablet600: "600px",
@@ -104,13 +133,26 @@ export default {
       tablet1024: "1024px",
       desktop1200: "1200px",
       desktop1400: "1400px",
+      desktop1440: "1440px",
+      desktop1920: "1920px",
     },
-    
+
     fontWeight: {
       400: "400",
       500: "500",
       600: "600",
     },
+
+    boxShadow: {
+      btFocus: "0 0 0 4px rgba(46, 144, 250, 1)",
+      loading: "20px 0 rgba(46, 144, 250, 1)",
+    },
+
+    letterSpacing: {
+      button: "-0.2px",
+      textBase: "-0.24px",
+    },
+    
   },
   plugins: [],
 };
