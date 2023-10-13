@@ -1,4 +1,4 @@
-export const theme = {
+ const theme = {
   extend: {},
   colors: {
     // bg
@@ -145,3 +145,5 @@ export const theme = {
   },
   
 }
+
+export default theme;
