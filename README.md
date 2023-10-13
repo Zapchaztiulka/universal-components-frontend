@@ -15,6 +15,9 @@
 приклад використання компонентів:  
 імпортувати  
 ```import Button from "universal-components-frontend/src/components/buttons/button"```  
+підключити конфіг тейлвінду  
+в tailwind.config.js
+```export * from "universal-components-frontend/tailwind.config"```
 відрендерити  
 ```javascript
 const MyComponent = () => {
