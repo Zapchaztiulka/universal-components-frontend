@@ -94,7 +94,6 @@ export default {
 
       // gray (color primitives)
       gray: {
-        0: "#FFFFFF",
         50: "#F9F9F9",
         100: "#E6E8EA",
         200: "#C6CACD",
