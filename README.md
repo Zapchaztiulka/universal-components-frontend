@@ -3,18 +3,29 @@
 репозиторій містить універсальні компоненти для фронтенд-розробки каталогу, адмінпанелі та чатботу, а також має [живу сторінку](https://cerulean-halva-2bf838.netlify.app/) для легшого візульного вибору потрібного компоненту
 
 включає:
-
+- buttons
+- icons
+- inputs
+- selects
+- loader
+- notificcations
+- tooltips
+- modals
 
 
 ## Підключення до репозиторію
 
 ввести в термінаті команду для встановлення пакету залежностей:  
-```npm install git+ssh://github.com/Zapchaztiulka/universal-components-frontend.git```  
+```sh
+npm install git+ssh://github.com/Zapchaztiulka/universal-components-frontend.git
+```  
 
 
 приклад використання компонентів:  
 імпортувати  
-```import Button from "universal-components-frontend/src/components/buttons/button"```  
+```
+../admin-panel-frontend/universal-components-frontend/presets.jsimport Button from "universal-components-frontend/src/components/buttons/button"
+```  
 підключити конфіг тейлвінду  
 в tailwind.config.js
 ```export * from "universal-components-frontend/tailwind.config"```
