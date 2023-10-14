@@ -6,14 +6,14 @@ export const ShowContainer = ({
     description,
     width,
     height,
-    backgroundColor
+    bgColorClassName
 }:{
     component:ReactElement;
     componentName:string;
     description?:string;
     width?:number;
     height?:number;
-    backgroundColor?:string;
+    bgColorClassName?:string;
 }) => {
     return <div className="inline-block p-xs border-black border-solid border">
 
@@ -25,7 +25,7 @@ export const ShowContainer = ({
         <div className={`
             ${width ? `w-[${width}px]` : "w-[200px]"} 
             ${height ? `w-[${height}px]` : "h-[100px]"}
-            ${backgroundColor ? `bg-[${backgroundColor}]` : "bg-bgWhite"}
+            ${bgColorClassName ? bgColorClassName : "bg-bgWhite"}
             border-borderDefault border-solid border-2
         `}>
             {component}

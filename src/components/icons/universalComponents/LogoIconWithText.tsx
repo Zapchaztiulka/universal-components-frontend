@@ -3,7 +3,7 @@ import theme from "../../../../presets"
 const LogoIconWithText = ({
     color1 = theme.colors.iconBrand, 
     color2 = theme.colors.bgBrandLight3, 
-    color3 = '#41464C',
+    color3 = theme.colors.textSecondary,
     width = "248",
     height = "60"
 }) => {

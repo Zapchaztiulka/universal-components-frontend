@@ -6,7 +6,6 @@ export const Buttons = () => {
         <ShowContainer
             component={<DestructiveBtn text="Button"/>}
             componentName="DestructiveBtn"
-            description="default"
         />
         <ShowContainer
             component={<DestructiveBtn
@@ -15,6 +14,14 @@ export const Buttons = () => {
             />}
             componentName="DestructiveBtn"
             description="disabled"
+        />
+        <ShowContainer
+            component={<DestructiveBtn
+                withIcon={true}
+                text={"Кнопка"}
+            />}
+            componentName="DestructiveBtn"
+            description="withIcon true"
         />
     </div>
 }

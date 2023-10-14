@@ -14,7 +14,7 @@ export const Icons = () => {
             componentName="LogoIcon"
             description="with white color props"
             width={100}
-            backgroundColor={theme.colors.bgGreyDark}
+            bgColorClassName="bg-bgGreyDark"
         />
         <ShowContainer
             component={<LogoIconWithText />}
