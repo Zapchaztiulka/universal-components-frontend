@@ -4,17 +4,24 @@ import DestructiveBtn from "./universalComponents/DestructiveBtn"
 export const Buttons = () => {
     return <div>
         <ShowContainer
-            component={<DestructiveBtn children="Button"/>}
+            component={<DestructiveBtn text="Button"/>}
             componentName="DestructiveBtn"
-            description="default"
         />
         <ShowContainer
             component={<DestructiveBtn
                 disabled={true}
-                children={"text"}
+                text={"text"}
             />}
             componentName="DestructiveBtn"
             description="disabled"
+        />
+        <ShowContainer
+            component={<DestructiveBtn
+                withIcon={true}
+                text={"Кнопка"}
+            />}
+            componentName="DestructiveBtn"
+            description="withIcon true"
         />
     </div>
 }

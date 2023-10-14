@@ -6,30 +6,30 @@ export const ShowContainer = ({
     description,
     width,
     height,
-    backgroundColor
+    bgColorClassName
 }:{
     component:ReactElement;
-    componentName: string;
-    description?: string;
-    width?: string;
-    height?: string;
-    backgroundColor?: string;
+    componentName:string;
+    description?:string;
+    width?:number;
+    height?:number;
+    bgColorClassName?:string;
 }) => {
-    return <div className="inline-block p-4 border-black border-solid border-2">
+    return <div className="inline-block p-xs border-black border-solid border">
 
-        <p>{componentName}</p>
+        <div className=" text-xs">
+            component name:
+            <p className="text-xl">{componentName}</p>
+        </div>
         
         <div className={`
-            ${width ? width : "w-[200px]"} 
-            ${height ? height : "h-[100px]"}
-            ${backgroundColor ? backgroundColor : "bg-white"}
-            border-black border-solid border-2
+            ${width ? `w-[${width}px]` : "w-[200px]"} 
+            ${height ? `w-[${height}px]` : "h-[100px]"}
+            ${bgColorClassName ? bgColorClassName : "bg-bgWhite"}
+            border-borderDefault border-solid border-2
         `}>
-
             {component}
-
         </div>
-
-        {description && <p>{description}</p>}
+        <p className=" text-xs">{description ? description : "default"}</p>
     </div>
 }

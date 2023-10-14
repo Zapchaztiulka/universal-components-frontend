@@ -1,21 +1,24 @@
 import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
+import { Basket24 } from "../../icons";
 
 const DestructiveBtn = ({
-    children,
+    text,
     to,
     disabled,
     // pressed,
     onClick,
-    buttonStyle
+    buttonStyle,
+    withIcon = false,
 }:{
-    children?:ReactElement | string;
+    text?:string;
     to?:string;
     disabled?:boolean;
     pressed?:boolean;
     onClick?:()=>void;
     buttonStyle?:string;
-    }) => {
+    withIcon?:boolean;
+    }):ReactElement => {
 
     const navigate = useNavigate();
 
@@ -30,18 +33,19 @@ const DestructiveBtn = ({
 
     return (
         <button
-            className={`font-sans font-semibold px-l py-xs text-base leading-6 tracking-button
-                text-textColors-contrast  bg-bgColors-defaultDestructive
-                hover:bg-bgColors-hoverDestructive focus:outline-none 
+            className={`font-sans font-semibold  p-xs w-[150px] flex justify-center items-center gap-xs2
+                text-textContrast  bg-bgDefaultDestructive
+                hover:bg-bgHoverDestructive focus:outline-none 
                 focus:drop-shadow-focusButton rounded-medium transition-colors duration-300
 
-                disabled:text-textColors-disabled disabled:bg-bgColors-disable disabled:border disabled:border-solid
-                disabled:border-borderColors-disabled disabled:rounded-medium disabled:cursor-not-allowed
+                disabled:text-textDisabled disabled:bg-bgDisable disabled:border disabled:border-solid
+                disabled:border-borderDisabled disabled:rounded-medium disabled:cursor-not-allowed
                 ${buttonStyle}`}
             onClick={handleButtonClick}
             disabled={disabled}
         >
-        {children}
+        {withIcon && <Basket24 color="white"/>}
+        {text}
         </button>
     )
 }
