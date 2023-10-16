@@ -1,4 +1,4 @@
-import { Basket24, LogoIcon, LogoIconWithText, ArrowLeftIcon, ArrowRightIcon, ArrowDownIcon, ArrowUpIcon, ChevronsLeftIcon, ChevronsRightIcon, CloseIcon, CheckIcon, PlusIcon, MinusIcon, EllipseIcon } from "."
+import { Basket24, LogoIcon, LogoIconWithText, ArrowLeftIcon, ArrowRightIcon, ArrowDownIcon, ArrowUpIcon, ChevronsLeftIcon, ChevronsRightIcon, CloseIcon, CheckIcon, PlusIcon, MinusIcon, EllipseIcon, EyeIcon, EyeOffIcon, MailIcon, TrashIcon, UploadIcon, QuestionIcon, ZoomInIcon, ZoomOutIcon } from "."
 import theme from "../../../presets"
 import { ShowContainer } from "../showContainer"
 
@@ -85,6 +85,46 @@ export const Icons = () => {
         <ShowContainer
             component={<EllipseIcon />}
             componentName="EllipseIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<EyeIcon />}
+            componentName="EyeIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<EyeOffIcon />}
+            componentName="EyeOffIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<TrashIcon />}
+            componentName="TrashIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<MailIcon />}
+            componentName="MailIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<UploadIcon />}
+            componentName="UploadIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<ZoomInIcon />}
+            componentName="ZoomInIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<ZoomOutIcon />}
+            componentName="ZoomOutIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<QuestionIcon />}
+            componentName="QuestionIcon"
             width={100}
         />
     </div>

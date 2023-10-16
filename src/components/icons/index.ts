@@ -12,6 +12,14 @@ import CheckIcon from "./universalComponents/CheckIcon";
 import MinusIcon from "./universalComponents/MinusIcon";
 import PlusIcon from "./universalComponents/PlusIcon";
 import EllipseIcon from "./universalComponents/EllipseIcon";
+import EyeIcon from "./universalComponents/EyeIcon";
+import EyeOffIcon from "./universalComponents/EyeOffIcon";
+import MailIcon from "./universalComponents/MailIcon";
+import QuestionIcon from "./universalComponents/QuestionIcon";
+import TrashIcon from "./universalComponents/TrashIcon";
+import UploadIcon from "./universalComponents/UploadIcon";
+import ZoomInIcon from "./universalComponents/ZoomInIcon";
+import ZoomOutIcon from "./universalComponents/ZoomOutIcon";
 
 export {
     LogoIcon,
@@ -27,5 +35,13 @@ export {
     CheckIcon,
     PlusIcon,
     MinusIcon,
-    EllipseIcon
+    EllipseIcon,
+    EyeIcon,
+    EyeOffIcon,
+    MailIcon,
+    TrashIcon,
+    UploadIcon,
+    QuestionIcon,
+    ZoomInIcon,
+    ZoomOutIcon
 }
