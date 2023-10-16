@@ -1,4 +1,4 @@
-import { Basket24, LogoIcon, LogoIconWithText, ArrowLeftIcon, ArrowRightIcon, ArrowDownIcon, ArrowUpIcon, ChevronsLeftIcon, ChevronsRightIcon } from "."
+import { Basket24, LogoIcon, LogoIconWithText, ArrowLeftIcon, ArrowRightIcon, ArrowDownIcon, ArrowUpIcon, ChevronsLeftIcon, ChevronsRightIcon, CloseIcon, CheckIcon, PlusIcon, MinusIcon, EllipseIcon } from "."
 import theme from "../../../presets"
 import { ShowContainer } from "../showContainer"
 
@@ -60,6 +60,31 @@ export const Icons = () => {
         <ShowContainer
             component={<ChevronsRightIcon />}
             componentName="ChevronsRightIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<CloseIcon />}
+            componentName="CloseIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<CheckIcon />}
+            componentName="CheckIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<PlusIcon />}
+            componentName="PlusIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<MinusIcon />}
+            componentName="MinusIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<EllipseIcon />}
+            componentName="EllipseIcon"
             width={100}
         />
     </div>

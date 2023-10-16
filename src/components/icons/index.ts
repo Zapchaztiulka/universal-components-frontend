@@ -7,6 +7,11 @@ import ArrowDownIcon from "./universalComponents/ArrowDownIcon";
 import ArrowUpIcon from "./universalComponents/ArrowUpIcon";
 import ChevronsLeftIcon from "./universalComponents/ChevronsLeftIcon";
 import ChevronsRightIcon from "./universalComponents/ChevronsRightIcon";
+import CloseIcon from "./universalComponents/CloseIcon";
+import CheckIcon from "./universalComponents/CheckIcon";
+import MinusIcon from "./universalComponents/MinusIcon";
+import PlusIcon from "./universalComponents/PlusIcon";
+import EllipseIcon from "./universalComponents/EllipseIcon";
 
 export {
     LogoIcon,
@@ -17,5 +22,10 @@ export {
     ArrowDownIcon,
     ArrowUpIcon,
     ChevronsLeftIcon,
-    ChevronsRightIcon
+    ChevronsRightIcon,
+    CloseIcon,
+    CheckIcon,
+    PlusIcon,
+    MinusIcon,
+    EllipseIcon
 }
