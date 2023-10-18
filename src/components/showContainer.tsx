@@ -15,11 +15,11 @@ export const ShowContainer = ({
     height?:number;
     bgColorClassName?:string;
 }) => {
-    return <div className="inline-block p-xs border-black border-solid border">
+    return <div className="inline-block p-xs border-black border-solid border-1">
 
-        <div className=" text-xs">
+        <div className=" text-body">
             component name:
-            <p className="text-xl">{componentName}</p>
+            <p className="text-heading3">{componentName}</p>
         </div>
         
         <div className={`

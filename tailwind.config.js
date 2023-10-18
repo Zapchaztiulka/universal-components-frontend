@@ -179,6 +179,11 @@ export default {
       large: "24px",
       large2: "32px",
     },
+
+    borderWidth: {
+      1: "1px",
+      2: "2px"
+    },
   
     screens: {
       mobile320: "320px",
@@ -192,6 +197,44 @@ export default {
       desktop1440: "1440px",
       desktop1920: "1920px",
     },
+
+    fontSize: {
+      heading1: ['36px', {
+        lineHeight: '1.3',
+        letterSpacing: '-0.54px',
+        fontWeight: '400',
+      }],
+      heading2: ['28px', {
+        lineHeight: '1.3',
+        letterSpacing: '-0.42px',
+        fontWeight: '400',
+      }],
+      heading3: ['24px', {
+        lineHeight: '1.25',
+        letterSpacing: '-0.3px',
+        fontWeight: '500',
+      }],
+      heading4: ['20px', {
+        lineHeight: '1.25',
+        letterSpacing: '-0.3px',
+        fontWeight: '500',
+      }],
+      body: ['16px', {
+        lineHeight: '1.4',
+        letterSpacing: '-0.24px',
+        fontWeight: '400',
+      }],
+      button: ['16px', {
+        lineHeight: '1.4',
+        letterSpacing: '-0.24px',
+        fontWeight: '500',
+      }],
+      caption: ['14px', {
+        lineHeight: '1.4',
+        letterSpacing: '-0.21px',
+        fontWeight: '400',
+      }],
+  },
   
     fontWeight: {
       400: "400",
