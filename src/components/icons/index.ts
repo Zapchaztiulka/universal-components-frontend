@@ -20,6 +20,8 @@ import TrashIcon from "./universalComponents/TrashIcon";
 import UploadIcon from "./universalComponents/UploadIcon";
 import ZoomInIcon from "./universalComponents/ZoomInIcon";
 import ZoomOutIcon from "./universalComponents/ZoomOutIcon";
+import AlertIcon from "./universalComponents/AlertIcon";
+import NumberIcon from "./universalComponents/NumberIcon";
 
 export {
     LogoIcon,
@@ -43,5 +45,7 @@ export {
     UploadIcon,
     QuestionIcon,
     ZoomInIcon,
-    ZoomOutIcon
+    ZoomOutIcon,
+    AlertIcon,
+    NumberIcon
 }

@@ -1,4 +1,4 @@
-import { Basket24, LogoIcon, LogoIconWithText, ArrowLeftIcon, ArrowRightIcon, ArrowDownIcon, ArrowUpIcon, ChevronsLeftIcon, ChevronsRightIcon, CloseIcon, CheckIcon, PlusIcon, MinusIcon, EllipseIcon, EyeIcon, EyeOffIcon, MailIcon, TrashIcon, UploadIcon, QuestionIcon, ZoomInIcon, ZoomOutIcon } from "."
+import { Basket24, LogoIcon, LogoIconWithText, ArrowLeftIcon, ArrowRightIcon, ArrowDownIcon, ArrowUpIcon, ChevronsLeftIcon, ChevronsRightIcon, CloseIcon, CheckIcon, PlusIcon, MinusIcon, EllipseIcon, EyeIcon, EyeOffIcon, MailIcon, TrashIcon, UploadIcon, QuestionIcon, ZoomInIcon, ZoomOutIcon, AlertIcon, NumberIcon } from "."
 import theme from "../../../presets"
 import { ShowContainer } from "../showContainer"
 
@@ -125,6 +125,40 @@ export const Icons = () => {
         <ShowContainer
             component={<QuestionIcon />}
             componentName="QuestionIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<AlertIcon />}
+            componentName="AlertIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<AlertIcon variant="warning"/>}
+            componentName="AlertIcon"
+            width={100}
+            description="variant='warning'"
+        />
+        <ShowContainer
+            component={<AlertIcon variant="error" />}
+            componentName="AlertIcon"
+            width={100}
+            description="variant='error'"
+        />
+        <ShowContainer
+            component={<AlertIcon variant="brand" />}
+            componentName="AlertIcon"
+            width={100}
+            description="variant='brand'"
+        />
+        <ShowContainer
+            component={<AlertIcon variant="success" />}
+            componentName="AlertIcon"
+            width={100}
+            description="variant='success'"
+        />
+        <ShowContainer
+            component={<NumberIcon />}
+            componentName="NumberIcon"
             width={100}
         />
     </div>
