@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { useNavigate } from "react-router-dom";
-import { Basket24 } from "../../icons";
+import { BasketIcon } from "../../icons";
 
 const DestructiveBtn = ({
     text,
@@ -44,7 +44,7 @@ const DestructiveBtn = ({
             onClick={handleButtonClick}
             disabled={disabled}
         >
-        {withIcon && <Basket24 color="white"/>}
+        {withIcon && <BasketIcon color="white"/>}
         {text}
         </button>
     )
