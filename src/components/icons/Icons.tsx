@@ -1,4 +1,4 @@
-import { Basket24, LogoIcon, LogoIconWithText, ArrowLeftIcon, ArrowRightIcon, ArrowDownIcon, ArrowUpIcon, ChevronsLeftIcon, ChevronsRightIcon, CloseIcon, CheckIcon, PlusIcon, MinusIcon, EllipseIcon, EyeIcon, EyeOffIcon, MailIcon, TrashIcon, UploadIcon, QuestionIcon, ZoomInIcon, ZoomOutIcon, AlertIcon, NumberIcon } from "."
+import { Basket24, LogoIcon, LogoIconWithText, ArrowLeftIcon, ArrowRightIcon, ArrowDownIcon, ArrowUpIcon, ChevronsLeftIcon, ChevronsRightIcon, CloseIcon, CheckIcon, PlusIcon, MinusIcon, EllipseIcon, EyeIcon, EyeOffIcon, MailIcon, TrashIcon, UploadIcon, QuestionIcon, ZoomInIcon, ZoomOutIcon, AlertIcon, NumberIcon, EmptyImageIcon, LoadingIcon } from "."
 import theme from "../../../presets"
 import { ShowContainer } from "../showContainer"
 
@@ -159,6 +159,28 @@ export const Icons = () => {
         <ShowContainer
             component={<NumberIcon />}
             componentName="NumberIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<NumberIcon number={5}/>}
+            componentName="NumberIcon"
+            width={100}
+            description="number=5"
+        />
+        <ShowContainer
+            component={<EmptyImageIcon />}
+            componentName="EmptyImageIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<EmptyImageIcon size="big"/>}
+            componentName="EmptyImageIcon"
+            width={120} height={150}
+            description="size big"
+        />
+        <ShowContainer
+            component={<LoadingIcon />}
+            componentName="LoadingIcon"
             width={100}
         />
     </div>

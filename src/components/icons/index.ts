@@ -22,6 +22,8 @@ import ZoomInIcon from "./universalComponents/ZoomInIcon";
 import ZoomOutIcon from "./universalComponents/ZoomOutIcon";
 import AlertIcon from "./universalComponents/AlertIcon";
 import NumberIcon from "./universalComponents/NumberIcon";
+import EmptyImageIcon from "./universalComponents/EmptyImageIcon";
+import LoadingIcon from "./universalComponents/LoadingIcon";
 
 export {
     LogoIcon,
@@ -47,5 +49,7 @@ export {
     ZoomInIcon,
     ZoomOutIcon,
     AlertIcon,
-    NumberIcon
+    NumberIcon,
+    EmptyImageIcon,
+    LoadingIcon
 }
