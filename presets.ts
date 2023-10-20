@@ -20,7 +20,7 @@
     bgPressedBlue: "#53B1FD",
     bgPressedDestructive: "#F97066",
     bgHover: "#FFFFFF",
-    bgHoverGrey: "#EFF8FF",
+    bgHoverGrey: "#FAFDFF",
     bgHoverBlue: "#1849A9",
     bgHoverDestructive: "#912018",
     bgDefaultBlue: "#1570EF",
