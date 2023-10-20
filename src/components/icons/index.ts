@@ -1,6 +1,6 @@
 import LogoIcon from "./universalComponents/LogoIcon";
 import LogoIconWithText from "./universalComponents/LogoIconWithText";
-import Basket24 from "./universalComponents/Basket24";
+import BasketIcon from "./universalComponents/BasketIcon";
 import ArrowLeftIcon from "./universalComponents/ArrowLeftIcon";
 import ArrowRightIcon from "./universalComponents/ArrowRightIcon";
 import ArrowDownIcon from "./universalComponents/ArrowDownIcon";
@@ -28,7 +28,7 @@ import LoadingIcon from "./universalComponents/LoadingIcon";
 export {
     LogoIcon,
     LogoIconWithText,
-    Basket24,
+    BasketIcon,
     ArrowLeftIcon,
     ArrowRightIcon,
     ArrowDownIcon,
