@@ -16,9 +16,21 @@ export enum BUTTON_SIZES {
     BIG = "big",
 }
 
-export const buttonTypesToClasses = {
+export type ButtonMapItemType = {
+    DEFAULT: string;
+    HOVER: string;
+    FOCUS: string;
+    DISABLED: string;
+    ACTIVE: string;
+};
+
+export type ButtonMapType = {
+    [key in BUTTON_TYPES]: ButtonMapItemType;
+};
+
+export const buttonTypesToClasses: ButtonMapType = {
     [BUTTON_TYPES.PRIMARY]: {
-        DEFAULT: "w-[150px] bg-bgBrandDark",
+        DEFAULT: "w-[150px] bg-bgBrandDark text-textContrast",
         HOVER: "hover:bg-bgHoverBlue",
         FOCUS: "focus:shadow-btFocus",
         DISABLED: "",
@@ -27,18 +39,18 @@ export const buttonTypesToClasses = {
 
     [BUTTON_TYPES.SECONDARY]: {
         DEFAULT:
-            "w-[150px] bg-bgWhite text-textBrand border-solid border-1 border-borderDefaultBlue",
-        HOVER: "hover:bg-bgWhite",
-        FOCUS: "focus:bg-bgWhite",
+            "w-[150px] bg-bgAWhite text-textBrand border-solid border-1 border-borderDefaultBlue",
+        HOVER: "hover:bg-bgHoverGrey",
+        FOCUS: "focus:shadow-btFocus",
         DISABLED: "disabled:border-borderDisabled",
         ACTIVE: "active:bg-bgPressedGrey",
     },
 
     [BUTTON_TYPES.SECONDARY_GRAY]: {
         DEFAULT:
-            "w-[150px] text-textPrimary border-solid border-1 border-borderDefault",
+            "w-[150px] bg-bgWhite text-textPrimary border-solid border-1 border-borderDefault",
         HOVER: "hover:bg-bgHoverGrey",
-        FOCUS: "focus:bg-bgWhite",
+        FOCUS: "focus:shadow-btFocus",
         DISABLED: "",
         ACTIVE: "active:bg-bgPressedGrey active:border-borderDefault",
     },
@@ -54,7 +66,7 @@ export const buttonTypesToClasses = {
     [BUTTON_TYPES.DESTRUCTIVE]: {
         DEFAULT: "w-[150px] bg-bgDefaultDestructive",
         HOVER: "hover:bg-bgHoverDestructive",
-        FOCUS: "focus:bg-bgDefaultDestructive",
+        FOCUS: "focus:bg-bgDefaultDestructive focus:shadow-btFocus",
         DISABLED:
             "disabled:border-solid  disabled:border-1 disabled:border-borderDisabled",
         ACTIVE: "active:bg-bgPressedDestructive",
@@ -83,7 +95,7 @@ const buttonTypeToIconProps = {
     [BUTTON_TYPES.ICON_ONLY]: { color: theme.colors.iconWhite },
 };
 
-type Props = {
+export type Props = {
     buttonType?: BUTTON_TYPES;
     className?: string;
     text?: string;
@@ -114,7 +126,7 @@ const Button = ({
     return (
         <button
             className={cn(
-                "leading-6 font-500 text-textContrast py-xs px-m rounded-medium flex justify-center items-center gap-xs2 transition-colors duration-300 ",
+                "leading-6 font-500 py-xs px-m rounded-medium flex justify-center items-center gap-xs2 transition-colors duration-300 ",
                 "focus:outline-none",
                 {
                     "disabled:bg-bgDisable disabled:text-textDisabled":
@@ -123,7 +135,6 @@ const Button = ({
 
                 getButtonClasses,
                 sizeClassName,
-
                 className
             )}
             disabled={disabled}

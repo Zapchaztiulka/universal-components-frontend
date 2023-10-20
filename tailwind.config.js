@@ -12,6 +12,7 @@ export default {
     colors: {
       // bg
       bgWhite: "#FFFFFF",
+      bgAWhite: "#FFFFFF", // low priority for white color
       bgContrast: "#1C1F23",
       bgGreyDark: "#2E3238",
       bgGreyLigth: "#F9F9F9",
@@ -36,7 +37,7 @@ export default {
       bgDefaultDestructive: "#D92D20",
       bgImg: "#F9F9F9",
       bgDisable: "#F9F9F9",
-  
+
       // icon
       iconWhite: "#fff",
       iconPrimary: "#2E3238",
@@ -48,7 +49,7 @@ export default {
       iconSuccess: "#12B76A",
       iconWarning: "#F79009",
       iconDisabled: "#A7ABB0",
-  
+
       // text
       textPrimary: "#1C1F23",
       textSecondary: "#41464C",
@@ -60,8 +61,8 @@ export default {
       textError: "#D92D20",
       textSuccess: "#039855",
       textWarning: "#F79009",
-      textDisabled: "#A7ABB0",      
-  
+      textDisabled: "#A7ABB0",
+
       // border
       borderDefault: "#C6CACD",
       borderDefaultBlue: "#1570EF",
@@ -72,11 +73,11 @@ export default {
       borderError: "#F97066",
       borderSuccess: "#32D583",
       borderDisabled: "#E6E8EA",
-  
+
       // static
       staticBlack: "#000000",
       staticWhite: "#FFFFFF",
-  
+
       // brand (color primitives)
       brand: {
         25: "#FAFDFF",
@@ -91,7 +92,7 @@ export default {
         800: "#1849A9",
         900: "#194185"
       },
-  
+
       // gray (color primitives)
       gray: {
         50: "#F9F9F9",
@@ -105,7 +106,7 @@ export default {
         800: "#2E3238",
         900: "#1C1F23"
       },
-  
+
       // yellow (color primitives)
       yellow: {
         50: "#FFFAEB",
@@ -119,7 +120,7 @@ export default {
         800: "#93370D",
         900: "#792E0D"
       },
-  
+
       // green (color primitives)
       green: {
         50: "#ECFDF3",
@@ -133,7 +134,7 @@ export default {
         800: "#05603A",
         900: "#054F31"
       },
-  
+
       // red (color primitives)
       red: {
         50: "#FEF3F2",
@@ -147,12 +148,12 @@ export default {
         800: "#912018",
         900: "#7A271A"
       },
-  
+
       // additional
       aditional1: "rgba(42, 43, 48, 0.4)",
       transparent: "transparent",
     },
-  
+
     spacing: {
       xs4: "2px",
       xs3: "4px",
@@ -169,7 +170,7 @@ export default {
       xl3: "64px",
       xl4: "72px",
     },
-  
+
     borderRadius: {
       zero: "0px",
       minimal: "4px",
@@ -184,7 +185,7 @@ export default {
       1: "1px",
       2: "2px"
     },
-  
+
     screens: {
       mobile320: "320px",
       mobile375: "375px",
@@ -234,24 +235,29 @@ export default {
         letterSpacing: '-0.21px',
         fontWeight: '400',
       }],
-  },
-  
+    },
+
     fontWeight: {
       400: "400",
       500: "500",
       600: "600",
     },
-  
+
     boxShadow: {
       btFocus: "0 0 0 4px rgba(46, 144, 250, 1)",
       loading: "20px 0 rgba(46, 144, 250, 1)",
     },
-  
+
     letterSpacing: {
       button: "-0.2px",
       textBase: "-0.24px",
     },
-    
   },
-  plugins: [],
+  safelist: [
+    { pattern: /text-+/ },
+    { pattern: /bg-+/ },
+    { pattern: /border-+/ },
+    { pattern: /shadow-+/ },
+    { pattern: /!bg-+/ },
+  ]
 };

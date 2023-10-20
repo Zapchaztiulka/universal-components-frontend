@@ -39,7 +39,7 @@ export const PrimaryWithIcon: Story = {
 export const Secondary: Story = {
   args: {
     text: 'Button',
-    type: BUTTON_TYPES.SECONDARY,
+    buttonType: BUTTON_TYPES.SECONDARY,
     disabled: false,
   },
 };
@@ -47,14 +47,14 @@ export const SecondaryWithIcon: Story = {
   args: {
     text: 'Button',
     icon: Basket24,
-    type: BUTTON_TYPES.SECONDARY,
+    buttonType: BUTTON_TYPES.SECONDARY,
     disabled: false,
   },
 };
 export const SecondaryGray: Story = {
   args: {
     text: 'Button',
-    type: BUTTON_TYPES.SECONDARY_GRAY,
+    buttonType: BUTTON_TYPES.SECONDARY_GRAY,
     disabled: false,
   },
 };
@@ -62,7 +62,7 @@ export const SecondaryGrayWithIcon: Story = {
   args: {
     text: 'Button',
     icon: Basket24,
-    type: BUTTON_TYPES.SECONDARY_GRAY,
+    buttonType: BUTTON_TYPES.SECONDARY_GRAY,
     disabled: false,
   },
 };
@@ -79,15 +79,15 @@ export const Disabled: Story = {
 export const Desctructive: Story = {
   args: {
     text: 'Button',
-   
-    type: BUTTON_TYPES.DESTRUCTIVE,
+
+    buttonType: BUTTON_TYPES.DESTRUCTIVE,
     disabled: false,
   },
 };
 export const DesctructiveWithIcon: Story = {
   args: {
     text: 'Button',
-    type: BUTTON_TYPES.DESTRUCTIVE,
+    buttonType: BUTTON_TYPES.DESTRUCTIVE,
     icon: Basket24,
     disabled: false,
   },
@@ -95,15 +95,14 @@ export const DesctructiveWithIcon: Story = {
 export const Tertiary: Story = {
   args: {
     text: 'Показати ще',
-
-    type: BUTTON_TYPES.TERTIARY,
+    buttonType: BUTTON_TYPES.TERTIARY,
     disabled: false,
   },
 };
 export const TertiaryeWithIcon: Story = {
   args: {
     text: 'Показати ще',
-    type: BUTTON_TYPES.TERTIARY,
+    buttonType: BUTTON_TYPES.TERTIARY,
     icon: Basket24,
     disabled: false,
   },
@@ -117,7 +116,7 @@ export const SmallSize: Story = {
 
 export const IconOnly: Story = {
   args: {
-    type: BUTTON_TYPES.ICON_ONLY,
+    buttonType: BUTTON_TYPES.ICON_ONLY,
     icon: Basket24,
     iconProps: {
       color: 'white',
