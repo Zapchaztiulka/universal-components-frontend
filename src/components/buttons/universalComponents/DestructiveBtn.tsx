@@ -10,23 +10,22 @@ const DestructiveBtn = ({
     onClick,
     buttonStyle,
     withIcon = false,
-}:{
-    text?:string;
-    to?:string;
-    disabled?:boolean;
-    pressed?:boolean;
-    onClick?:()=>void;
-    buttonStyle?:string;
-    withIcon?:boolean;
-    }):ReactElement => {
-
+}: {
+    text?: string;
+    to?: string;
+    disabled?: boolean;
+    pressed?: boolean;
+    onClick?: () => void;
+    buttonStyle?: string;
+    withIcon?: boolean;
+}): ReactElement => {
     const navigate = useNavigate();
 
     const handleButtonClick = () => {
         if (onClick) {
-        onClick();
+            onClick();
         }
-        if(to) {
+        if (to) {
             navigate(to);
         }
     };
@@ -44,10 +43,10 @@ const DestructiveBtn = ({
             onClick={handleButtonClick}
             disabled={disabled}
         >
-        {withIcon && <Basket24 color="white"/>}
-        {text}
+            {withIcon && <Basket24 color="white" />}
+            {text}
         </button>
-    )
-}
+    );
+};
 
 export default DestructiveBtn;

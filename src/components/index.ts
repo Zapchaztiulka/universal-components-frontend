@@ -1,4 +1,4 @@
-import { Buttons } from "./buttons/Buttons";
+import { Buttons } from "./buttons/Page";
 import { Icons } from "./icons/Icons";
 import { Inputs } from "./inputs/Inputs";
 import { Loader } from "./loader/Loader";
