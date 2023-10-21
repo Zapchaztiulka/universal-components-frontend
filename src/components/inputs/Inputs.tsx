@@ -1,8 +1,13 @@
-import { TextField } from ".";
+import { useState } from "react";
+import { TextField, InputPassword } from ".";
 import { ValidationStatus } from "../../types/validationStatus";
 import { ShowContainer } from "../showContainer";
 
 export const Inputs = () => {
+  const [displayPassword, setDisplayPassword] = useState(true);
+  const toogleDisplayPassword = () => {
+    setDisplayPassword((prev) => !prev);
+  };
   return (
     <div>
       <p>All inputs</p>
@@ -33,6 +38,16 @@ export const Inputs = () => {
             disabled={true}
             messageClassName="text-textInputDefault"
           />
+        }
+        componentName="TextField"
+              width={500}
+              
+          />
+
+           <ShowContainer
+        component={
+                    <InputPassword displayPassword={displayPassword} toogleDisplayPassword={toogleDisplayPassword} />
+
         }
         componentName="TextField"
         width={500}
