@@ -1,6 +1,6 @@
 import theme from "../../../../presets"
 
-const Basket24 = ({
+const BasketIcon = ({
     color = theme.colors.iconPrimary,
     size = "24",
   }:{
@@ -16,4 +16,4 @@ const Basket24 = ({
     );
   };
   
-  export default Basket24;
+  export default BasketIcon;
