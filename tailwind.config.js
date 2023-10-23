@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import myPreset from "./preset";
+
 export default {
   content: [
     "./src/**/*.{html,js,jsx,ts,tsx,mdx}",
@@ -7,9 +9,15 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  presets: [myPreset],
   theme: {
     extend: {},
-    colors: {
+  },
+  plugins: [],
+};
+
+/*
+colors: {
       // bg
       bgWhite: "#FFFFFF",
       bgContrast: "#1C1F23",
@@ -273,5 +281,4 @@ export default {
       textBase: "-0.24px",
     },
   },
-  plugins: [],
-};
+*/

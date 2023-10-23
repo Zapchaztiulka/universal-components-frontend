@@ -1,6 +1,8 @@
- const theme = {
+
+const myPreset = {
+  theme: {
   extend: {},
-  colors: {
+ colors: {
     // bg
     bgWhite: "#FFFFFF",
     bgContrast: "#1C1F23",
@@ -165,6 +167,7 @@
     xl4: "72px",
   },
 
+
   borderRadius: {
     zero: "0px",
     minimal: "4px",
@@ -246,7 +249,7 @@
     button: "-0.2px",
     textBase: "-0.24px",
   },
-  
+  }
 }
 
-export default theme;
+export default myPreset;
