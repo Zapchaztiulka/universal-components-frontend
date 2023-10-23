@@ -4,6 +4,7 @@ import { ValidationStatus } from "../../../types/validationStatus";
 import { handleStatus } from "../../../utils/handleValidationStatus";
 
 const InputPassword = ({
+  type,
   placeholder,
   label,
   asterisk,
@@ -12,12 +13,15 @@ const InputPassword = ({
   message,
   status,
   disabled,
+  icon,
   handleChange,
+  inputBoxClassName,
   iconClassName,
   labelClassName,
   inputClassName,
   messageClassName,
 }: {
+  type: string;
   placeholder?: string;
   label?: string;
   asterisk?: boolean;
@@ -27,13 +31,15 @@ const InputPassword = ({
   message?: string;
   status?: ValidationStatus;
   disabled?: boolean;
+  icon?: React.ReactElement;
   handleChange?: (text: string) => void;
+  inputBoxClassName?: string;
   iconClassName?: string;
   labelClassName?: string;
   inputClassName?: string;
   messageClassName?: string;
 }) => {
-  console.log(disabled);
+ 
   const [value, setValue] = useState("");
   const index = useRef(`text-field-${nanoid()}`);
   const onChangeHandler = async (e: React.FormEvent<HTMLInputElement>) => {
@@ -54,11 +60,11 @@ const InputPassword = ({
           {label} {asterisk && <span className="ml-xs4 text-textError">*</span>}
         </label>
       )}
-      <div className="relative inline-block">
+      <div className={`relative ${inputBoxClassName ? inputBoxClassName : ""}`}>
         <input
           id={index.current}
           placeholder={placeholder}
-          type="password"
+          type={type}
           value={value}
           onChange={onChangeHandler}
           disabled={disabled}
@@ -69,7 +75,7 @@ const InputPassword = ({
                     border-1 border-solid rounded-minimal
                     hover:bg-bgHoverGrey
                     disabled:bg-bgDisable disabled:border-borderDisabled
-                    disabled:text-textDisabled
+                    disabled:text-textDisabled group 
                     ${handleStatus({
                       status,
                       error: "border-borderError",
@@ -82,11 +88,11 @@ const InputPassword = ({
           type="button"
           onClick={toogleDisplayPassword}
           className={`
-                    absolute bottom-[16px] right-[16px]
+                    absolute bottom-s right-xs 
                     ${iconClassName ? iconClassName : ""}
                 `}
         >
-          {displayPassword ? "open" : "close"}
+          {icon}
         </button>
       </div>
       {message && (

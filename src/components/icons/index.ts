@@ -24,6 +24,9 @@ import AlertIcon from "./universalComponents/AlertIcon";
 import NumberIcon from "./universalComponents/NumberIcon";
 import EmptyImageIcon from "./universalComponents/EmptyImageIcon";
 import LoadingIcon from "./universalComponents/LoadingIcon";
+import AttachIcon from "./universalComponents/AttachIcon";
+import MenuIcon from "./universalComponents/MenuIcon";
+
 
 export {
     LogoIcon,
@@ -51,5 +54,7 @@ export {
     AlertIcon,
     NumberIcon,
     EmptyImageIcon,
-    LoadingIcon
+    LoadingIcon, 
+    AttachIcon,
+    MenuIcon,
 }
