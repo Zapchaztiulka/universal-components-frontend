@@ -124,3 +124,15 @@ export const IconOnly: Story = {
     disabled: false,
   },
 };
+
+export const SearchType: Story = {
+  args: {
+    buttonType: BUTTON_TYPES.SEARCH_TYPE,
+    icon: Basket24,
+    iconProps: {
+      color: 'white',
+    },
+    disabled: false,
+  },
+};
+

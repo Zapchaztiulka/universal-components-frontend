@@ -9,12 +9,15 @@ export enum BUTTON_TYPES {
     TERTIARY = "tertiary",
     DESTRUCTIVE = "desctructive",
     ICON_ONLY = "icon-only",
+    SEARCH_TYPE = "search-type",
 }
 
 export enum BUTTON_SIZES {
     SMALL = "small",
     BIG = "big",
 }
+
+export type IconSideType = "left" | "right" 
 
 export type ButtonMapItemType = {
     DEFAULT: string;
@@ -30,7 +33,8 @@ export type ButtonMapType = {
 
 export const buttonTypesToClasses: ButtonMapType = {
     [BUTTON_TYPES.PRIMARY]: {
-        DEFAULT: "w-[150px] bg-bgBrandDark text-textContrast",
+        DEFAULT:
+            "w-[150px] bg-bgBrandDark text-textContrast py-xs px-m leading-6",
         HOVER: "hover:bg-bgHoverBlue",
         FOCUS: "focus:shadow-btFocus",
         DISABLED: "",
@@ -39,7 +43,7 @@ export const buttonTypesToClasses: ButtonMapType = {
 
     [BUTTON_TYPES.SECONDARY]: {
         DEFAULT:
-            "w-[150px] bg-bgAWhite text-textBrand border-solid border-1 border-borderDefaultBlue",
+            "w-[150px] bg-bgAWhite text-textBrand border-solid border-1 border-borderDefaultBlue py-xs px-m leading-6",
         HOVER: "hover:bg-bgHoverGrey",
         FOCUS: "focus:shadow-btFocus",
         DISABLED: "disabled:border-borderDisabled",
@@ -48,7 +52,7 @@ export const buttonTypesToClasses: ButtonMapType = {
 
     [BUTTON_TYPES.SECONDARY_GRAY]: {
         DEFAULT:
-            "w-[150px] bg-bgWhite text-textPrimary border-solid border-1 border-borderDefault",
+            "w-[150px] bg-bgWhite text-textPrimary border-solid border-1 border-borderDefault py-xs px-m leading-6",
         HOVER: "hover:bg-bgHoverGrey",
         FOCUS: "focus:shadow-btFocus",
         DISABLED: "",
@@ -56,7 +60,7 @@ export const buttonTypesToClasses: ButtonMapType = {
     },
 
     [BUTTON_TYPES.TERTIARY]: {
-        DEFAULT: "h-[40px] text-textBrand px-xs py-xs2 rounded-zero",
+        DEFAULT: "h-[40px]  text-textBrand rounded-zero whitespace-nowrap",
         HOVER: "hover:bg-bgHoverGrey",
         FOCUS: "focus:outline-none",
         DISABLED: "disabled:text-textTertiary disabled:bg-bgDisable",
@@ -64,7 +68,7 @@ export const buttonTypesToClasses: ButtonMapType = {
     },
 
     [BUTTON_TYPES.DESTRUCTIVE]: {
-        DEFAULT: "w-[150px] bg-bgDefaultDestructive",
+        DEFAULT: "w-[150px] bg-bgDefaultDestructive py-xs px-m leading-6",
         HOVER: "hover:bg-bgHoverDestructive",
         FOCUS: "focus:bg-bgDefaultDestructive focus:shadow-btFocus",
         DISABLED:
@@ -73,12 +77,28 @@ export const buttonTypesToClasses: ButtonMapType = {
     },
 
     [BUTTON_TYPES.ICON_ONLY]: {
-        DEFAULT: "bg-bgDefaultBlue w-[56px] h-[56px] px-s",
-        HOVER: "",
-        FOCUS: "",
+        DEFAULT: "bg-bgDefaultBlue w-[56px] h-[56px] px-s py-s",
+        HOVER: "hover:bg-bgHoverBlue",
+        FOCUS: "focus:shadow-btFocus",
         DISABLED: "",
-        ACTIVE: "",
+        ACTIVE: "active:bg-bgPressedBlue",
     },
+    [BUTTON_TYPES.SEARCH_TYPE]: {
+        DEFAULT: "bg-bgDefaultBlue rounded-l-zero",
+        HOVER: "hover:bg-bgHoverBlue",
+        FOCUS: "focus:shadow-btFocus",
+        DISABLED: "",
+        ACTIVE: "active:bg-bgPressedBlue",
+    },
+};
+const buttonSearchTypeToSizes = {
+    [BUTTON_SIZES.BIG]: "h-[56px] w-[56px] p-s rounded-r-medium2",
+    [BUTTON_SIZES.SMALL]: "h-[48px] w-[48px] p-xs rounded-r-minimal",
+};
+
+const buttonTertiaryToSizes = {
+    [BUTTON_SIZES.BIG]: "text-button px-xs py-xs2",
+    [BUTTON_SIZES.SMALL]: "text-caption px-xs2 py-xs2",
 };
 
 const buttonSizesToClasses = {
@@ -93,6 +113,8 @@ const buttonTypeToIconProps = {
     [BUTTON_TYPES.TERTIARY]: { color: theme.colors.iconPrimary },
     [BUTTON_TYPES.DESTRUCTIVE]: { color: theme.colors.iconWhite },
     [BUTTON_TYPES.ICON_ONLY]: { color: theme.colors.iconWhite },
+    [BUTTON_TYPES.SEARCH_TYPE]: { color: theme.colors.iconWhite },
+    
 };
 
 export type Props = {
@@ -100,6 +122,7 @@ export type Props = {
     className?: string;
     text?: string;
     icon?: ElementType;
+    iconSide?: IconSideType;
     iconProps?: any;
     disabled?: boolean;
     size?: BUTTON_SIZES;
@@ -112,6 +135,7 @@ const Button = ({
     icon: IconComponent,
     iconProps,
     disabled,
+    iconSide = "left",
     size = BUTTON_SIZES.BIG,
     ...rest
 }: Props) => {
@@ -126,11 +150,19 @@ const Button = ({
     return (
         <button
             className={cn(
-                "leading-6 font-500 py-xs px-m rounded-medium flex justify-center items-center gap-xs2 transition-colors duration-300 ",
+                " font-500 rounded-medium flex justify-center items-center gap-xs2 transition-colors duration-300 ",
                 "focus:outline-none",
                 {
                     "disabled:bg-bgDisable disabled:text-textDisabled":
                         disabled === true,
+                },
+                {
+                    [buttonSearchTypeToSizes[size]]:
+                        buttonType === BUTTON_TYPES.SEARCH_TYPE,
+                },
+                {
+                    [buttonTertiaryToSizes[size]]:
+                        buttonType === BUTTON_TYPES.TERTIARY,
                 },
 
                 getButtonClasses,
@@ -140,6 +172,7 @@ const Button = ({
             disabled={disabled}
             {...rest}
         >
+            {iconSide === "right" && text}
             {IconComponent && (
                 <IconComponent
                     {...buttonTypeToIconProps[buttonType]}
@@ -148,7 +181,7 @@ const Button = ({
                     {...(disabled ? { color: theme.colors.textDisabled } : {})}
                 />
             )}
-            {text}
+            {iconSide === "left" && text}
         </button>
     );
 };
