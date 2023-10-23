@@ -1,4 +1,4 @@
-# Universal components for Zapchaztiulka frontend development
+ # Universal components for Zapchaztiulka frontend development
 
 репозиторій містить універсальні компоненти для фронтенд-розробки каталогу, адмінпанелі та чатботу, а також має [живу сторінку](https://cerulean-halva-2bf838.netlify.app/) для легшого візульного вибору потрібного компоненту
 
@@ -12,7 +12,10 @@
 - tooltips
 - modals
 
-
+## Запустити storybook для розробки
+```
+npm run storybook
+``` 
 ## Підключення до репозиторію
 
 ввести в термінаті команду для встановлення пакету залежностей:  
