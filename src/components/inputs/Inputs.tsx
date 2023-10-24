@@ -70,7 +70,6 @@ export const Inputs = () => {
           <InputPassword
             
             type={displayPassword ? "text" : "password"}
-            displayPassword={displayPassword}
             toogleDisplayPassword={toogleDisplayPassword}
             icon={displayPassword ? <EyeIcon size='16'  /> : <EyeOffIcon size='16' />}
             inputClassName='pr-[38px]'
