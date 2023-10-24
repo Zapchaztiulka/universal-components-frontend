@@ -9,8 +9,7 @@ const InputPassword = ({
   label,
   asterisk,
   toogleDisplayPassword,
-  displayPassword,
-  message,
+   message,
   status,
   disabled,
   icon,
@@ -25,7 +24,6 @@ const InputPassword = ({
   placeholder?: string;
   label?: string;
   asterisk?: boolean;
-  displayPassword: boolean;
   toogleDisplayPassword: () => void;
   labelWithIcon?: boolean;
   message?: string;
