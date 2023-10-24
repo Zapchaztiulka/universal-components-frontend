@@ -3,42 +3,41 @@ import React, { useRef, useState } from "react";
 import { ValidationStatus } from "../../../types/validationStatus";
 import { handleStatus } from "../../../utils/handleValidationStatus";
 
-const TextField = ({
+const InputPassword = ({
+  type,
   placeholder,
   label,
   asterisk,
-  message,
+  toogleDisplayPassword,
+   message,
   status,
   disabled,
-  iconRight,
-  iconLeft,
+  icon,
   handleChange,
-  onRightIconClick,
-  onLeftIconClick,
+  inputBoxClassName,
+  iconClassName,
   labelClassName,
   inputClassName,
   messageClassName,
-  inputBoxClassName,
-  iconBoxClassName,
 }: {
+  type: string;
   placeholder?: string;
   label?: string;
   asterisk?: boolean;
+  toogleDisplayPassword: () => void;
   labelWithIcon?: boolean;
   message?: string;
   status?: ValidationStatus;
   disabled?: boolean;
-  iconRight?: React.ReactElement;
-  iconLeft?: React.ReactElement;
+  icon?: React.ReactElement;
   handleChange?: (text: string) => void;
-  onRightIconClick?: () => void;
-  onLeftIconClick?: () => void;
+  inputBoxClassName?: string;
+  iconClassName?: string;
   labelClassName?: string;
   inputClassName?: string;
   messageClassName?: string;
-  inputBoxClassName?: string;
-  iconBoxClassName?: string;
 }) => {
+ 
   const [value, setValue] = useState("");
   const index = useRef(`text-field-${nanoid()}`);
   const onChangeHandler = async (e: React.FormEvent<HTMLInputElement>) => {
@@ -63,18 +62,18 @@ const TextField = ({
         <input
           id={index.current}
           placeholder={placeholder}
+          type={type}
           value={value}
           onChange={onChangeHandler}
           disabled={disabled}
-          className={` button
-                    block p-xs  bg-bgWhite 
+          className={`
+                    
+        block p-xs bg-bgWhite outline-0
                     text-[16px] font-400 leading-[1.5]
                     border-1 border-solid rounded-minimal
                     hover:bg-bgHoverGrey
                     disabled:bg-bgDisable disabled:border-borderDisabled
-                    disabled:text-textDisabled 
-                    outline-0
-                    
+                    disabled:text-textDisabled group 
                     ${handleStatus({
                       status,
                       error: "border-borderError",
@@ -83,27 +82,17 @@ const TextField = ({
                     ${inputClassName ? inputClassName : ""}
                 `}
         />
-
-        {(iconLeft || iconRight) && (
-          <div
-            className={`absolute bottom-xs right-xs flex gap-xs2 ${
-              iconBoxClassName ? iconBoxClassName : ""
-            }`}
-          >
-            {iconLeft && (
-              <button type="button" onClick={onLeftIconClick}>
-                {iconLeft}
-              </button>
-            )}
-            {iconRight && (
-              <button type="button" onClick={onRightIconClick}>
-                {iconRight}
-              </button>
-            )}
-          </div>
-        )}
+        <button
+          type="button"
+          onClick={toogleDisplayPassword}
+          className={`
+                    absolute bottom-s right-xs 
+                    ${iconClassName ? iconClassName : ""}
+                `}
+        >
+          {icon}
+        </button>
       </div>
-
       {message && (
         <p
           aria-disabled={disabled}
@@ -121,4 +110,4 @@ const TextField = ({
     </>
   );
 };
-export default TextField;
+export default InputPassword;

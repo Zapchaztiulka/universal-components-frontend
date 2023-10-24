@@ -1,15 +1,23 @@
 /** @type {import('tailwindcss').Config} */
+import myPreset from "./preset";
+
 export default {
   content: [
-    './src/**/*.{html,js,jsx,ts,tsx,mdx}',
+    "./src/**/*.{html,js,jsx,ts,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./**/*.{js,ts,jsx,tsx,mdx}"
+    "./**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  presets: [myPreset],
   theme: {
     extend: {},
-    colors: {
+  },
+  plugins: [],
+};
+
+/*
+colors: {
       // bg
       bgWhite: "#FFFFFF",
       bgContrast: "#1C1F23",
@@ -29,14 +37,14 @@ export default {
       bgPressedBlue: "#53B1FD",
       bgPressedDestructive: "#F97066",
       bgHover: "#FFFFFF",
-      bgHoverGrey: "#EFF8FF",
+      bgHoverGrey: "#FAFDFF",
       bgHoverBlue: "#1849A9",
       bgHoverDestructive: "#912018",
       bgDefaultBlue: "#1570EF",
       bgDefaultDestructive: "#D92D20",
       bgImg: "#F9F9F9",
       bgDisable: "#F9F9F9",
-  
+
       // icon
       iconWhite: "#fff",
       iconPrimary: "#2E3238",
@@ -48,7 +56,7 @@ export default {
       iconSuccess: "#12B76A",
       iconWarning: "#F79009",
       iconDisabled: "#A7ABB0",
-  
+
       // text
       textPrimary: "#1C1F23",
       textSecondary: "#41464C",
@@ -60,8 +68,8 @@ export default {
       textError: "#D92D20",
       textSuccess: "#039855",
       textWarning: "#F79009",
-      textDisabled: "#A7ABB0",      
-  
+      textDisabled: "#A7ABB0",
+
       // border
       borderDefault: "#C6CACD",
       borderDefaultBlue: "#1570EF",
@@ -72,11 +80,11 @@ export default {
       borderError: "#F97066",
       borderSuccess: "#32D583",
       borderDisabled: "#E6E8EA",
-  
+
       // static
       staticBlack: "#000000",
       staticWhite: "#FFFFFF",
-  
+
       // brand (color primitives)
       brand: {
         25: "#FAFDFF",
@@ -89,9 +97,9 @@ export default {
         600: "#1570EF",
         700: "#175CD3",
         800: "#1849A9",
-        900: "#194185"
+        900: "#194185",
       },
-  
+
       // gray (color primitives)
       gray: {
         50: "#F9F9F9",
@@ -103,9 +111,9 @@ export default {
         600: "#555B61",
         700: "#41464C",
         800: "#2E3238",
-        900: "#1C1F23"
+        900: "#1C1F23",
       },
-  
+
       // yellow (color primitives)
       yellow: {
         50: "#FFFAEB",
@@ -117,9 +125,9 @@ export default {
         600: "#DC6803",
         700: "#B54708",
         800: "#93370D",
-        900: "#792E0D"
+        900: "#792E0D",
       },
-  
+
       // green (color primitives)
       green: {
         50: "#ECFDF3",
@@ -131,9 +139,9 @@ export default {
         600: "#039855",
         700: "#027A48",
         800: "#05603A",
-        900: "#054F31"
+        900: "#054F31",
       },
-  
+
       // red (color primitives)
       red: {
         50: "#FEF3F2",
@@ -145,14 +153,14 @@ export default {
         600: "#D92D20",
         700: "#B42318",
         800: "#912018",
-        900: "#7A271A"
+        900: "#7A271A",
       },
-  
+
       // additional
       aditional1: "rgba(42, 43, 48, 0.4)",
       transparent: "transparent",
     },
-  
+
     spacing: {
       xs4: "2px",
       xs3: "4px",
@@ -169,7 +177,7 @@ export default {
       xl3: "64px",
       xl4: "72px",
     },
-  
+
     borderRadius: {
       zero: "0px",
       minimal: "4px",
@@ -182,9 +190,9 @@ export default {
 
     borderWidth: {
       1: "1px",
-      2: "2px"
+      2: "2px",
     },
-  
+
     screens: {
       mobile320: "320px",
       mobile375: "375px",
@@ -199,59 +207,78 @@ export default {
     },
 
     fontSize: {
-      heading1: ['36px', {
-        lineHeight: '1.3',
-        letterSpacing: '-0.54px',
-        fontWeight: '400',
-      }],
-      heading2: ['28px', {
-        lineHeight: '1.3',
-        letterSpacing: '-0.42px',
-        fontWeight: '400',
-      }],
-      heading3: ['24px', {
-        lineHeight: '1.25',
-        letterSpacing: '-0.3px',
-        fontWeight: '500',
-      }],
-      heading4: ['20px', {
-        lineHeight: '1.25',
-        letterSpacing: '-0.3px',
-        fontWeight: '500',
-      }],
-      body: ['16px', {
-        lineHeight: '1.4',
-        letterSpacing: '-0.24px',
-        fontWeight: '400',
-      }],
-      button: ['16px', {
-        lineHeight: '1.4',
-        letterSpacing: '-0.24px',
-        fontWeight: '500',
-      }],
-      caption: ['14px', {
-        lineHeight: '1.4',
-        letterSpacing: '-0.21px',
-        fontWeight: '400',
-      }],
-  },
-  
+      heading1: [
+        "36px",
+        {
+          lineHeight: "1.3",
+          letterSpacing: "-0.54px",
+          fontWeight: "400",
+        },
+      ],
+      heading2: [
+        "28px",
+        {
+          lineHeight: "1.3",
+          letterSpacing: "-0.42px",
+          fontWeight: "400",
+        },
+      ],
+      heading3: [
+        "24px",
+        {
+          lineHeight: "1.25",
+          letterSpacing: "-0.3px",
+          fontWeight: "500",
+        },
+      ],
+      heading4: [
+        "20px",
+        {
+          lineHeight: "1.25",
+          letterSpacing: "-0.3px",
+          fontWeight: "500",
+        },
+      ],
+      body: [
+        "16px",
+        {
+          lineHeight: "1.4",
+          letterSpacing: "-0.24px",
+          fontWeight: "400",
+        },
+      ],
+      button: [
+        "16px",
+        {
+          lineHeight: "1.4",
+          letterSpacing: "-0.24px",
+          fontWeight: "500",
+        },
+      ],
+      caption: [
+        "14px",
+        {
+          lineHeight: "1.4",
+          letterSpacing: "-0.21px",
+          fontWeight: "400",
+        },
+      ],
+    },
+
     fontWeight: {
       400: "400",
       500: "500",
       600: "600",
     },
-  
+
     boxShadow: {
       btFocus: "0 0 0 4px rgba(46, 144, 250, 1)",
       loading: "20px 0 rgba(46, 144, 250, 1)",
     },
-  
+
     letterSpacing: {
       button: "-0.2px",
       textBase: "-0.24px",
     },
-    
   },
-  plugins: [],
-};
+*/
