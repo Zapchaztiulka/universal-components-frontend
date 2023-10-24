@@ -1,4 +1,4 @@
-import { BasketIcon, LogoIcon, LogoIconWithText, ArrowLeftIcon, ArrowRightIcon, ArrowDownIcon, ArrowUpIcon, ChevronsLeftIcon, ChevronsRightIcon, CloseIcon, CheckIcon, PlusIcon, MinusIcon, EllipseIcon, EyeIcon, EyeOffIcon, MailIcon, TrashIcon, UploadIcon, QuestionIcon, ZoomInIcon, ZoomOutIcon, AlertIcon, NumberIcon, EmptyImageIcon, LoadingIcon } from "."
+import { BasketIcon, LogoIcon, LogoIconWithText, ArrowLeftIcon, ArrowRightIcon, ArrowDownIcon, ArrowUpIcon, ChevronsLeftIcon, ChevronsRightIcon, CloseIcon, CheckIcon, PlusIcon, MinusIcon, EllipseIcon, EyeIcon, EyeOffIcon, MailIcon, TrashIcon, UploadIcon, QuestionIcon, ZoomInIcon, ZoomOutIcon, AlertIcon, NumberIcon, EmptyImageIcon, LoadingIcon, BasketCountIcon, LoaderIcon, IconButton, OrdersCountIcon, OrdersIcon } from "."
 import theme from "../../../presets"
 import { ShowContainer } from "../showContainer"
 
@@ -93,6 +93,12 @@ export const Icons = () => {
             width={100}
         />
         <ShowContainer
+            component={<EyeIcon size="16" />}
+            componentName="EyeIcon"
+            width={100}
+            description="size 16"
+        />
+        <ShowContainer
             component={<EyeOffIcon />}
             componentName="EyeOffIcon"
             width={100}
@@ -133,7 +139,7 @@ export const Icons = () => {
             width={100}
         />
         <ShowContainer
-            component={<AlertIcon variant="warning"/>}
+            component={<AlertIcon variant="warning" />}
             componentName="AlertIcon"
             width={100}
             description="variant='warning'"
@@ -162,7 +168,7 @@ export const Icons = () => {
             width={100}
         />
         <ShowContainer
-            component={<NumberIcon number={5}/>}
+            component={<NumberIcon number={5} />}
             componentName="NumberIcon"
             width={100}
             description="number=5"
@@ -173,7 +179,7 @@ export const Icons = () => {
             width={100}
         />
         <ShowContainer
-            component={<EmptyImageIcon size="big"/>}
+            component={<EmptyImageIcon size="big" />}
             componentName="EmptyImageIcon"
             width={120} height={150}
             description="size big"
@@ -181,6 +187,45 @@ export const Icons = () => {
         <ShowContainer
             component={<LoadingIcon />}
             componentName="LoadingIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<BasketCountIcon />}
+            componentName="BasketCountIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<LoaderIcon />}
+            componentName="LoaderIcon"
+            width={100}
+            bgColorClassName="bg-bgGreyDark"
+        />
+        <ShowContainer
+            component={<IconButton><PlusIcon /></IconButton>}
+            componentName="IconButton"
+            width={100}
+            description="with <PlusIcon />"
+        />
+        <ShowContainer
+            component={<IconButton disabled><PlusIcon /></IconButton>}
+            componentName="IconButton"
+            width={100}
+            description="disabled"
+        />
+        <ShowContainer
+            component={<IconButton active><PlusIcon /></IconButton>}
+            componentName="IconButton"
+            width={100}
+            description="active"
+        />
+        <ShowContainer
+            component={<OrdersCountIcon />}
+            componentName="OrdersCountIcon"
+            width={100}
+        />
+        <ShowContainer
+            component={<OrdersIcon />}
+            componentName="OrdersIcon"
             width={100}
         />
     </div>
