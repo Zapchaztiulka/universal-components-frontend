@@ -1,4 +1,5 @@
 import { Basket24 } from "../icons";
+import { ElementType } from "react";
 import Link from "../link/Link";
 import Button, {
     BUTTON_SIZES,
@@ -7,6 +8,15 @@ import Button, {
     ButtonMapItemType,
     Props,
 } from "./Button";
+
+type renderBlockColorsProps = {
+    text?: string;
+    buttonType?: BUTTON_TYPES;
+    icon?: ElementType;
+    className?: string;
+    withSmall?: boolean;
+    disabled?: boolean;
+};
 
 const getClassByType = (
     buttonType: BUTTON_TYPES,
@@ -87,7 +97,7 @@ const renderBlockColors = (
     buttonType: BUTTON_TYPES,
     categoryTitle: string,
     text: string,
-    itemRenderer: (Props: any) => JSX.Element,
+    itemRenderer: (Props: renderBlockColorsProps) => JSX.Element,
     withSmall = true
 ) => {
     const focussedClassName = getClassByType(buttonType, "FOCUS");
