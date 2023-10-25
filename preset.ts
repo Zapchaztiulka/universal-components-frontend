@@ -179,8 +179,8 @@ const myPreset = {
   },
 
   borderWidth: {
-    1: "1px",
-    2: "2px"
+    "1": "1px",
+    "2": "2px"
   },
 
   screens: {
