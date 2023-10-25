@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Button, { BUTTON_TYPES, BUTTON_SIZES } from './Button'
+import Button, { BUTTON_TYPES, BUTTON_SIZES } from './Button';
 import { Basket24 } from '../icons';
 
 
@@ -136,3 +136,15 @@ export const SearchType: Story = {
   },
 };
 
+
+export const Loading: Story = {
+  args: {
+   isLoading: true
+  },
+};
+export const DisabledLoading: Story = {
+  args: {
+    isLoading: true,
+    disabled: true,
+  },
+};

@@ -1,6 +1,7 @@
 import { ElementType, ButtonHTMLAttributes, useMemo } from "react";
 import cn from "clsx";
 import theme from "./../../../presets";
+import LoadingIcon from "./LoadingIcon";
 
 export enum BUTTON_TYPES {
     PRIMARY = "primary",
@@ -17,7 +18,7 @@ export enum BUTTON_SIZES {
     BIG = "big",
 }
 
-export type IconSideType = "left" | "right" 
+export type IconSideType = "left" | "right";
 
 export type ButtonMapItemType = {
     DEFAULT: string;
@@ -34,7 +35,7 @@ export type ButtonMapType = {
 export const buttonTypesToClasses: ButtonMapType = {
     [BUTTON_TYPES.PRIMARY]: {
         DEFAULT:
-            "w-[150px] bg-bgBrandDark text-textContrast py-xs px-m leading-6",
+            "min-w-[150px] bg-bgBrandDark text-textContrast py-xs px-m leading-6",
         HOVER: "hover:bg-bgHoverBlue",
         FOCUS: "focus:shadow-btFocus",
         DISABLED: "",
@@ -43,7 +44,7 @@ export const buttonTypesToClasses: ButtonMapType = {
 
     [BUTTON_TYPES.SECONDARY]: {
         DEFAULT:
-            "w-[150px] bg-bgAWhite text-textBrand border-solid border-1 border-borderDefaultBlue py-xs px-m leading-6",
+            "min-w-[150px] bg-bgAWhite text-textBrand border-solid border-1 border-borderDefaultBlue py-xs px-m leading-6",
         HOVER: "hover:bg-bgHoverGrey",
         FOCUS: "focus:shadow-btFocus",
         DISABLED: "disabled:border-borderDisabled",
@@ -52,7 +53,7 @@ export const buttonTypesToClasses: ButtonMapType = {
 
     [BUTTON_TYPES.SECONDARY_GRAY]: {
         DEFAULT:
-            "w-[150px] bg-bgWhite text-textPrimary border-solid border-1 border-borderDefault py-xs px-m leading-6",
+            "min-w-[150px] bg-bgWhite text-textPrimary border-solid border-1 border-borderDefault py-xs px-m leading-6",
         HOVER: "hover:bg-bgHoverGrey",
         FOCUS: "focus:shadow-btFocus",
         DISABLED: "",
@@ -68,7 +69,7 @@ export const buttonTypesToClasses: ButtonMapType = {
     },
 
     [BUTTON_TYPES.DESTRUCTIVE]: {
-        DEFAULT: "w-[150px] bg-bgDefaultDestructive py-xs px-m leading-6",
+        DEFAULT: "min-w-[150px] bg-bgDefaultDestructive py-xs px-m leading-6",
         HOVER: "hover:bg-bgHoverDestructive",
         FOCUS: "focus:bg-bgDefaultDestructive focus:shadow-btFocus",
         DISABLED:
@@ -114,7 +115,6 @@ const buttonTypeToIconProps = {
     [BUTTON_TYPES.DESTRUCTIVE]: { color: theme.colors.iconWhite },
     [BUTTON_TYPES.ICON_ONLY]: { color: theme.colors.iconWhite },
     [BUTTON_TYPES.SEARCH_TYPE]: { color: theme.colors.iconWhite },
-    
 };
 
 export type Props = {
@@ -126,6 +126,7 @@ export type Props = {
     iconProps?: any;
     disabled?: boolean;
     size?: BUTTON_SIZES;
+    isLoading?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button = ({
@@ -136,6 +137,7 @@ const Button = ({
     iconProps,
     disabled,
     iconSide = "left",
+    isLoading = false,
     size = BUTTON_SIZES.BIG,
     ...rest
 }: Props) => {
@@ -146,6 +148,22 @@ const Button = ({
     const getButtonClasses = useMemo(() => {
         return Object.values(buttonTypesToClasses[buttonType]).join(" ");
     }, [buttonType]);
+
+    const renderContent = () => {
+        return (<>
+            {iconSide === "right" && text}
+            {IconComponent && (
+                <IconComponent
+                    {...buttonTypeToIconProps[buttonType]}
+                    size="24"
+                    {...iconProps}
+                    {...(disabled ? { color: theme.colors.textDisabled } : {})}
+                />
+            )}
+            {iconSide === "left" && text}
+        </>
+        )
+    }
 
     return (
         <button
@@ -172,16 +190,7 @@ const Button = ({
             disabled={disabled}
             {...rest}
         >
-            {iconSide === "right" && text}
-            {IconComponent && (
-                <IconComponent
-                    {...buttonTypeToIconProps[buttonType]}
-                    size="24"
-                    {...iconProps}
-                    {...(disabled ? { color: theme.colors.textDisabled } : {})}
-                />
-            )}
-            {iconSide === "left" && text}
+            {isLoading ? (<LoadingIcon/>): (renderContent())}
         </button>
     );
 };
