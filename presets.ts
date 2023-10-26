@@ -20,7 +20,7 @@
     bgPressedBlue: "#53B1FD",
     bgPressedDestructive: "#F97066",
     bgHover: "#FFFFFF",
-    bgHoverGrey: "#EFF8FF",
+    bgHoverGrey: "#FAFDFF",
     bgHoverBlue: "#1849A9",
     bgHoverDestructive: "#912018",
     bgDefaultBlue: "#1570EF",
@@ -32,6 +32,7 @@
     iconWhite: "#fff",
     iconPrimary: "#2E3238",
     iconSecondary: "#888D92",
+    iconTertiary: '#E6E8EA',
     iconContrast: "#FFFFFF",
     iconBrand: "#1570EF",
     iconBrandDark: "#1849A9",
@@ -41,22 +42,23 @@
     iconDisabled: "#A7ABB0",
 
     // text
-    textPrimary: "#1C1F23",
-    textSecondary: "#41464C",
-    textTertiary: "#6B7075",
-    textContrast: "#FFFFFF",
+    textDisabled: "#A7ABB0",      
     textBrand: "#1849A9",
+    textTertiary: "#6B7075",
+    textSecondary: "#41464C",
+    textPrimary: "#1C1F23",
     textInputDefault: "#6B7075",
+    textContrast: "#FFFFFF",
     textInputActive: "#1C1F23",
+    textWarning: '#F79009',
     textError: "#D92D20",
     textSuccess: "#039855",
-    textWarning: "#F79009",
-    textDisabled: "#A7ABB0",      
 
     // border
     borderDefault: "#C6CACD",
-    borderDefaultBlue: "#1570EF",
+    borderDefault50: "#E6E8EA",
     borderHover: "#A7ABB0",
+    borderDefaultBlue: "#1570EF",
     borderHoverBlue: "#1849A9",
     borderPressedBlue: "#53B1FD",
     borderActive: "#175CD3",
@@ -85,6 +87,7 @@
 
     // gray (color primitives)
     gray: {
+      white: '#FFFFFF',
       50: "#F9F9F9",
       100: "#E6E8EA",
       200: "#C6CACD",
@@ -94,7 +97,8 @@
       600: "#555B61",
       700: "#41464C",
       800: "#2E3238",
-      900: "#1C1F23"
+      900: "#1C1F23",
+      black: '#000000'
     },
 
     // yellow (color primitives)
@@ -152,7 +156,7 @@
     s: "16px",
     sPlus: "20px",
     m: "24px",
-    m1: "38px",
+    m1: "28px",
     m2: "32px",
     l: "40px",
     xl: "48px",

@@ -1,7 +1,7 @@
 import { ElementType, ButtonHTMLAttributes, useMemo } from "react";
 import cn from "clsx";
 import theme from "./../../../presets";
-import LoadingIcon from "./LoadingIcon";
+import { LoaderIcon } from "../icons";
 
 export enum BUTTON_TYPES {
     PRIMARY = "primary",
@@ -12,6 +12,11 @@ export enum BUTTON_TYPES {
     ICON_ONLY = "icon-only",
     SEARCH_TYPE = "search-type",
 }
+
+type IconType = {
+    color?: string;
+    size?: string;
+};
 
 export enum BUTTON_SIZES {
     SMALL = "small",
@@ -123,7 +128,7 @@ export type Props = {
     text?: string;
     icon?: ElementType;
     iconSide?: IconSideType;
-    iconProps?: any;
+    iconProps?: IconType;
     disabled?: boolean;
     size?: BUTTON_SIZES;
     isLoading?: boolean;
@@ -150,20 +155,23 @@ const Button = ({
     }, [buttonType]);
 
     const renderContent = () => {
-        return (<>
-            {iconSide === "right" && text}
-            {IconComponent && (
-                <IconComponent
-                    {...buttonTypeToIconProps[buttonType]}
-                    size="24"
-                    {...iconProps}
-                    {...(disabled ? { color: theme.colors.textDisabled } : {})}
-                />
-            )}
-            {iconSide === "left" && text}
-        </>
-        )
-    }
+        return (
+            <>
+                {iconSide === "right" && text}
+                {IconComponent && (
+                    <IconComponent
+                        {...buttonTypeToIconProps[buttonType]}
+                        size="24"
+                        {...iconProps}
+                        {...(disabled
+                            ? { color: theme.colors.textDisabled }
+                            : {})}
+                    />
+                )}
+                {iconSide === "left" && text}
+            </>
+        );
+    };
 
     return (
         <button
@@ -190,7 +198,13 @@ const Button = ({
             disabled={disabled}
             {...rest}
         >
-            {isLoading ? (<LoadingIcon/>): (renderContent())}
+            {isLoading ? (
+                <LoaderIcon
+                    color={disabled ? theme.colors.textDisabled : undefined}
+                />
+            ) : (
+                renderContent()
+            )}
         </button>
     );
 };

@@ -85,4 +85,4 @@ const LoadingIcon = () => {
     );
 }
 
-export default LoadingIcon
+export default LoadingIcon;

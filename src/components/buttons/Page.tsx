@@ -1,4 +1,4 @@
-import { Basket24 } from "../icons";
+import { BasketIcon } from "../icons";
 import { ElementType } from "react";
 import Link from "../link/Link";
 import Button, {
@@ -125,7 +125,7 @@ const renderBlockColors = (
                         {itemRenderer({
                             text: text,
                             buttonType: buttonType,
-                            icon: Basket24,
+                            icon: BasketIcon,
                             className: "",
                             withSmall: withSmall,
                         })}
@@ -134,7 +134,7 @@ const renderBlockColors = (
                         {itemRenderer({
                             text: text,
                             buttonType: buttonType,
-                            icon: Basket24,
+                            icon: BasketIcon,
                             className: focussedClassName,
                             withSmall: withSmall,
                         })}
@@ -143,7 +143,7 @@ const renderBlockColors = (
                         {itemRenderer({
                             text: text,
                             buttonType: buttonType,
-                            icon: Basket24,
+                            icon: BasketIcon,
                             className: hoverClassName,
                             withSmall: withSmall,
                         })}
@@ -152,7 +152,7 @@ const renderBlockColors = (
                         {itemRenderer({
                             text: text,
                             buttonType: buttonType,
-                            icon: Basket24,
+                            icon: BasketIcon,
                             className: activeClassName,
                             withSmall: withSmall,
                         })}
@@ -161,7 +161,7 @@ const renderBlockColors = (
                         {itemRenderer({
                             text: text,
                             buttonType: buttonType,
-                            icon: Basket24,
+                            icon: BasketIcon,
                             disabled: true,
                             withSmall: withSmall,
                         })}
@@ -188,8 +188,7 @@ const renderTextLink = () => {
                     Text link
                 </div>
                 <div className="components__block border-1 border-borderDefault border-dashed rounded-large p-m pt-m1">
-                    <div className="components__normal flex flex-col gap-xl justify-between"
-                    >
+                    <div className="components__normal flex flex-col gap-xl justify-between">
                         <Link text="Textlink" href="#" />
                         <Link
                             text="Textlink"
@@ -220,8 +219,7 @@ const renderLoading = () => {
                     Loader
                 </div>
                 <div className="components__block border-1 border-borderDefault border-dashed rounded-large p-m pt-m1">
-                    <div className="components__normal flex flex-col gap-xl justify-between"
-                    >
+                    <div className="components__normal flex flex-col gap-xl justify-between">
                         <Button isLoading />
                         <Button isLoading className={activeClassName} />
                         <Button isLoading disabled />

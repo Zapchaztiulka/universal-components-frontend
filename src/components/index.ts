@@ -1,4 +1,4 @@
-import { Buttons } from "./buttons/index";
+import { Button } from "./buttons/index";
 import { Icons } from "./icons/Icons";
 import { Inputs } from "./inputs/Inputs";
 import { Loader } from "./loader/Loader";
@@ -8,7 +8,7 @@ import { Tooltips } from "./tooltips/Tooltips";
 import { Link } from "./link/index";
 
 export {
-    Buttons,
+    Button,
     Icons,
     Inputs,
     Loader,

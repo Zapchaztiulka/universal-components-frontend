@@ -33,6 +33,7 @@
         "@typescript-eslint/eslint-plugin": "^6.0.0",
         "@typescript-eslint/parser": "^6.0.0",
         "@vitejs/plugin-react": "^4.0.3",
+        "autoprefixer": "^10.4.16",
         "babel-loader": "^8.3.0",
         "css-loader": "^6.8.1",
         "eslint": "^8.45.0",

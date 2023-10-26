@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Button, { BUTTON_TYPES, BUTTON_SIZES } from './Button';
-import { Basket24 } from '../icons';
+import { BasketIcon } from '../icons';
 
 
 const meta = {
@@ -29,7 +29,7 @@ export const Primary: Story = {
 export const PrimaryWithIcon: Story = {
   args: {
     text: 'Button',
-    icon: Basket24,
+    icon: BasketIcon,
     iconProps: {
       color: 'white',
     },
@@ -46,7 +46,7 @@ export const Secondary: Story = {
 export const SecondaryWithIcon: Story = {
   args: {
     text: 'Button',
-    icon: Basket24,
+    icon: BasketIcon,
     buttonType: BUTTON_TYPES.SECONDARY,
     disabled: false,
   },
@@ -61,7 +61,7 @@ export const SecondaryGray: Story = {
 export const SecondaryGrayWithIcon: Story = {
   args: {
     text: 'Button',
-    icon: Basket24,
+    icon: BasketIcon,
     buttonType: BUTTON_TYPES.SECONDARY_GRAY,
     disabled: false,
   },
@@ -69,7 +69,7 @@ export const SecondaryGrayWithIcon: Story = {
 export const Disabled: Story = {
   args: {
     text: 'Button',
-    icon: Basket24,
+    icon: BasketIcon,
     disabled: true,
     iconProps: {
       color: 'white',
@@ -88,7 +88,7 @@ export const DesctructiveWithIcon: Story = {
   args: {
     text: 'Button',
     buttonType: BUTTON_TYPES.DESTRUCTIVE,
-    icon: Basket24,
+    icon: BasketIcon,
     disabled: false,
   },
 };
@@ -103,7 +103,16 @@ export const TertiaryeWithIcon: Story = {
   args: {
     text: 'Показати ще',
     buttonType: BUTTON_TYPES.TERTIARY,
-    icon: Basket24,
+    icon: BasketIcon,
+    disabled: false,
+  },
+};
+export const TertiaryeWithRightIcon: Story = {
+  args: {
+    text: 'Показати ще',
+    buttonType: BUTTON_TYPES.TERTIARY,
+    icon: BasketIcon,
+    iconSide: "right",
     disabled: false,
   },
 };
@@ -117,7 +126,7 @@ export const SmallSize: Story = {
 export const IconOnly: Story = {
   args: {
     buttonType: BUTTON_TYPES.ICON_ONLY,
-    icon: Basket24,
+    icon: BasketIcon,
     iconProps: {
       color: 'white',
     },
@@ -128,7 +137,7 @@ export const IconOnly: Story = {
 export const SearchType: Story = {
   args: {
     buttonType: BUTTON_TYPES.SEARCH_TYPE,
-    icon: Basket24,
+    icon: BasketIcon,
     iconProps: {
       color: 'white',
     },
