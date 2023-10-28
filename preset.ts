@@ -2,7 +2,7 @@
 const myPreset = {
   theme: {
   extend: {},
- colors: {
+  colors: {
     // bg
     bgWhite: "#FFFFFF",
     bgContrast: "#1C1F23",
@@ -167,6 +167,9 @@ const myPreset = {
     xl4: "72px",
   },
 
+  width: {
+    fit: "fit-content",
+  },
 
   borderRadius: {
     zero: "0px",
