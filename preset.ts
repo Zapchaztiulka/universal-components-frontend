@@ -1,4 +1,5 @@
- const theme = {
+const myPreset = {
+  theme: {
   extend: {},
   colors: {
     // bg
@@ -165,6 +166,10 @@
     xl4: "72px",
   },
 
+  width: {
+    fit: "fit-content",
+  },
+
   borderRadius: {
     zero: "0px",
     minimal: "4px",
@@ -176,8 +181,8 @@
   },
 
   borderWidth: {
-    1: "1px",
-    2: "2px"
+    "1": "1px",
+    "2": "2px"
   },
 
   screens: {
@@ -245,8 +250,16 @@
   letterSpacing: {
     button: "-0.2px",
     textBase: "-0.24px",
-  },
-  
+    },
+  safelist: [
+    { pattern: /text-+/ },
+    { pattern: /bg-+/ },
+    { pattern: /border-+/ },
+    { pattern: /shadow-+/ },
+    { pattern: /w-+/ },
+    { pattern: /!bg-+/ },
+  ],
+  }
 }
 
-export default theme;
+export default myPreset;

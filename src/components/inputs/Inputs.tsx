@@ -2,7 +2,7 @@ import { useState } from "react";
 import { TextField, InputPassword } from ".";
 import { ValidationStatus } from "../../types/validationStatus";
 import { ShowContainer } from "../showContainer";
-import { AttachIcon, EyeIcon, EyeOffIcon, MenuIcon } from "../icons";
+import { AttachIcon, EyeIcon, EyeOffIcon, IconButton, MenuIcon } from "../icons";
 
 export const Inputs = () => {
   const [displayPassword, setDisplayPassword] = useState(true);
@@ -28,6 +28,8 @@ export const Inputs = () => {
             placeholder="placeholder"
             label="Label"
             status={ValidationStatus.error}
+            message="infooooo"
+
           />
         }
         componentName="TextField"
@@ -38,41 +40,42 @@ export const Inputs = () => {
         component={
           <TextField
             label="Label"
-            status={ValidationStatus.error}
+            status={ValidationStatus.success}
             message="infooooo"
             asterisk={true}
             iconRight={<AttachIcon />}
-            // disabled={true}
-            messageClassName="text-textInputDefault"
-          />
+                    />
         }
         componentName="TextField"
         width={500}
+         description="3"
       />
  <ShowContainer
         component={
           <TextField
+             
             label="Label"
             message="infooooo"
             asterisk={true}
-            iconRight={<AttachIcon />}
+            iconRight={<IconButton  ><AttachIcon /></IconButton>}
             iconLeft={<MenuIcon />}
             onRightIconClick={clickOnIcon}
             messageClassName="text-textInputDefault"
-            inputClassName="pr-[80px] w-[100%]"
+         
           />
         }
         componentName="TextField"
         width={600}
+        description="4"
       />
       <ShowContainer
         component={
           <InputPassword
-            
             type={displayPassword ? "text" : "password"}
             toogleDisplayPassword={toogleDisplayPassword}
             icon={displayPassword ? <EyeIcon size='16'  /> : <EyeOffIcon size='16' />}
-            inputClassName='pr-[38px]'
+            
+            message="qqqqqqqqqqqqqq"
           />
         }
         componentName="InputPassword"
@@ -81,4 +84,3 @@ export const Inputs = () => {
     </div>
   );
 };
-// messageClassName передаємо за умовою колір тексту (error && 'text-textError') || (success && 'text-textSuccess') || "text-textInputDefault"

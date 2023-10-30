@@ -9,7 +9,7 @@ const InputPassword = ({
   label,
   asterisk,
   toogleDisplayPassword,
-   message,
+  message,
   status,
   disabled,
   icon,
@@ -37,7 +37,6 @@ const InputPassword = ({
   inputClassName?: string;
   messageClassName?: string;
 }) => {
- 
   const [value, setValue] = useState("");
   const index = useRef(`text-field-${nanoid()}`);
   const onChangeHandler = async (e: React.FormEvent<HTMLInputElement>) => {
@@ -45,6 +44,7 @@ const InputPassword = ({
     handleChange && handleChange(e.currentTarget.value);
   };
 
+  // const defaultBorderFocus = 'focus:border-borderActive';
   return (
     <>
       {label && (
@@ -69,24 +69,28 @@ const InputPassword = ({
           className={`
                     
         block p-xs bg-bgWhite outline-0
-                    text-[16px] font-400 leading-[1.5]
-                    border-1 border-solid rounded-minimal
-                    hover:bg-bgHoverGrey
-                    disabled:bg-bgDisable disabled:border-borderDisabled
-                    disabled:text-textDisabled group 
-                    ${handleStatus({
-                      status,
-                      error: "border-borderError",
-                      success: "border-borderSuccess",
-                    })}
+        text-[16px] font-400 leading-[1.5]
+        border-1 border-solid rounded-minimal
+        hover:bg-bgHoverGrey
+           
+        disabled:bg-bgDisable disabled:border-borderDisabled
+        disabled:text-textDisabled group 
+        ${icon && 'pr-[42px]'}
+                        ${handleStatus({
+                          status,
+                          error: "border-borderError",
+                          success: "border-borderSuccess",
+                          defaultBorder: 'focus:border-borderActive',
+                        })}
                     ${inputClassName ? inputClassName : ""}
                 `}
         />
         <button
+          disabled={disabled}
           type="button"
           onClick={toogleDisplayPassword}
           className={`
-                    absolute bottom-s right-xs 
+                    absolute bottom-s right-s 
                     ${iconClassName ? iconClassName : ""}
                 `}
         >
@@ -100,7 +104,8 @@ const InputPassword = ({
                     mt-xs3  text-[14px]
                     font-400 leading-[1.4] 
                      aria-disabled:text-textDisabled
-                                
+                    ${(status === ValidationStatus.error && 'text-textError') || (status === ValidationStatus.success && 'text-textSuccess') || "text-textInputDefault" }
+           
                     ${messageClassName ? messageClassName : ""}
                 `}
         >
@@ -111,3 +116,4 @@ const InputPassword = ({
   );
 };
 export default InputPassword;
+

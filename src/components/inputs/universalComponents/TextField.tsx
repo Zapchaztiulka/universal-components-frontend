@@ -66,19 +66,24 @@ const TextField = ({
           value={value}
           onChange={onChangeHandler}
           disabled={disabled}
-          className={` button
-                    block p-xs  bg-bgWhite 
-                    text-[16px] font-400 leading-[1.5]
-                    border-1 border-solid rounded-minimal
-                    hover:bg-bgHoverGrey
-                    disabled:bg-bgDisable disabled:border-borderDisabled
-                    disabled:text-textDisabled 
-                    outline-0
+          className={` 
+          
+          w-[100%]
+          block p-xs  bg-bgWhite 
+          text-[16px] font-400 leading-[1.5]
+          border-1 border-solid rounded-minimal
+           hover:bg-bgHoverGrey
+           disabled:bg-bgDisable disabled:border-borderDisabled
+           disabled:text-textDisabled 
+            outline-0
+            ${(iconRight && iconLeft) && 'pr-[80px]'}
+             ${(iconRight || iconLeft) && 'pr-xl'}
                     
                     ${handleStatus({
                       status,
                       error: "border-borderError",
                       success: "border-borderSuccess",
+                      defaultBorder: "focus:border-borderActive",
                     })}
                     ${inputClassName ? inputClassName : ""}
                 `}
@@ -91,12 +96,12 @@ const TextField = ({
             }`}
           >
             {iconLeft && (
-              <button type="button" onClick={onLeftIconClick}>
+              <button disabled={disabled} type="button" onClick={onLeftIconClick}>
                 {iconLeft}
               </button>
             )}
             {iconRight && (
-              <button type="button" onClick={onRightIconClick}>
+              <button disabled={disabled} type="button" onClick={onRightIconClick}>
                 {iconRight}
               </button>
             )}
@@ -111,6 +116,8 @@ const TextField = ({
                     mt-xs3  text-[14px]
                     font-400 leading-[1.4] 
                      aria-disabled:text-textDisabled
+                     ${(status === ValidationStatus.error && 'text-textError') || (status === ValidationStatus.success && 'text-textSuccess') || "text-textInputDefault" }
+                   
                                 
                     ${messageClassName ? messageClassName : ""}
                 `}
