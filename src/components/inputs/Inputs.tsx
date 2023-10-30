@@ -68,7 +68,6 @@ export const Inputs = () => {
       <ShowContainer
         component={
           <InputPassword
-            
             type={displayPassword ? "text" : "password"}
             toogleDisplayPassword={toogleDisplayPassword}
             icon={displayPassword ? <EyeIcon size='16'  /> : <EyeOffIcon size='16' />}

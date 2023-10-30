@@ -79,6 +79,7 @@ const TextField = ({
                       status,
                       error: "border-borderError",
                       success: "border-borderSuccess",
+                      defaultBorder: "focus:border-borderActive",
                     })}
                     ${inputClassName ? inputClassName : ""}
                 `}

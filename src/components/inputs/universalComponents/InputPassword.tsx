@@ -9,7 +9,7 @@ const InputPassword = ({
   label,
   asterisk,
   toogleDisplayPassword,
-   message,
+  message,
   status,
   disabled,
   icon,
@@ -37,7 +37,6 @@ const InputPassword = ({
   inputClassName?: string;
   messageClassName?: string;
 }) => {
- 
   const [value, setValue] = useState("");
   const index = useRef(`text-field-${nanoid()}`);
   const onChangeHandler = async (e: React.FormEvent<HTMLInputElement>) => {
@@ -45,6 +44,7 @@ const InputPassword = ({
     handleChange && handleChange(e.currentTarget.value);
   };
 
+  // const defaultBorderFocus = 'focus:border-borderActive';
   return (
     <>
       {label && (
@@ -69,16 +69,18 @@ const InputPassword = ({
           className={`
                     
         block p-xs bg-bgWhite outline-0
-                    text-[16px] font-400 leading-[1.5]
-                    border-1 border-solid rounded-minimal
-                    hover:bg-bgHoverGrey
-                    disabled:bg-bgDisable disabled:border-borderDisabled
-                    disabled:text-textDisabled group 
-                    ${handleStatus({
-                      status,
-                      error: "border-borderError",
-                      success: "border-borderSuccess",
-                    })}
+        text-[16px] font-400 leading-[1.5]
+        border-1 border-solid rounded-minimal
+        hover:bg-bgHoverGrey
+       
+        disabled:bg-bgDisable disabled:border-borderDisabled
+        disabled:text-textDisabled group 
+                        ${handleStatus({
+                          status,
+                          error: "border-borderError",
+                          success: "border-borderSuccess",
+                          defaultBorder: 'focus:border-borderActive',
+                        })}
                     ${inputClassName ? inputClassName : ""}
                 `}
         />
@@ -111,3 +113,12 @@ const InputPassword = ({
   );
 };
 export default InputPassword;
+
+/*
+   ${status ? (handleStatus({
+                      status,
+                      error: "border-borderError",
+                      success: "border-borderSuccess",
+                      // default: ' focus:border-borderActive'
+                    })) : ' focus:border-borderActive'}
+*/
