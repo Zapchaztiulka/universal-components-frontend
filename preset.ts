@@ -256,6 +256,7 @@ const myPreset = {
     { pattern: /bg-+/ },
     { pattern: /border-+/ },
     { pattern: /shadow-+/ },
+    { pattern: /w-+/ },
     { pattern: /!bg-+/ },
   ],
   }

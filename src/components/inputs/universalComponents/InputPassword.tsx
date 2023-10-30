@@ -72,9 +72,10 @@ const InputPassword = ({
         text-[16px] font-400 leading-[1.5]
         border-1 border-solid rounded-minimal
         hover:bg-bgHoverGrey
-       
+           
         disabled:bg-bgDisable disabled:border-borderDisabled
         disabled:text-textDisabled group 
+        ${icon && 'pr-[42px]'}
                         ${handleStatus({
                           status,
                           error: "border-borderError",
@@ -89,7 +90,7 @@ const InputPassword = ({
           type="button"
           onClick={toogleDisplayPassword}
           className={`
-                    absolute bottom-s right-xs 
+                    absolute bottom-s right-s 
                     ${iconClassName ? iconClassName : ""}
                 `}
         >
@@ -103,7 +104,8 @@ const InputPassword = ({
                     mt-xs3  text-[14px]
                     font-400 leading-[1.4] 
                      aria-disabled:text-textDisabled
-                                
+                    ${(status === ValidationStatus.error && 'text-textError') || (status === ValidationStatus.success && 'text-textSuccess') || "text-textInputDefault" }
+           
                     ${messageClassName ? messageClassName : ""}
                 `}
         >
@@ -115,11 +117,3 @@ const InputPassword = ({
 };
 export default InputPassword;
 
-/*
-   ${status ? (handleStatus({
-                      status,
-                      error: "border-borderError",
-                      success: "border-borderSuccess",
-                      // default: ' focus:border-borderActive'
-                    })) : ' focus:border-borderActive'}
-*/
