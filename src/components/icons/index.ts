@@ -27,7 +27,7 @@ import LoadingIcon from "./universalComponents/LoadingIcon";
 
 import AttachIcon from "./universalComponents/AttachIcon";
 import MenuIcon from "./universalComponents/MenuIcon";
-
+import UserImageIcon from "./universalComponents/admin/UserImageIcon";
 
 import BasketCountIcon from "./universalComponents/BasketCountIcon";
 import LoaderIcon from "./universalComponents/LoaderIcon";
@@ -65,7 +65,7 @@ export {
 
     AttachIcon,
     MenuIcon,
-
+    UserImageIcon,
     LoadingIcon,
     BasketCountIcon,
     LoaderIcon,
