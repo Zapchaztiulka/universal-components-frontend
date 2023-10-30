@@ -92,12 +92,12 @@ const TextField = ({
             }`}
           >
             {iconLeft && (
-              <button type="button" onClick={onLeftIconClick}>
+              <button disabled={disabled} type="button" onClick={onLeftIconClick}>
                 {iconLeft}
               </button>
             )}
             {iconRight && (
-              <button type="button" onClick={onRightIconClick}>
+              <button disabled={disabled} type="button" onClick={onRightIconClick}>
                 {iconRight}
               </button>
             )}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { TextField, InputPassword } from ".";
 import { ValidationStatus } from "../../types/validationStatus";
 import { ShowContainer } from "../showContainer";
-import { AttachIcon, EyeIcon, EyeOffIcon, MenuIcon } from "../icons";
+import { AttachIcon, EyeIcon, EyeOffIcon, IconButton, MenuIcon } from "../icons";
 
 export const Inputs = () => {
   const [displayPassword, setDisplayPassword] = useState(true);
@@ -52,10 +52,11 @@ export const Inputs = () => {
  <ShowContainer
         component={
           <TextField
+             
             label="Label"
             message="infooooo"
             asterisk={true}
-            iconRight={<AttachIcon />}
+            iconRight={<IconButton  ><AttachIcon /></IconButton>}
             iconLeft={<MenuIcon />}
             onRightIconClick={clickOnIcon}
             messageClassName="text-textInputDefault"
@@ -68,6 +69,7 @@ export const Inputs = () => {
       <ShowContainer
         component={
           <InputPassword
+            disabled
             type={displayPassword ? "text" : "password"}
             toogleDisplayPassword={toogleDisplayPassword}
             icon={displayPassword ? <EyeIcon size='16'  /> : <EyeOffIcon size='16' />}

@@ -85,6 +85,7 @@ const InputPassword = ({
                 `}
         />
         <button
+          disabled={disabled}
           type="button"
           onClick={toogleDisplayPassword}
           className={`
