@@ -1,5 +1,3 @@
-import DestructiveBtn from "./universalComponents/DestructiveBtn";
+import Button from "./Button";
 
-export default {
-    DestructiveBtn
-}
+export { Button }

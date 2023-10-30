@@ -1,6 +1,4 @@
-
-const myPreset = {
-  theme: {
+ const theme = {
   extend: {},
   colors: {
     // bg
@@ -167,10 +165,6 @@ const myPreset = {
     xl4: "72px",
   },
 
-  width: {
-    fit: "fit-content",
-  },
-
   borderRadius: {
     zero: "0px",
     minimal: "4px",
@@ -182,8 +176,8 @@ const myPreset = {
   },
 
   borderWidth: {
-    "1": "1px",
-    "2": "2px"
+    1: "1px",
+    2: "2px"
   },
 
   screens: {
@@ -252,7 +246,7 @@ const myPreset = {
     button: "-0.2px",
     textBase: "-0.24px",
   },
-  }
+  
 }
 
-export default myPreset;
+export default theme;

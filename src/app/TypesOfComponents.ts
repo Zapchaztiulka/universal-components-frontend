@@ -1,5 +1,4 @@
 enum TypesOfComponents {
-    buttons = "buttons",
     inputs = "inputs",
     icons = "icons",
     loader = "loader",

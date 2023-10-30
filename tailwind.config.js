@@ -20,6 +20,7 @@ export default {
 colors: {
       // bg
       bgWhite: "#FFFFFF",
+      bgAWhite: "#FFFFFF", // low priority for white color
       bgContrast: "#1C1F23",
       bgGreyDark: "#2E3238",
       bgGreyLigth: "#F9F9F9",
@@ -281,4 +282,6 @@ colors: {
       textBase: "-0.24px",
     },
   },
+  
+};
 */

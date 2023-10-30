@@ -72,5 +72,4 @@ export {
     IconButton,
     OrdersCountIcon,
     OrdersIcon
-
 }
