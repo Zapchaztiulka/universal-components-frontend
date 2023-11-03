@@ -1,15 +1,17 @@
 import theme from "../../../../presets"
 import { cloneElement } from 'react'
 
+export type Props = {
+    children?: JSX.Element;
+    disabled?: boolean;
+    active?: boolean;
+};
+
 const IconButton = ({
     children,
     disabled,
     active
-}: {
-    children?: JSX.Element;
-    disabled?: boolean;
-    active?: boolean;
-}) => {
+}: Props ) => {
 
     const childrenWithPropsActive = cloneElement(children as React.ReactElement<any>, {
         color: theme.colors.iconBrand
