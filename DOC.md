@@ -120,44 +120,4 @@ export const Disabled: Story = {
 ```
 ![Alt text](.storybook/asset/DisButton.png)
 
-# Правила роботи с репозиторием
- ## Підключення до репозиторію
- ввести в терміналі команду для встановлення пакету залежностей:
- ```
- npm install git+ssh://github.com/Zapchaztiulka/universal-components-frontend.git
- ```
- ## Запустити сеовер для розробки
-```
-npm run dev
-``` 
- ## Запустити storybook для розробки
-```
-npm run sb
-``` 
 
- ### Приклад використання компонентів:
-
- `імпортувати`
- ```
- ../admin-panel-frontend/universal-components-frontend/presets.jsimport Button from "universal-components-frontend/src/components/buttons/button"
- ```
- підключити конфіг тейлвінду
- в tailwind.config.js
-  ```export * from "universal-components-frontend/tailwind.config"```
-
-  відрендерити
-  ```javascript
-const MyComponent = () => {
-    return (
-      // інша розмітка чи компоненти
-      <Button />
-    )
-}
-```
-
-
-
-## Learn More
-
-You can learn more about Storybook in the [Storybook documentation](https://storybook.js.org/docs/react/get-started/introduction).  
-To learn React, check out the [React documentation](https://reactjs.org/).
