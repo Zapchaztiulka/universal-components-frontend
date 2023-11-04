@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Button, { BUTTON_TYPES, BUTTON_SIZES } from './Button';
-import { BasketIcon } from '../icons';
+import { BasketIcon, PlusIcon } from '../icons';
 
 
 const meta = {
@@ -46,7 +46,7 @@ export const Secondary: Story = {
 export const SecondaryWithIcon: Story = {
   args: {
     text: 'Button',
-    icon: BasketIcon,
+    icon: PlusIcon,
     buttonType: BUTTON_TYPES.SECONDARY,
     disabled: false,
   },
@@ -79,7 +79,6 @@ export const Disabled: Story = {
 export const Desctructive: Story = {
   args: {
     text: 'Button',
-
     buttonType: BUTTON_TYPES.DESTRUCTIVE,
     disabled: false,
   },

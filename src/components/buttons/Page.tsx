@@ -1,6 +1,7 @@
-import { BasketIcon } from "../icons";
+import { BasketIcon, PlusIcon, PhoneIcon, ArrowDownIcon, SearchIcon} from "../icons";
 import { ElementType } from "react";
 import Link from "../link/Link";
+
 import Button, {
     BUTTON_SIZES,
     BUTTON_TYPES,
@@ -8,6 +9,7 @@ import Button, {
     ButtonMapItemType,
     Props,
 } from "./Button";
+import theme from "../../../preset";
 
 type renderBlockColorsProps = {
     text?: string;
@@ -51,24 +53,26 @@ const renderButtons = ({
 
 const renderTertiaryButtons = ({
     withSmall = true,
-    icon,
     ...rest
 }: Props & { withSmall?: boolean }) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { icon, ...other } = rest;
     return (
         <div className="flex ">
             <div className="flex gap-xl">
-                <Button {...rest} />
-                <Button {...rest} icon={icon} />
-                <Button {...rest} icon={icon} iconSide="right" />
+                <Button {...other} />
+                <Button {...other} icon={PhoneIcon} />
+                <Button {...other} icon={ArrowDownIcon} iconProps={{ color: theme.theme.colors.iconBrand }} iconSide="right" />
             </div>
 
             {withSmall && (
                 <div style={{ marginLeft: "180px" }} className="flex gap-xl">
-                    <Button {...rest} size={BUTTON_SIZES.SMALL} />
-                    <Button {...rest} icon={icon} size={BUTTON_SIZES.SMALL} />
+                    <Button {...other} size={BUTTON_SIZES.SMALL} />
+                    <Button {...other} icon={PhoneIcon} size={BUTTON_SIZES.SMALL} />
                     <Button
-                        {...rest}
-                        icon={icon}
+                        {...other}
+                        icon={ArrowDownIcon}
+                        iconProps={{ color: theme.theme.colors.iconBrand }} 
                         iconSide="right"
                         size={BUTTON_SIZES.SMALL}
                     />
@@ -98,7 +102,8 @@ const renderBlockColors = (
     categoryTitle: string,
     text: string,
     itemRenderer: (Props: renderBlockColorsProps) => JSX.Element,
-    withSmall = true
+    withSmall = true,
+    icon = BasketIcon,
 ) => {
     const focussedClassName = getClassByType(buttonType, "FOCUS");
     const hoverClassName = getClassByType(buttonType, "HOVER");
@@ -125,7 +130,7 @@ const renderBlockColors = (
                         {itemRenderer({
                             text: text,
                             buttonType: buttonType,
-                            icon: BasketIcon,
+                            icon,
                             className: "",
                             withSmall: withSmall,
                         })}
@@ -134,7 +139,7 @@ const renderBlockColors = (
                         {itemRenderer({
                             text: text,
                             buttonType: buttonType,
-                            icon: BasketIcon,
+                            icon,
                             className: focussedClassName,
                             withSmall: withSmall,
                         })}
@@ -143,7 +148,7 @@ const renderBlockColors = (
                         {itemRenderer({
                             text: text,
                             buttonType: buttonType,
-                            icon: BasketIcon,
+                            icon,
                             className: hoverClassName,
                             withSmall: withSmall,
                         })}
@@ -152,7 +157,7 @@ const renderBlockColors = (
                         {itemRenderer({
                             text: text,
                             buttonType: buttonType,
-                            icon: BasketIcon,
+                            icon,
                             className: activeClassName,
                             withSmall: withSmall,
                         })}
@@ -161,7 +166,7 @@ const renderBlockColors = (
                         {itemRenderer({
                             text: text,
                             buttonType: buttonType,
-                            icon: BasketIcon,
+                            icon,
                             disabled: true,
                             withSmall: withSmall,
                         })}
@@ -246,7 +251,9 @@ export const Page = () => {
                 BUTTON_TYPES.SECONDARY,
                 "Secondary color",
                 "Button",
-                renderButtons
+                renderButtons,
+                true,
+                PlusIcon,
             )}
             {renderBlockColors(
                 BUTTON_TYPES.SECONDARY_GRAY,
@@ -279,7 +286,8 @@ export const Page = () => {
                 "Search type",
                 "",
                 renderIcons,
-                true
+                true,
+                SearchIcon
             )}
             {renderTextLink()}
 
