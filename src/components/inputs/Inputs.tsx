@@ -1,14 +1,15 @@
 import { useState } from "react";
-import { TextField, InputPassword } from ".";
+import { TextField, InputPassword, Input } from ".";
 import { ValidationStatus } from "../../types/validationStatus";
 import { ShowContainer } from "../showContainer";
 import { AttachIcon, EyeIcon, EyeOffIcon, IconButton, MenuIcon } from "../icons";
+import { InputTypes, InputTypesFigma } from "./universalComponents/Input.types";
 
 export const Inputs = () => {
   const [displayPassword, setDisplayPassword] = useState(true);
   const toogleDisplayPassword = () => {
     setDisplayPassword((prev) => !prev);
-    console.log("click");
+    console.log("toogleDisplayPassword");
   };
 
   const clickOnIcon = () => {
@@ -60,7 +61,6 @@ export const Inputs = () => {
             iconRight={<IconButton  ><AttachIcon /></IconButton>}
             iconLeft={<MenuIcon />}
             onRightIconClick={clickOnIcon}
-            messageClassName="text-textInputDefault"
          
           />
         }
@@ -75,12 +75,82 @@ export const Inputs = () => {
             toogleDisplayPassword={toogleDisplayPassword}
             icon={displayPassword ? <EyeIcon size='16'  /> : <EyeOffIcon size='16' />}
             
-            message="qqqqqqqqqqqqqq"
+            message="qqqqqqqqqqqqqq1"
           />
         }
         componentName="InputPassword"
         width={500}
       />  
+<ShowContainer
+        component={
+          <Input
+            inputTypesFigma={InputTypesFigma.Password}
+            type={displayPassword ? InputTypes.Text : InputTypes.Password}
+            onMainIconClick={toogleDisplayPassword}
+            mainIcon={displayPassword ? <EyeIcon size='16'  /> : <EyeOffIcon size='16' />}
+            
+            message="qqqqqqqqqqqqqq1"
+          />
+        }
+        componentName="Input"
+        width={500}
+                description="6"
+
+      />  
+      <ShowContainer
+        component={
+          <Input
+            inputTypesFigma={InputTypesFigma.TextField}
+            type={InputTypes.Text}
+           label="Label"
+            message="infooooo"
+            asterisk={true}
+            mainIcon={<IconButton  ><AttachIcon /></IconButton>}
+            extraLeftIcon={<MenuIcon />}
+            onMainIconClick={clickOnIcon}
+            onExtraLeftIconClick={clickOnIcon}
+          />
+        }
+        componentName="Input"
+        width={500}
+        description="7"
+
+      />  
+
+        <ShowContainer
+        component={
+          <Input
+            inputTypesFigma={InputTypesFigma.TextField}
+            type={InputTypes.Text}
+           label="Label"
+            message="infooooo"
+            asterisk={true}
+            mainIcon={<IconButton  ><AttachIcon /></IconButton>}
+            onMainIconClick={clickOnIcon}
+          />
+        }
+        componentName="Input"
+        width={500}
+        description="8"
+
+      /> 
+          <ShowContainer
+        component={
+          <Input
+            inputTypesFigma={InputTypesFigma.TextField}
+            type={InputTypes.Text}
+           label="Label"
+            message="infooooo"
+            asterisk={true}
+          
+          />
+        }
+        componentName="Input"
+        width={500}
+        description="9"
+
+      /> 
+      
     </div>
   );
 };

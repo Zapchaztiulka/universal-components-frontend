@@ -160,6 +160,7 @@ const myPreset = {
     m1: "28px",
     m2: "32px",
     l: "40px",
+    l2: '42px',
     xl: "48px",
     xl2: "56px",
     xl3: "64px",
