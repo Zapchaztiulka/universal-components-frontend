@@ -61,7 +61,7 @@ export const SecondaryGray: Story = {
 export const SecondaryGrayWithIcon: Story = {
   args: {
     text: 'Button',
-    icon: BasketIcon,
+    icon: PlusIcon,
     buttonType: BUTTON_TYPES.SECONDARY_GRAY,
     disabled: false,
   },
