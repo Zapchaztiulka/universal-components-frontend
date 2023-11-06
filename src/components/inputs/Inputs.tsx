@@ -17,14 +17,18 @@ export const Inputs = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [text, setText] = useState("");
-
+  const [price, setPrice] = useState("0");
+  const [query, setQuery] = useState("");
+console.log(query);
   const toogleDisplayPassword = () => {
     setDisplayPassword((prev) => !prev);
   };
 
   const getPhone = (value: string) => {
-    console.log(value);
-    setPhone(changePhoneNumber(value));
+        setPhone(changePhoneNumber(value));
+  };
+  const getPrice = (value: string) => {
+        setPrice(value);
   };
 
   const getPassword = (value: string) => {
@@ -32,6 +36,9 @@ export const Inputs = () => {
   };
   const getText = (value: string) => {
     setText(value);
+  };
+  const getQuery = (value: string) => {
+    setQuery(value);
   };
 
   const clickOnIcon = () => {
@@ -196,7 +203,7 @@ export const Inputs = () => {
             message="infooooo"
             asterisk={true}
             phoneCode="+38"
-            // disabled={true}
+              // disabled={true}
             handleChange={getPhone}
             maxLength={13}
           />
@@ -204,6 +211,38 @@ export const Inputs = () => {
         componentName="Input phone number"
         width={500}
         description="10"
+      />
+         <ShowContainer
+        component={
+          <Input
+            value={price}
+            inputTypesFigma={InputTypesFigma.Price}
+            type={InputTypes.Text} 
+            // disabled={true}
+              placeholder='0'
+            handleChange={getPrice}
+            maxLength={13}
+          />
+        }
+        componentName="Input price"
+        width={500}
+        description="11"
+      />
+           <ShowContainer
+        component={
+          <Input
+            value={query}
+            inputTypesFigma={InputTypesFigma.SearchField}
+            type={InputTypes.Text} 
+            // disabled={true}
+            placeholder='Я шукаю...'
+            handleChange={getQuery}
+            maxLength={13}
+          />
+        }
+        componentName="Search field"
+        width={500}
+        description="12"
       />
     </div>
   );

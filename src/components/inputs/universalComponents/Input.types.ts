@@ -12,6 +12,7 @@ export enum InputTypesFigma {
   PhoneNumber,
   SearchField,
   TextArea,
+  Price,
 }
 
 export type InputProps = {

@@ -64,11 +64,14 @@ const Input = ({
           disabled={disabled}
           maxLength={maxLength}
           className={`        
-         w-[100%] block p-xs bg-bgWhite outline-0 text-[16px] text-textInputActive font-400 leading-[1.5]
+         w-full ${inputTypesFigma === InputTypesFigma.Price && "w-[115px]"}
+        block p-xs bg-bgWhite outline-0 text-[16px] text-textInputActive font-400 leading-[1.5]
         border-1 border-solid rounded-minimal
         hover:bg-bgHoverGrey disabled:bg-bgDisable disabled:border-borderDisabled
-        disabled:text-textDisabled  
-        ${inputTypesFigma === InputTypesFigma.Password && mainIcon && "pr-l2"}
+        disabled:text-textDisabled placeholder:hover:text-textInputActive placeholder:focus:text-textInputActive placeholder:disabled:text-textDisabled 
+       
+        ${inputTypesFigma === InputTypesFigma.SearchField && "rounded-tr-zero rounded-br-zero"}
+       ${inputTypesFigma === InputTypesFigma.Password && mainIcon && "pr-l2"}
         ${inputTypesFigma === InputTypesFigma.TextField && mainIcon && !extraLeftIcon && "pr-xl"}
         ${inputTypesFigma === InputTypesFigma.TextField &&  mainIcon && extraLeftIcon && "pr-[80px]"}
         ${inputTypesFigma === InputTypesFigma.PhoneNumber && "pl-[63px]"}
