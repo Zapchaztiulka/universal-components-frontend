@@ -1,5 +1,5 @@
 
-export const Selects = () => {
+const Selects = () => {
     return <div>
         All selects
         <div>
@@ -8,3 +8,5 @@ export const Selects = () => {
         </div>
     </div>
 }
+
+export default Selects
