@@ -3,7 +3,7 @@ import { Icons } from "./icons/Icons";
 import { Inputs } from "./inputs/Inputs";
 import { Loader } from "./loader/Loader";
 import { Notifications } from "./notifications/Notifications";
-import { Selects } from "./selects/Selects";
+import { Selects } from "./select/Select";
 import { Tooltips } from "./tooltips/Tooltips";
 import { Link } from "./link/index";
 

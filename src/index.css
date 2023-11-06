@@ -1,6 +1,10 @@
-@import 'tailwindcss/base';
+/* @import 'tailwindcss/base';
 @import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss/utilities'; */
+
+@tailwindcss base;
+@tailwindcss components;
+@tailwindcss utilities;
 
 @font-face {
   font-family: 'Inter';
