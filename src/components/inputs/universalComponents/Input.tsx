@@ -26,6 +26,7 @@ const Input = ({
   inputClassName,
   messageClassName,
   iconBoxClassName,
+  ...rest
 }: InputProps) => {
 
   const [isInputActive, setInputActive] = useState(false);
@@ -64,7 +65,7 @@ const Input = ({
           disabled={disabled}
           maxLength={maxLength}
           className={`        
-         w-full ${inputTypesFigma === InputTypesFigma.Price && "w-[115px]"}
+         w-[100%] ${inputTypesFigma === InputTypesFigma.Price && "w-[115px]"}
         block p-xs bg-bgWhite outline-0 text-[16px] text-textInputActive font-400 leading-[1.5]
         border-1 border-solid rounded-minimal
         hover:bg-bgHoverGrey disabled:bg-bgDisable disabled:border-borderDisabled
@@ -84,6 +85,7 @@ const Input = ({
         })}
     ${inputClassName ? inputClassName : ""}
                 `}
+          {...rest}
         />
         {inputTypesFigma === InputTypesFigma.PhoneNumber && (
           <span aria-disabled={disabled} className={`absolute bottom-xs left-xs leading-[1.5] ${isInputActive ? "text-textInputActive": "text-textInputDefault"} 

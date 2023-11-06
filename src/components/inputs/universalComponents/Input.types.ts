@@ -1,4 +1,4 @@
-// import { InputHTMLAttributes } from "react";
+import { InputHTMLAttributes } from "react";
 import { ValidationStatus } from "../../../types/validationStatus";
 
 export enum InputTypes {
@@ -38,4 +38,4 @@ export type InputProps = {
   inputClassName?: string;
   messageClassName?: string;
   iconBoxClassName?: string;
-};
+} & InputHTMLAttributes<HTMLInputElement>;

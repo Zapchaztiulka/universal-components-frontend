@@ -11,6 +11,7 @@ import {
 } from "../icons";
 import { InputTypes, InputTypesFigma } from "./universalComponents/Input.types";
 import { changePhoneNumber } from "../../utils/changePhoneNumber";
+import Textarea from "./universalComponents/Textarea";
 
 export const Inputs = () => {
   const [displayPassword, setDisplayPassword] = useState(false);
@@ -19,6 +20,8 @@ export const Inputs = () => {
   const [text, setText] = useState("");
   const [price, setPrice] = useState("0");
   const [query, setQuery] = useState("");
+  const [textarea, setTextarea] = useState("");
+
 console.log(query);
   const toogleDisplayPassword = () => {
     setDisplayPassword((prev) => !prev);
@@ -40,7 +43,12 @@ console.log(query);
   const getQuery = (value: string) => {
     setQuery(value);
   };
-
+  const getTextarea = (value: string) => {
+    setTextarea(value);
+  };
+ const clickTest = () => {
+    console.log("test");
+  };
   const clickOnIcon = () => {
     console.log("click");
   };
@@ -244,6 +252,28 @@ console.log(query);
         width={500}
         description="12"
       />
+
+       <ShowContainer
+        component={
+          <Textarea
+            value={textarea}
+            handleChange={getTextarea}
+             label="Label"
+           
+            asterisk={true}
+            // rows={4}
+              disabled={true}
+            maxLength={200}
+            lettersCounter={true}
+            onBlur={clickTest}
+          />
+        }
+        componentName=""
+        width={500}
+        description="13"
+      />
+
+  
     </div>
   );
 };
