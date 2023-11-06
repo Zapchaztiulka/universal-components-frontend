@@ -74,7 +74,7 @@ export const buttonTypesToClasses: ButtonMapType = {
     },
 
     [BUTTON_TYPES.DESTRUCTIVE]: {
-        DEFAULT: "min-w-[150px] bg-bgDefaultDestructive py-xs px-m leading-6",
+        DEFAULT: "min-w-[150px]  text-textContrast bg-bgDefaultDestructive py-xs px-m leading-6",
         HOVER: "hover:bg-bgHoverDestructive",
         FOCUS: "focus:bg-bgDefaultDestructive focus:shadow-btFocus",
         DISABLED:
@@ -108,8 +108,8 @@ const buttonTertiaryToSizes = {
 };
 
 const buttonSizesToClasses = {
-    [BUTTON_SIZES.BIG]: "h-[48px]",
-    [BUTTON_SIZES.SMALL]: "h-[40px]",
+    [BUTTON_SIZES.BIG]: "h-[48px] py-xs",
+    [BUTTON_SIZES.SMALL]: "h-[40px] py-xs2",
 };
 
 const buttonTypeToIconProps = {
