@@ -108,8 +108,8 @@ const buttonTertiaryToSizes = {
 };
 
 const buttonSizesToClasses = {
-    [BUTTON_SIZES.BIG]: "h-[48px]",
-    [BUTTON_SIZES.SMALL]: "h-[40px]",
+    [BUTTON_SIZES.BIG]: "h-[48px] py-xs",
+    [BUTTON_SIZES.SMALL]: "h-[40px] py-xs2",
 };
 
 const buttonTypeToIconProps = {
