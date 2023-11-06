@@ -1,21 +1,23 @@
+// import { InputHTMLAttributes } from "react";
 import { ValidationStatus } from "../../../types/validationStatus";
 
-export enum InputTypes{
-    Text = 'text',
-    Password = 'password',
-    Phone = 'tel',
+export enum InputTypes {
+  Text = "text",
+  Password = "password",
+  Phone = "tel",
 }
 export enum InputTypesFigma {
-    TextField,
-    Password,
-    PhoneNumber,
-    SearchField,
-    TextArea,
+  TextField,
+  Password,
+  PhoneNumber,
+  SearchField,
+  TextArea,
 }
 
 export type InputProps = {
-type: InputTypes;
-inputTypesFigma: InputTypesFigma;
+  value: string;
+  type: InputTypes;
+  inputTypesFigma: InputTypesFigma;
   placeholder?: string;
   label?: string;
   asterisk?: boolean;
@@ -24,7 +26,9 @@ inputTypesFigma: InputTypesFigma;
   disabled?: boolean;
   mainIcon?: React.ReactElement;
   extraLeftIcon?: React.ReactElement;
-  handleChange?: (text: string) => void;
+  phoneCode?: string;
+  maxLength?: number;
+  handleChange: (text: string) => void;
   onMainIconClick?: () => void;
   onExtraLeftIconClick?: () => void;
   inputBoxClassName?: string;
