@@ -1,9 +1,8 @@
-import TextField from "./universalComponents/TextField";
-import InputPassword from "./universalComponents/InputPassword";
 import Input from "./universalComponents/Input";
+import Textarea from "./universalComponents/Textarea";
+
 
 export {
-    TextField,
-    InputPassword,
     Input,
+    Textarea,
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TextField, InputPassword, Input } from ".";
+import { Input, Textarea } from ".";
 import { ValidationStatus } from "../../types/validationStatus";
 import { ShowContainer } from "../showContainer";
 import {
@@ -11,7 +11,6 @@ import {
 } from "../icons";
 import { InputTypes, InputTypesFigma } from "./universalComponents/Input.types";
 import { changePhoneNumber } from "../../utils/changePhoneNumber";
-import Textarea from "./universalComponents/Textarea";
 
 export const Inputs = () => {
   const [displayPassword, setDisplayPassword] = useState(false);
@@ -22,16 +21,16 @@ export const Inputs = () => {
   const [query, setQuery] = useState("");
   const [textarea, setTextarea] = useState("");
 
-console.log(query);
+  console.log(query);
   const toogleDisplayPassword = () => {
     setDisplayPassword((prev) => !prev);
   };
 
   const getPhone = (value: string) => {
-        setPhone(changePhoneNumber(value));
+    setPhone(changePhoneNumber(value));
   };
   const getPrice = (value: string) => {
-        setPrice(value);
+    setPrice(value);
   };
 
   const getPassword = (value: string) => {
@@ -46,7 +45,7 @@ console.log(query);
   const getTextarea = (value: string) => {
     setTextarea(value);
   };
- const clickTest = () => {
+  const clickTest = () => {
     console.log("test");
   };
   const clickOnIcon = () => {
@@ -55,71 +54,7 @@ console.log(query);
   return (
     <div>
       <p>All inputs</p>
-      <ShowContainer
-        component={<TextField placeholder="placeholder" label="Label" />}
-        componentName="TextField"
-        width={500}
-      />
-      <ShowContainer
-        component={
-          <TextField
-            placeholder="placeholder"
-            label="Label"
-            status={ValidationStatus.error}
-            message="infooooo"
-          />
-        }
-        componentName="TextField"
-        width={500}
-      />
 
-      <ShowContainer
-        component={
-          <TextField
-            label="Label"
-            status={ValidationStatus.success}
-            message="infooooo"
-            asterisk={true}
-            iconRight={<AttachIcon />}
-          />
-        }
-        componentName="TextField"
-        width={500}
-        description="3"
-      />
-      <ShowContainer
-        component={
-          <TextField
-            label="Label"
-            message="infooooo"
-            asterisk={true}
-            iconRight={
-              <IconButton>
-                <AttachIcon />
-              </IconButton>
-            }
-            iconLeft={<MenuIcon />}
-            onRightIconClick={clickOnIcon}
-          />
-        }
-        componentName="TextField"
-        width={600}
-        description="4"
-      />
-      <ShowContainer
-        component={
-          <InputPassword
-            type={displayPassword ? "text" : "password"}
-            toogleDisplayPassword={toogleDisplayPassword}
-            icon={
-              displayPassword ? <EyeIcon size="16" /> : <EyeOffIcon size="16" />
-            }
-            message="qqqqqqqqqqqqqq1"
-          />
-        }
-        componentName="InputPassword"
-        width={500}
-      />
       <ShowContainer
         component={
           <Input
@@ -136,7 +71,7 @@ console.log(query);
         }
         componentName="Input"
         width={500}
-        description="6"
+        description="1"
       />
       <ShowContainer
         component={
@@ -160,7 +95,7 @@ console.log(query);
         }
         componentName="Input"
         width={500}
-        description="7"
+        description="2"
       />
 
       <ShowContainer
@@ -183,7 +118,7 @@ console.log(query);
         }
         componentName="Input"
         width={500}
-        description="8"
+        description="3"
       />
       <ShowContainer
         component={
@@ -199,7 +134,7 @@ console.log(query);
         }
         componentName="Input"
         width={500}
-        description="9"
+        description="4"
       />
       <ShowContainer
         component={
@@ -211,58 +146,60 @@ console.log(query);
             message="infooooo"
             asterisk={true}
             phoneCode="+38"
-              // disabled={true}
+            // disabled={true}
             handleChange={getPhone}
             maxLength={13}
+            status={ValidationStatus.success}
           />
         }
         componentName="Input phone number"
         width={500}
-        description="10"
+        description="5"
       />
-         <ShowContainer
+      <ShowContainer
         component={
           <Input
             value={price}
             inputTypesFigma={InputTypesFigma.Price}
-            type={InputTypes.Text} 
+            type={InputTypes.Text}
             // disabled={true}
-              placeholder='0'
+            placeholder="0"
             handleChange={getPrice}
             maxLength={13}
           />
         }
         componentName="Input price"
         width={500}
-        description="11"
+        description="6"
       />
-           <ShowContainer
+      <ShowContainer
         component={
           <Input
             value={query}
             inputTypesFigma={InputTypesFigma.SearchField}
-            type={InputTypes.Text} 
+            type={InputTypes.Text}
             // disabled={true}
-            placeholder='Я шукаю...'
+            placeholder="Я шукаю..."
             handleChange={getQuery}
             maxLength={13}
+            status={ValidationStatus.success}
           />
         }
         componentName="Search field"
         width={500}
-        description="12"
+        description="7"
       />
 
-       <ShowContainer
+      <ShowContainer
         component={
           <Textarea
             value={textarea}
             handleChange={getTextarea}
-             label="Label"
-           
+            label="Label"
             asterisk={true}
-            // rows={4}
-              disabled={true}
+            status={ValidationStatus.success}
+            rows={4}
+            disabled={true}
             maxLength={200}
             lettersCounter={true}
             onBlur={clickTest}
@@ -270,10 +207,8 @@ console.log(query);
         }
         componentName=""
         width={500}
-        description="13"
+        description="8"
       />
-
-  
     </div>
   );
 };
