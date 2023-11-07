@@ -50,10 +50,9 @@ const Textarea = ({
           rows={rows}
           cols={cols}
           className={`        
-         w-[100%] block py-s px-xs bg-bgWhite outline-0 text-[16px] text-textInputActive font-400 leading-[1.5]
-        border-1 border-solid rounded-minimal resize-none
-        hover:bg-bgHoverGrey disabled:bg-bgDisable disabled:border-borderDisabled
-        disabled:text-textDisabled placeholder:hover:text-textInputActive placeholder:focus:text-textInputActive placeholder:disabled:text-textDisabled 
+        block w-[100%] py-s px-xs  border-1 border-solid rounded-minimal resize-none bg-bgWhite outline-0 text-[16px] text-textInputActive font-400 
+        leading-[1.5] hover:bg-bgHoverGrey disabled:bg-bgDisable disabled:border-borderDisabled disabled:text-textDisabled placeholder:hover:text-textInputActive
+        placeholder:focus:text-textInputActive placeholder:disabled:text-textDisabled 
   
         ${handleStatus({
           status,

@@ -1,5 +1,5 @@
-import { nanoid } from "nanoid";
 import React, { useRef, useState } from "react";
+import { nanoid } from "nanoid";
 import { ValidationStatus } from "../../../types/validationStatus";
 import { handleStatus } from "../../../utils/handleValidationStatus";
 import { InputProps, InputTypesFigma } from "./Input.types";
@@ -26,6 +26,7 @@ const Input = ({
   inputClassName,
   messageClassName,
   iconBoxClassName,
+  phoneCodeClassName,
   ...rest
 }: InputProps) => {
 
@@ -65,17 +66,16 @@ const Input = ({
           disabled={disabled}
           maxLength={maxLength}
           className={`        
-         w-[100%] ${inputTypesFigma === InputTypesFigma.Price && "w-[115px]"}
-        block p-xs bg-bgWhite outline-0 text-[16px] text-textInputActive font-400 leading-[1.5]
-        border-1 border-solid rounded-minimal
+        block w-[100%] ${(inputTypesFigma === InputTypesFigma.Price) ? "w-[115px]" : ''}
+        p-xs border-1 border-solid rounded-minimal bg-bgWhite outline-0 text-[16px] text-textInputActive font-400 leading-[1.5]
         hover:bg-bgHoverGrey disabled:bg-bgDisable disabled:border-borderDisabled
         disabled:text-textDisabled placeholder:hover:text-textInputActive placeholder:focus:text-textInputActive placeholder:disabled:text-textDisabled 
        
-        ${inputTypesFigma === InputTypesFigma.SearchField && "rounded-tr-zero rounded-br-zero"}
-       ${inputTypesFigma === InputTypesFigma.Password && mainIcon && "pr-l2"}
-        ${inputTypesFigma === InputTypesFigma.TextField && mainIcon && !extraLeftIcon && "pr-xl"}
-        ${inputTypesFigma === InputTypesFigma.TextField &&  mainIcon && extraLeftIcon && "pr-[80px]"}
-        ${inputTypesFigma === InputTypesFigma.PhoneNumber && "pl-[63px]"}
+        ${(inputTypesFigma === InputTypesFigma.SearchField) ? "rounded-tr-zero rounded-br-zero" : ''}
+        ${(inputTypesFigma === InputTypesFigma.Password && mainIcon) ? "pr-l2" : ''}
+        ${(inputTypesFigma === InputTypesFigma.TextField && mainIcon && !extraLeftIcon) ? "pr-xl" : ''}
+        ${(inputTypesFigma === InputTypesFigma.TextField &&  mainIcon && extraLeftIcon) ? "pr-[80px]" : ''}
+        ${(inputTypesFigma === InputTypesFigma.PhoneNumber) ? "pl-[63px]" : ''}
 
         ${handleStatus({
           status,
@@ -87,43 +87,28 @@ const Input = ({
                 `}
           {...rest}
         />
+        
         {inputTypesFigma === InputTypesFigma.PhoneNumber && (
-          <span aria-disabled={disabled} className={`absolute bottom-xs left-xs leading-[1.5] ${isInputActive ? "text-textInputActive": "text-textInputDefault"} 
-         aria-disabled:text-textDisabled after:content-[''] after:absolute after:w-[1px]  after:left-[41px] after:top-[-4px] after-block after:h-[28px]
-          after:aria-disabled:bg-textDisabled ${isInputActive ? "after:bg-textInputActive": "after:bg-textInputDefault"} 
-          `}>{phoneCode}</span>
+          <span aria-disabled={disabled}
+          className={`absolute bottom-xs left-xs leading-[1.5] ${isInputActive ? "text-textInputActive" : "text-textInputDefault"} 
+        aria-disabled:text-textDisabled after:content-[''] after:absolute after:w-[1px] after:left-[41px] after:top-[-4px] after-block after:h-[28px]
+        after:aria-disabled:bg-textDisabled ${isInputActive ? "after:bg-textInputActive": "after:bg-textInputDefault"} 
+          ${phoneCodeClassName ? phoneCodeClassName : ''}`}>{phoneCode}</span>
 )}
-
         {(extraLeftIcon || mainIcon) && (
           <div
             className={`absolute flex gap-xs2
-            ${
-              inputTypesFigma === InputTypesFigma.TextField
-                ? "bottom-xs right-xs"
-                : ""
-            }
-            ${
-              inputTypesFigma === InputTypesFigma.Password
-                ? "bottom-s right-s"
-                : ""
-            }
+            ${inputTypesFigma === InputTypesFigma.TextField ? "bottom-xs right-xs" : "" }
+            ${inputTypesFigma === InputTypesFigma.Password ? "bottom-s right-s" : ""}
             ${iconBoxClassName ? iconBoxClassName : ""}`}
           >
             {extraLeftIcon && (
-              <button
-                disabled={disabled}
-                type="button"
-                onClick={onExtraLeftIconClick}
-              >
+              <button disabled={disabled} type="button" onClick={onExtraLeftIconClick}>
                 {extraLeftIcon}
               </button>
             )}
             {mainIcon && (
-              <button
-                disabled={disabled}
-                type="button"
-                onClick={onMainIconClick}
-              >
+              <button disabled={disabled} type="button" onClick={onMainIconClick}>
                 {mainIcon}
               </button>
             )}
@@ -132,8 +117,7 @@ const Input = ({
       </div>
    
       {message && (
-        <p
-          aria-disabled={disabled}
+        <p aria-disabled={disabled}
           className={`mt-xs3  text-[14px] font-400 leading-[1.4] aria-disabled:text-textDisabled
                     ${
                       (status === ValidationStatus.error && "text-textError") ||
@@ -150,4 +134,5 @@ const Input = ({
     </>
   );
 };
+
 export default Input;

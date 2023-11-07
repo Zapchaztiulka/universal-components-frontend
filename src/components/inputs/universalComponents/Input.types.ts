@@ -38,4 +38,5 @@ export type InputProps = {
   inputClassName?: string;
   messageClassName?: string;
   iconBoxClassName?: string;
+  phoneCodeClassName?: string;
 } & InputHTMLAttributes<HTMLInputElement>;

@@ -21,7 +21,6 @@ export const Inputs = () => {
   const [query, setQuery] = useState("");
   const [textarea, setTextarea] = useState("");
 
-  console.log(query);
   const toogleDisplayPassword = () => {
     setDisplayPassword((prev) => !prev);
   };
@@ -198,15 +197,16 @@ export const Inputs = () => {
             label="Label"
             asterisk={true}
             status={ValidationStatus.success}
-            rows={4}
-            disabled={true}
+            rows={1}
+            // disabled={true}
             maxLength={200}
             lettersCounter={true}
             onBlur={clickTest}
           />
         }
-        componentName=""
+        componentName="Textarea"
         width={500}
+        height={600}
         description="8"
       />
     </div>
