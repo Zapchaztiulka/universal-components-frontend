@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Button, { BUTTON_TYPES, BUTTON_SIZES } from './Button';
-import { BasketIcon } from '../icons';
+import { BasketIcon, PlusIcon, PhoneIcon, ArrowDownIcon, SearchIcon } from '../icons';
 
 
 const meta = {
@@ -46,7 +46,7 @@ export const Secondary: Story = {
 export const SecondaryWithIcon: Story = {
   args: {
     text: 'Button',
-    icon: BasketIcon,
+    icon: PlusIcon,
     buttonType: BUTTON_TYPES.SECONDARY,
     disabled: false,
   },
@@ -61,7 +61,7 @@ export const SecondaryGray: Story = {
 export const SecondaryGrayWithIcon: Story = {
   args: {
     text: 'Button',
-    icon: BasketIcon,
+    icon: PlusIcon,
     buttonType: BUTTON_TYPES.SECONDARY_GRAY,
     disabled: false,
   },
@@ -79,7 +79,6 @@ export const Disabled: Story = {
 export const Desctructive: Story = {
   args: {
     text: 'Button',
-
     buttonType: BUTTON_TYPES.DESTRUCTIVE,
     disabled: false,
   },
@@ -103,7 +102,7 @@ export const TertiaryeWithIcon: Story = {
   args: {
     text: 'Показати ще',
     buttonType: BUTTON_TYPES.TERTIARY,
-    icon: BasketIcon,
+    icon: PhoneIcon,
     disabled: false,
   },
 };
@@ -111,7 +110,7 @@ export const TertiaryeWithRightIcon: Story = {
   args: {
     text: 'Показати ще',
     buttonType: BUTTON_TYPES.TERTIARY,
-    icon: BasketIcon,
+    icon: ArrowDownIcon,
     iconSide: "right",
     disabled: false,
   },
@@ -137,7 +136,7 @@ export const IconOnly: Story = {
 export const SearchType: Story = {
   args: {
     buttonType: BUTTON_TYPES.SEARCH_TYPE,
-    icon: BasketIcon,
+    icon: SearchIcon,
     iconProps: {
       color: 'white',
     },

@@ -17,13 +17,13 @@ type Story = StoryObj<typeof meta>;
 
 export const TextLink: Story = {
     args: {
-        text: 'Link Text',
+        text: 'Textlink',
         disabled: false,
     },
 };
 export const DisabledTextLink: Story = {
     args: {
-        text: 'Link Text',
+        text: 'Textlink',
         disabled: true,
     },
 };

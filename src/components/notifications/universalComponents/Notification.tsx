@@ -24,7 +24,7 @@ const Notification: FC<NotificationProps> =
 
         let sizeStyle = "w-[600px]";
         let textColor = 'textSuccess';
-        let borderColor = `border-borderSuccess`;
+        let borderColor = 'borderSuccess';
         let bgColor = 'bgSuccessLight';
         let iconColor = theme.colors.iconSuccess;
 
@@ -33,14 +33,14 @@ const Notification: FC<NotificationProps> =
         }
         if (state == States.Error) {
             textColor = 'textError';
-            borderColor = `border-borderError`;
+            borderColor = 'borderError';
             bgColor = 'bgErrorLight';
             iconColor = theme.colors.iconError;
         }
 
         return (
             <div className={`w-fit ${className} fixed bottom-[24px] left-[50%] -translate-x-[50%]`}>
-                <div className={`inline-block ${sizeStyle} border-1 ${borderColor} bg-${bgColor} text-${textColor} rounded-medium px-[16px] py-[12px]`}>
+                <div className={`inline-block ${sizeStyle} border-1 border-${borderColor} bg-${bgColor} text-${textColor} rounded-medium px-[16px] py-[12px]`}>
                     <InfoIcon color={iconColor} className="inline-block mr-[3px]" />
                     <p className="inline-block relative -bottom-[2px]">
                         <span className="capitalize">{state}: </span>

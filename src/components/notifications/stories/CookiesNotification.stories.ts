@@ -8,16 +8,7 @@ const meta = {
     component: CookiesNotification,
     parameters: {
         layout: 'centered',
-        docs: {
-            story: {
-                inline: false,
-                iFrameHeight: 400,
-                width: '500px',
-                iFrameWidth: 600
-            },
-        },
     },
-    tags: ['autodocs'],
 } satisfies Meta<typeof CookiesNotification>;
 
 export default meta;

@@ -8,15 +8,7 @@ const meta = {
     component: Notification,
     parameters: {
         layout: 'centered',
-        docs: {
-            story: {
-                inline: false,
-                iFrameHeight: 500,
-                iFrameWidth: 600,
-            },
-        },
     },
-    tags: ['autodocs'],
 } satisfies Meta<typeof Notification>;
 
 export default meta;

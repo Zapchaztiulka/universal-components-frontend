@@ -1,9 +1,5 @@
 import {FC} from "react"
-
-export enum Sizes {
-    Small = "small",
-    Big = "big",
-}
+import { Sizes } from './Notification'
 
 interface CookiesNotificationProps {
     size?: Sizes;
