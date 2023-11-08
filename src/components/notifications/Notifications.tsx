@@ -1,10 +1,10 @@
+import { Notification } from "."
 
 export const Notifications = () => {
-    return <div>
+    return (<div>
         All Notifications
         <div>
-            <p><b>Name</b> description</p>
-            &#8249; Component &#8250;
+            <Notification message="message" />
         </div>
-    </div>
+    </div>)
 }
