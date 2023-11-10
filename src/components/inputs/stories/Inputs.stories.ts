@@ -48,11 +48,11 @@ const meta = {
       description: 'Example: placeholder="Я шукаю..."',
     },
     mainIcon: {
-      description: 'Example: "mainIcon={<AttachIcon />}"',
+      description: 'Example: "mainIcon={}"',
     },
     extraLeftIcon: {
       description:
-        "Add an icon if the input contains two icons. Example: extraLeftIcon={<MenuIcon />}",
+        "Add an icon if the input contains two icons. Example: extraLeftIcon={}",
     },
     phoneCode: {
       description: 'Example: phoneCode="+38" ',
