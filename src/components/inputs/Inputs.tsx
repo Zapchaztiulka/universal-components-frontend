@@ -65,10 +65,10 @@ export const Inputs = () => {
               displayPassword ? <EyeIcon size="16" /> : <EyeOffIcon size="16" />
             }
             handleChange={getPassword}
-            message="qqqqqqqqqqqqqq1"
+            message="message"
           />
         }
-        componentName="Input"
+        componentName="Password"
         width={500}
         description="1"
       />
@@ -92,7 +92,7 @@ export const Inputs = () => {
             onExtraLeftIconClick={clickOnIcon}
           />
         }
-        componentName="Input"
+        componentName="TextField"
         width={500}
         description="2"
       />
@@ -115,7 +115,7 @@ export const Inputs = () => {
             onMainIconClick={clickOnIcon}
           />
         }
-        componentName="Input"
+        componentName="TextField"
         width={500}
         description="3"
       />
@@ -131,7 +131,7 @@ export const Inputs = () => {
             asterisk={true}
           />
         }
-        componentName="Input"
+        componentName="Text Field"
         width={500}
         description="4"
       />
@@ -151,7 +151,7 @@ export const Inputs = () => {
             status={ValidationStatus.success}
           />
         }
-        componentName="Input phone number"
+        componentName="Phone number"
         width={500}
         description="5"
       />
@@ -167,7 +167,7 @@ export const Inputs = () => {
             maxLength={13}
           />
         }
-        componentName="Input price"
+        componentName="Price"
         width={500}
         description="6"
       />
@@ -181,7 +181,7 @@ export const Inputs = () => {
             placeholder="Я шукаю..."
             handleChange={getQuery}
             maxLength={13}
-            status={ValidationStatus.success}
+            // status={ValidationStatus.success}
           />
         }
         componentName="Search field"
@@ -196,7 +196,7 @@ export const Inputs = () => {
             handleChange={getTextarea}
             label="Label"
             asterisk={true}
-            status={ValidationStatus.success}
+            // status={ValidationStatus.success}
             rows={1}
             // disabled={true}
             maxLength={200}

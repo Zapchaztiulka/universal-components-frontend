@@ -7,18 +7,18 @@ export enum InputTypes {
   Phone = "tel",
 }
 export enum InputTypesFigma {
-  TextField,
-  Password,
-  PhoneNumber,
-  SearchField,
-  TextArea,
-  Price,
+  TextField = 'TextField',
+  Password = 'Password',
+  PhoneNumber = 'PhoneNumber',
+  SearchField = 'SearchField',
+  TextArea = 'TextArea',
+  Price= 'Price',
 }
 
 export type InputProps = {
-  value: string;
-  type: InputTypes;
-  inputTypesFigma: InputTypesFigma;
+  value?: string;
+  type?: InputTypes;
+  inputTypesFigma?: InputTypesFigma;
   placeholder?: string;
   label?: string;
   asterisk?: boolean;
@@ -29,7 +29,7 @@ export type InputProps = {
   extraLeftIcon?: React.ReactElement;
   phoneCode?: string;
   maxLength?: number;
-  handleChange: (text: string) => void;
+  handleChange?: (text: string) => void;
   onMainIconClick?: () => void;
   onExtraLeftIconClick?: () => void;
   inputBoxClassName?: string;

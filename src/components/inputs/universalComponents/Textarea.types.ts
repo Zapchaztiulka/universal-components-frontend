@@ -12,7 +12,7 @@ export type TextareaProps = {
   rows?: number;
   cols?: number;
   lettersCounter?: boolean;
-  handleChange: (text: string) => void;
+  handleChange?: (text: string) => void;
   textareaBoxClassName?: string;
   labelClassName?: string;
   textareaClassName?: string;
