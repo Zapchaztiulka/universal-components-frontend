@@ -8,6 +8,7 @@ import {
     Notifications,
     Selects,
     Tooltips,
+    Modal
 } from "../components/index.ts";
 
 export const router = createBrowserRouter([
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
             {
                 path: TypesOfComponents.tooltips,
                 element: <Tooltips />,
+            },
+            {
+                path: TypesOfComponents.modals,
+                element: <Modal isOpened={true} />,
             },
         ],
     },

@@ -6,6 +6,7 @@ import { Notifications } from "./notifications/Notifications";
 import { Selects } from "./selects/Selects";
 import { Tooltips } from "./tooltips/Tooltips";
 import { Link } from "./link/index";
+import { Modal } from './modals/index'
 
 export {
     Button,
@@ -15,5 +16,6 @@ export {
     Notifications,
     Selects,
     Tooltips,
-    Link
+    Link,
+    Modal
 }
