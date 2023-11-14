@@ -31,7 +31,8 @@ export const PrimaryWithIcon: Story = {
     text: 'Button',
     icon: BasketIcon,
     iconProps: {
-      color: 'white',
+      // color: 'red',
+      className: "hover:text-textBrand!"
     },
     disabled: false,
   },

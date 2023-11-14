@@ -1,3 +1,3 @@
-import CustomSelect from "./Select";
+import Select from "./Select";
 
-export { CustomSelect }
+export { Select }

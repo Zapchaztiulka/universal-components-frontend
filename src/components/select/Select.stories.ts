@@ -1,80 +1,46 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import CustomSelect from './Select';
+import Select from './Select';
 
 
 const meta = {
   title: 'Select/Component',
-  component: CustomSelect,
+  component: Select,
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {
   },
-} satisfies Meta<typeof CustomSelect>;
+} satisfies Meta<typeof Select>;
 
-const items = [
-  {
-    children: [
-      {
-        children: [
-          {
-            id: 6,
-            name: 'Green',
-          },
-          {
-            id: 7,
-            name: 'Blue',
-          },
-          {
-            children: [
-              {
-                id: 9,
-                name: 'The push() method adds new items to the end of an array, and returns the new length.',
-              },
-              {
-                id: 10,
-                name: 'Hot',
-              },
-              {
-                id: 11,
-                name: 'Cold',
-              },
-            ],
-            id: 8,
-            name: 'Red',
-          },
-        ],
-        id: 3,
-        name: 'Moscow',
-      },
-      {
-        id: 4,
-        name: 'New York',
-      },
-      {
-        id: 5,
-        name: 'Paris',
-      },
-    ],
-    id: 1,
-    name: 'Accounting',
-  },
-  {
-    id: 2,
-    name: 'Management',
-  }
+const optionsDropdown = [
+  'Варіант 1',
+  'Варіант 2',
+  'Варіант 3',
+  'Варіант 4'
 ]
 
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Dropdown: Story = {
   args: {
-    placeholder: "Select value",
-    items,
-    selectedIds: [8,7]
+    options: optionsDropdown,
+    value: "Оберіть значення...",
   },
 }; 
+export const DropdownWithLabel: Story = {
+  args: {
+    options: optionsDropdown,
+    label: "Label"
+  },
+};
+export const DropdownWithRequiredLabel: Story = {
+  args: {
+    options: optionsDropdown,
+    label: "Label",
+    required: true
+  },
+};

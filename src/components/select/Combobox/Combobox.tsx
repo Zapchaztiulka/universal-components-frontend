@@ -1,13 +1,13 @@
 
 
 import { FC, useState, ReactElement } from "react";
-import { ArrowDownIcon } from "../icons";
+import { ArrowDownIcon } from "../../icons";
 import cn from "clsx";
-import { SelectOption } from "./SelectOption";
-import theme from "../../../presets";
+import { SelectOption } from "./../SelectOption";
+import theme from "../../../../presets";
 
 
-type SelectProps = {
+type ComboboxProps = {
   name?: string,
   label?: string,
   value?: string,
@@ -18,7 +18,7 @@ type SelectProps = {
 
 
 
-const Select: FC<SelectProps> = ({
+const Combobox: FC<ComboboxProps> = ({
   name = "customSelect",
   label,
   value = "Оберіть значення...",
@@ -41,8 +41,10 @@ const Select: FC<SelectProps> = ({
   };
 
   if (!icon) icon = (<ArrowDownIcon />);
-
-
+    const handleSearch = (e) => {
+    console.log('', e);
+}
+ 
   return (
     <div className="relative w-[343px] transition transition-all duration-500">
       <div>
@@ -50,14 +52,18 @@ const Select: FC<SelectProps> = ({
         {required ? <span className="text-textError"> *</span> : '' }
       </div>
       
-      <input type="hidden" name={name} value={state.value} />
+          <input type="hidden" name={name} value={state.value} />
+         
+          
+
         <button
         type="button"
           className={cn("w-full text-textInputDefault relative w-full bg-bgWhite p-xs text-left cursor-default border-1 border-solid  border-borderDefault rounded-minimal  active:bg-bgPressedGrey",
             {'text-textInputActive': state.showOptions  }
           )}
           onClick={handleClick}
-      >
+          >
+          <input type="text" onChange={handleSearch}/>
         <span className="flex items-center">
           <span className={cn("ml-3 block truncate hover:text-textInputActive",
             { 'text-textInputActive': state.showOptions }
@@ -89,4 +95,4 @@ const Select: FC<SelectProps> = ({
 
 
 
-export default Select;
+export default Combobox;
