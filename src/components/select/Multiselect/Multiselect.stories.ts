@@ -4,7 +4,7 @@ import Multiselect from './Multiselect';
 
 
 const meta = {
-  title: 'Select/Component',
+  title: 'Select/Multiselect',
   component: Multiselect,
   parameters: {
     layout: 'centered',

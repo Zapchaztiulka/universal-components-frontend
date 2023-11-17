@@ -1,10 +1,10 @@
 
 
 import { FC, useState, ReactElement } from "react";
-import { ArrowDownIcon } from "../icons";
+import { ArrowDownIcon } from "../../icons";
 import cn from "clsx";
-import { SelectOption } from "./SelectOption";
-import theme from "../../../presets";
+import { SelectOption } from "../SelectOption";
+import theme from "../../../../presets";
 
 
 type SelectProps = {
@@ -18,7 +18,7 @@ type SelectProps = {
 
 
 
-const Select: FC<SelectProps> = ({
+const Dropdown: FC<SelectProps> = ({
   name = "customSelect",
   label,
   value = "Оберіть значення...",
@@ -31,7 +31,7 @@ const Select: FC<SelectProps> = ({
     showOptions: false
   });
 
-  const handleClick = (e: Event) => {
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     setState((prev) => ({ ...prev, showOptions: !state.showOptions }));
   };
@@ -89,4 +89,4 @@ const Select: FC<SelectProps> = ({
 
 
 
-export default Select;
+export default Dropdown;

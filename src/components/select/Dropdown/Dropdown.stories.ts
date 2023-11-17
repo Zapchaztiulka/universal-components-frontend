@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Select from './Select';
+import Select from './Dropdown';
 
 
 const meta = {
-  title: 'Select/Component',
+  title: 'Select/Dropdown',
   component: Select,
   parameters: {
     layout: 'centered',
@@ -30,7 +30,7 @@ export const Dropdown: Story = {
     options: optionsDropdown,
     value: "Оберіть значення...",
   },
-}; 
+};
 export const DropdownWithLabel: Story = {
   args: {
     options: optionsDropdown,

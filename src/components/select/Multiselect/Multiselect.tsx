@@ -29,7 +29,7 @@ const Multiselect:FC<MultiselectProps> = ({
       showOptions: false
     });
   
-    const handleClick = (e: Event) => {
+    const handleClick = (e: React.MouseEvent<HTMLElement>) => {
       e.preventDefault();
       setState((prev) => ({ ...prev, showOptions: !state.showOptions }));
     };
