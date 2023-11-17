@@ -6,8 +6,8 @@ import { Notifications } from "./notifications/Notifications";
 import { Selects } from "./selects/Selects";
 import { Tooltips } from "./tooltips/Tooltips";
 import { Link } from "./link/index";
-import { Modal } from './modals/index'
-
+import { Modals } from './modals/Modals'
+//import Modals from './modals/Modals'
 export {
     Button,
     Icons,
@@ -17,5 +17,5 @@ export {
     Selects,
     Tooltips,
     Link,
-    Modal
+    Modals
 }
