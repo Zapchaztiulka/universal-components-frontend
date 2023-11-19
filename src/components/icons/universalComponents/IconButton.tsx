@@ -1,16 +1,19 @@
 import theme from "../../../../presets"
-import { cloneElement } from 'react'
+import { cloneElement, HTMLAttributes } from 'react'
 
 export type Props = {
     children?: JSX.Element;
     disabled?: boolean;
     active?: boolean;
-};
+    className?: string;
+} & HTMLAttributes<HTMLDivElement>;
 
 const IconButton = ({
     children,
     disabled,
-    active
+    active,
+    className,
+    ...props
 }: Props ) => {
 
     const childrenWithPropsActive = cloneElement(children as React.ReactElement<any>, {
@@ -21,10 +24,10 @@ const IconButton = ({
         color: theme.colors.borderDisabled
     });
 
-    const disabledStyle = `w-fit bg-bgDisable cursor-not-allowed`;
+    const disabledStyle = `w-fit bg-bgDisable cursor-not-allowed ${className}`;
 
     return (
-        <div className={disabled ? `${disabledStyle}` : `w-fit hover:bg-bgHoverGrey active:bg-bgPressedGrey`}>
+        <div {...props} className={disabled ? `${disabledStyle}` : `w-fit hover:bg-bgHoverGrey active:bg-bgPressedGrey ${className}`}>
             {active ? childrenWithPropsActive : (disabled ? childrenWithPropsDisabled : children)}
         </div>
     );

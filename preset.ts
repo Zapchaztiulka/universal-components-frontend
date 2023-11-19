@@ -149,22 +149,25 @@ const myPreset = {
       transparent: "transparent",
     },
 
-    spacing: {
-      xs4: "2px",
-      xs3: "4px",
-      xs2: "8px",
-      xs: "12px",
-      s: "16px",
-      sPlus: "20px",
-      m: "24px",
-      m1: "28px",
-      m2: "32px",
-      l: "40px",
-      xl: "48px",
-      xl2: "56px",
-      xl3: "64px",
-      xl4: "72px",
-    },
+
+  spacing: {
+    xs4: "2px",
+    xs3: "4px",
+    xs2: "8px",
+    xs: "12px",
+    s: "16px",
+    sPlus: "20px",
+    m: "24px",
+    m1: "28px",
+    m2: "32px",
+    l: "40px",
+    l2: '42px',
+    xl: "48px",
+    xl2: "56px",
+    xl3: "64px",
+    xl4: "72px",
+  },
+
 
     width: {
       fit: "fit-content",
