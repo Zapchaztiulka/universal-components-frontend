@@ -28,19 +28,17 @@ type Story = StoryObj<typeof meta>;
 export const Dropdown: Story = {
   args: {
     options: optionsDropdown,
-    value: "Оберіть значення...",
+    placeholder: "Оберіть значення...",
   },
 };
 export const DropdownWithLabel: Story = {
   args: {
     options: optionsDropdown,
-    label: "Label"
   },
 };
 export const DropdownWithRequiredLabel: Story = {
   args: {
     options: optionsDropdown,
-    label: "Label",
-    required: true
+
   },
 };

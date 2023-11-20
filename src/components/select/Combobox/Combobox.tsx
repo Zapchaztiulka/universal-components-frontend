@@ -2,36 +2,35 @@ import { FC, useState, useRef, useCallback, useEffect } from 'react';
 
 import cn from 'clsx';
 import { SelectOption } from './../SelectOption';
-import PickerWrapper from '../Wrapper/PickerWrapper';
 import PickerButtonWrapper from '../Wrapper/PickerButtonWrapper';
 import PickerOptionsWrapper from '../Wrapper/PickerOptionsWrapper';
+import EmptyState from './EmptyState/EmptyState';
 
 type ComboboxProps = {
     name?: string;
     label?: string;
     placeholder?: string;
-    choosedOption?: string;
+    choseOption?: string;
     options?: string[];
-    isRequired?: boolean;
     isError?: boolean;
     isSuccess?: boolean;
     isDisabled?: boolean;
     onChange: (value: string) => void;
+    onCreate?: (newOption: string) => void;
 };
 
 const Combobox: FC<ComboboxProps> = ({
     name = 'customSelect',
-    label = '',
-    choosedOption = '',
+    choseOption = '',
     placeholder = 'Оберіть значення...',
     options = [],
-    isRequired = false,
     isDisabled = false,
     isSuccess = false,
     isError = false,
     onChange,
+    onCreate,
 }) => {
-    const [value, setValue] = useState(choosedOption);
+    const [value, setValue] = useState(choseOption);
     const [showOptions, setShowOptions] = useState(false);
     const [search, setSearch] = useState('');
 
@@ -63,10 +62,7 @@ const Combobox: FC<ComboboxProps> = ({
     const filteredOptions = options.filter((option) => option.includes(search));
 
     return (
-        <PickerWrapper
-            label={label}
-            isRequired={isRequired}
-        >
+        <div className="relative w-[343px] transition transition-all duration-500 leading-6">
             <PickerButtonWrapper
                 onClick={handleOpenPicker}
                 isOpen={showOptions}
@@ -107,9 +103,10 @@ const Combobox: FC<ComboboxProps> = ({
                             updateValue={handleSelectOption}
                         />
                     ))}
+                    {!filteredOptions.length && <EmptyState search={search} onCreate={ onCreate} />}
                 </PickerOptionsWrapper>
             )}
-        </PickerWrapper>
+        </div>
     );
 };
 

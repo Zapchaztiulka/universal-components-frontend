@@ -1,50 +1,75 @@
+
 import FormField from '../FormField/FormField';
+import { TextField } from '../inputs';
 import { Combobox } from './Combobox';
 import { Dropdown } from './Dropdown';
 import Multiselect from './Multiselect/Multiselect';
 
 const optionsFirst = ['За популярністю', 'Від дешевих до дорогих', 'Від дорогих до дешевих'];
+const optionsSecond = ['Варіант 1', 'Варіант 2', 'Варіант 3', 'Варіант 4'];
 const optionsThird = ['Назва 1', 'Назва 2', 'Назва 3', 'Назва 4', 'Назва 5', 'Назва 6', 'Назва 7'];
 
 export const Page = () => {
+
     return (
         <>
             <header className="w-full bg-brand-900 text-bgWhite font-600 text-heading1 p-xl4">
                 Dropdown & Multiselect & Combo-box / Components
             </header>
             <div className="flex mt-[160px] ml-[60px] flex-col">
-                <div className="flex  ">
+                <div className="flex">
                     <div className="">
                         <Dropdown
-                            value="За популярністю..."
+                            placeholder="За популярністю..."
                             options={optionsFirst}
                         />
                     </div>
                     <div className=" ml-[114px]">
-                        <Dropdown
-                            value="Оберіть значення.."
+                        <FormField
                             label="Label"
-                            required={true}
-                            options={optionsFirst}
-                        />
+                            isRequired={true}
+                        >
+                            <Dropdown
+                                placeholder="Оберіть значення.."
+                                options={optionsFirst}
+                            />
+                        </FormField>
                     </div>
                     <div className=" ml-[114px]">
-                        <Dropdown
-                            value="Оберіть значення.."
+                        <FormField
                             label="Назва"
-                            required={true}
-                            options={optionsThird}
-                        />
+                            isRequired={true}
+                        >
+                            <Dropdown
+                                placeholder="Оберіть значення.."
+                                options={optionsSecond}
+                            />
+                        </FormField>
                     </div>
                 </div>
-                <div className="flex mt-[60px]   ">
-                    <div className="">
-                        <Multiselect
-                            placeholder="Оберіть значення.."
+                <div className="flex">
+                    <div className="flex mt-[60px]   ">
+                        <FormField
                             label="Назва"
-                            required={true}
-                            options={optionsThird}
-                        />
+                            isRequired={true}
+                        >
+                            <Multiselect
+                                placeholder="Оберіть значення.."
+                                options={optionsThird}
+                            />
+                        </FormField>
+                    </div>
+                    <div className=" ml-[114px]">
+                        <FormField
+                            label="Назва"
+                            isRequired={true}
+                        >
+                            <Combobox
+                                placeholder="Оберіть значення.."
+                                options={optionsThird}
+                                onChange={() => {}}
+                            />
+                        </FormField>
                     </div>
                     <div className=" ml-[114px]">
                         <FormField
@@ -57,7 +82,20 @@ export const Page = () => {
                                 placeholder="Оберіть значення.."
                                 options={optionsThird}
                                 isError={true}
-                                onChange={()=>{}}
+                                onChange={() => {}}
+                            />
+                        </FormField>
+                    </div>
+                    <div className=" ml-[114px]">
+                        <FormField
+                            label="Назва"
+                            isRequired={true}
+                            className="flex gap-xs"
+                        >
+                          <TextField placeholder='12'/>
+                            <Dropdown
+                                placeholder="штук"
+                                options={optionsSecond}
                             />
                         </FormField>
                     </div>

@@ -21,20 +21,7 @@ export const ComboboxComponent: StoryCombobox = {
     args: {
         options: optionsMulti,
         placeholder: 'Оберіть значення..',
-    },
-};
-export const ComboboxWithLabel: StoryCombobox = {
-    args: {
-        options: optionsMulti,
-        label: 'Назва',
-        onChange: () => {},
-    },
-};
-export const ComboboxWithRequiredLabel: StoryCombobox = {
-    args: {
-        options: optionsMulti,
-        label: 'Назва',
-        onChange: () => {},
+
     },
 };
 
@@ -42,16 +29,24 @@ export const ComboboxWithDefault: StoryCombobox = {
     args: {
         options: optionsMulti,
         label: 'Назва',
-        // required: true,
         onChange: () => {},
-        choosedOption: optionsMulti[1],
+        choseOption: optionsMulti[1],
     },
 };
+
 export const ComboboxDisabled: StoryCombobox = {
     args: {
         options: optionsMulti,
-        label: 'Назва',
-        onChange: () => {},
+        placeholder: 'Оберіть значення..',
         isDisabled: true,
     },
 };
+
+export const ComboboxAddOption: StoryCombobox = {
+    args: {
+        options: optionsMulti,
+        placeholder: 'Оберіть значення..',
+        onCreate: (option) => { alert(option) }
+    },
+};
+

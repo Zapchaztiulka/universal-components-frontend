@@ -28,7 +28,7 @@ export const Inputs = () => {
             placeholder="placeholder"
             label="Label"
             status={ValidationStatus.error}
-            message="infooooo"
+            message="info"
 
           />
         }
@@ -41,7 +41,7 @@ export const Inputs = () => {
           <TextField
             label="Label"
             status={ValidationStatus.success}
-            message="infooooo"
+            message="info"
             asterisk={true}
             iconRight={<AttachIcon />}
                     />
@@ -55,7 +55,7 @@ export const Inputs = () => {
           <TextField
              
             label="Label"
-            message="infooooo"
+            message="info"
             asterisk={true}
             iconRight={<IconButton  ><AttachIcon /></IconButton>}
             iconLeft={<MenuIcon />}
