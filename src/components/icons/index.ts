@@ -69,6 +69,7 @@ import NumberListIcon from "./universalComponents/admin/NumberListIcon";
 import ProfileIcon from "./universalComponents/admin/ProfileIcon";
 import StatisticsIcon from "./universalComponents/admin/StatisticsIcon";
 import UnderlinedIcon from "./universalComponents/admin/UnderlinedIcon";
+import IconWithBg from "./universalComponents/IconWithBg";
 
 export {
     LogoIcon,
@@ -141,5 +142,6 @@ export {
     NumberListIcon,
     ProfileIcon,
     StatisticsIcon,
-    UnderlinedIcon
+    UnderlinedIcon,
+    IconWithBg
 }

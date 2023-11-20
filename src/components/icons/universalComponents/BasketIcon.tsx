@@ -1,10 +1,9 @@
 import theme from "../../../../presets"
 
 const BasketIcon = ({
-  //  color = theme.colors.iconPrimary,
-  color = "currentColor",
-  size = "24",
-  className= '',
+    color = theme.colors.iconPrimary,
+    size = "24",
+    className
   }:{
     color?: string;
     size?: string;

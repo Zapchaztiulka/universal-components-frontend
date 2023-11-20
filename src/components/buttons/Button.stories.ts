@@ -1,9 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Button, { BUTTON_TYPES, BUTTON_SIZES } from './Button';
-import { ArrowDownIcon, BasketIcon, PhoneIcon, PlusIcon, SearchIcon } from '../icons';
+import Button, { BUTTON_TYPES, BUTTON_SIZES } from './Button';import { BasketIcon, PlusIcon, PhoneIcon, ArrowDownIcon, SearchIcon } from '../icons';
 import theme from '../../../presets';
-
 
 const meta = {
   title: 'Buttons/Component',
@@ -32,7 +30,6 @@ export const PrimaryWithIcon: Story = {
     text: 'Button',
     icon: BasketIcon,
     iconProps: {
-      // color: 'red',
       className: "hover:text-textBrand!"
     },
     disabled: false,
@@ -63,7 +60,7 @@ export const SecondaryGray: Story = {
 export const SecondaryGrayWithIcon: Story = {
   args: {
     text: 'Button',
-    icon: BasketIcon,
+    icon: PlusIcon,
     buttonType: BUTTON_TYPES.SECONDARY_GRAY,
     disabled: false,
   },

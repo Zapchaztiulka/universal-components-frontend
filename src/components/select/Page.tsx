@@ -1,5 +1,5 @@
 import FormField from '../FormField/FormField';
-import { TextField } from '../inputs';
+import { Input } from '../inputs';
 import { Combobox } from './Combobox';
 import { Dropdown } from './Dropdown';
 import Multiselect from './Multiselect/Multiselect';
@@ -114,7 +114,7 @@ export const Page = () => {
                             isRequired={true}
                             className="flex gap-xs"
                         >
-                            <TextField placeholder="12" />
+                            <Input placeholder="12" />
                             <Dropdown
                                 placeholder="штук"
                                 options={optionsSecond}
