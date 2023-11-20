@@ -1,4 +1,3 @@
-
 import FormField from '../FormField/FormField';
 import { TextField } from '../inputs';
 import { Combobox } from './Combobox';
@@ -10,7 +9,6 @@ const optionsSecond = ['Варіант 1', 'Варіант 2', 'Варіант 3
 const optionsThird = ['Назва 1', 'Назва 2', 'Назва 3', 'Назва 4', 'Назва 5', 'Назва 6', 'Назва 7'];
 
 export const Page = () => {
-
     return (
         <>
             <header className="w-full bg-brand-900 text-bgWhite font-600 text-heading1 p-xl4">
@@ -22,6 +20,7 @@ export const Page = () => {
                         <Dropdown
                             placeholder="За популярністю..."
                             options={optionsFirst}
+                            onChange={() => {}}
                         />
                     </div>
                     <div className=" ml-[114px]">
@@ -32,6 +31,7 @@ export const Page = () => {
                             <Dropdown
                                 placeholder="Оберіть значення.."
                                 options={optionsFirst}
+                                onChange={() => {}}
                             />
                         </FormField>
                     </div>
@@ -43,12 +43,14 @@ export const Page = () => {
                             <Dropdown
                                 placeholder="Оберіть значення.."
                                 options={optionsSecond}
+                                onChange={() => {}}
                             />
                         </FormField>
                     </div>
                 </div>
-                <div className="flex">
-                    <div className="flex mt-[60px]   ">
+
+                <div className="flex mt-[100px]">
+                    <div className="flex ">
                         <FormField
                             label="Назва"
                             isRequired={true}
@@ -56,6 +58,7 @@ export const Page = () => {
                             <Multiselect
                                 placeholder="Оберіть значення.."
                                 options={optionsThird}
+                                onChange={() => {}}
                             />
                         </FormField>
                     </div>
@@ -76,6 +79,7 @@ export const Page = () => {
                             label="Назва"
                             isRequired={true}
                             message="Error message"
+                            isMessage={true}
                             isError={true}
                         >
                             <Combobox
@@ -86,16 +90,35 @@ export const Page = () => {
                             />
                         </FormField>
                     </div>
-                    <div className=" ml-[114px]">
+                </div>
+                <div className="flex my-[100px]">
+                    <div>
                         <FormField
                             label="Назва"
                             isRequired={true}
+                            isMessage={true}
+                            message="Success message"
+                            isSuccess={true}
+                        >
+                            <Combobox
+                                placeholder="Оберіть значення.."
+                                options={optionsThird}
+                                isSuccess={true}
+                                onChange={() => {}}
+                            />
+                        </FormField>
+                    </div>
+                    <div className="ml-[114px] w-[343px]">
+                        <FormField
+                            label="Label"
+                            isRequired={true}
                             className="flex gap-xs"
                         >
-                          <TextField placeholder='12'/>
+                            <TextField placeholder="12" />
                             <Dropdown
                                 placeholder="штук"
                                 options={optionsSecond}
+                                onChange={() => {}}
                             />
                         </FormField>
                     </div>

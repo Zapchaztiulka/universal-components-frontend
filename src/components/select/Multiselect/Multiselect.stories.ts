@@ -25,16 +25,19 @@ export const MultiselectComponent: Story = {
     placeholder: "Оберіть значення..."
   },
 }; 
-export const MultiselectWithLabel: Story = {
+export const MultiselectWithDefault: Story = {
   args: {
-    options: optionsMulti,
-    label: "Label"
+      options: optionsMulti,
+      onChange: () => {},
+      choseOption: [optionsMulti[1], optionsMulti[2]],
   },
 };
-export const MultiselectWithRequiredLabel: Story = {
+
+export const MultiselectDisabled: Story = {
   args: {
-    options: optionsMulti,
-    label: "Label",
-    required: true
+      options: optionsMulti,
+      placeholder: 'Оберіть значення..',
+      isDisabled: true,
   },
 };
+

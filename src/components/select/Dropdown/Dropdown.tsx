@@ -1,5 +1,4 @@
-import { FC, useState, ReactElement } from 'react';
-import { ArrowDownIcon } from '../../icons';
+import { FC, useCallback, useState } from 'react';
 import cn from 'clsx';
 import { SelectOption } from '../SelectOption';
 import PickerButtonWrapper from '../Wrapper/PickerButtonWrapper';
@@ -14,7 +13,7 @@ type SelectProps = {
     isError?: boolean;
     isSuccess?: boolean;
     isDisabled?: boolean;
-    icon?: ReactElement;
+    onChange: (value: string) => void;
 };
 
 const Dropdown: FC<SelectProps> = ({
@@ -25,23 +24,22 @@ const Dropdown: FC<SelectProps> = ({
     isDisabled = false,
     isSuccess = false,
     isError = false,
-    icon,
+    onChange,
+    
 }) => {
-   
     const [value, setValue] = useState(choseOption);
     const [showOptions, setShowOptions] = useState(false);
 
-    const handleOpenPicker = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        setShowOptions(!showOptions);
-    };
+    const handleOpenPicker = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+      setShowOptions(!showOptions);
+  },[showOptions]);
 
     const updateValue = (value: string) => {
-        setShowOptions(false);
-        setValue(value);
+      setShowOptions(false);
+      setValue(value);
+      onChange(value);
     };
-
-    if (!icon) icon = <ArrowDownIcon />;
 
     return (
         <div className="relative w-[343px] transition transition-all duration-500 leading-6">
@@ -66,7 +64,8 @@ const Dropdown: FC<SelectProps> = ({
                         {value || placeholder}
                     </span>
                 </span>
-            </PickerButtonWrapper>
+        </PickerButtonWrapper>
+        
             {showOptions && (
                 <PickerOptionsWrapper>
                     {options.map((option, idx) => (

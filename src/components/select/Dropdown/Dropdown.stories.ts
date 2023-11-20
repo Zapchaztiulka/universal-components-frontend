@@ -18,27 +18,33 @@ const optionsDropdown = [
   'Варіант 1',
   'Варіант 2',
   'Варіант 3',
-  'Варіант 4'
+  'Варіант 4',
 ]
 
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Dropdown: Story = {
+export const DropdownComponent: Story = {
   args: {
     options: optionsDropdown,
     placeholder: "Оберіть значення...",
   },
 };
-export const DropdownWithLabel: Story = {
+
+export const DropdownWithDefault: Story = {
   args: {
-    options: optionsDropdown,
+      options: optionsDropdown,
+      label: 'Назва',
+      onChange: () => {},
+      choseOption: optionsDropdown[1],
   },
 };
-export const DropdownWithRequiredLabel: Story = {
-  args: {
-    options: optionsDropdown,
 
+export const DropdownDisabled: Story = {
+  args: {
+      options: optionsDropdown,
+      placeholder: 'Оберіть значення..',
+      isDisabled: true,
   },
 };

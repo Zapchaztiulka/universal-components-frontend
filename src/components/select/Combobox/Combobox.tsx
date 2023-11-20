@@ -8,7 +8,6 @@ import EmptyState from './EmptyState/EmptyState';
 
 type ComboboxProps = {
     name?: string;
-    label?: string;
     placeholder?: string;
     choseOption?: string;
     options?: string[];
@@ -36,10 +35,10 @@ const Combobox: FC<ComboboxProps> = ({
 
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const handleOpenPicker = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleOpenPicker = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         setShowOptions(!showOptions);
-    };
+    },[showOptions]);
 
     const handleSelectOption = useCallback(
         (val: string) => {

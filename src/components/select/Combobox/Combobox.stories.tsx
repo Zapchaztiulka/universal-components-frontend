@@ -28,7 +28,6 @@ export const ComboboxComponent: StoryCombobox = {
 export const ComboboxWithDefault: StoryCombobox = {
     args: {
         options: optionsMulti,
-        label: 'Назва',
         onChange: () => {},
         choseOption: optionsMulti[1],
     },
