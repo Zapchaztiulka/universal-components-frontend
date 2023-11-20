@@ -69,6 +69,10 @@ import NumberListIcon from "./universalComponents/admin/NumberListIcon";
 import ProfileIcon from "./universalComponents/admin/ProfileIcon";
 import StatisticsIcon from "./universalComponents/admin/StatisticsIcon";
 import UnderlinedIcon from "./universalComponents/admin/UnderlinedIcon";
+import ArrowTooltipRightIcon from "./universalComponents/ArrowTooltipRightIcon";
+import ArrowTooltipDownIcon from "./universalComponents/ArrowTooltipDownIcon";
+import ArrowTooltipLeftIcon from "./universalComponents/ArrowTooltipLeftIcon";
+import ArrowTooltipUpIcon from "./universalComponents/ArrowTooltipUpIcon";
 
 export {
     LogoIcon,
@@ -141,5 +145,9 @@ export {
     NumberListIcon,
     ProfileIcon,
     StatisticsIcon,
-    UnderlinedIcon
+    UnderlinedIcon,
+    ArrowTooltipUpIcon,
+    ArrowTooltipDownIcon,
+    ArrowTooltipRightIcon,
+    ArrowTooltipLeftIcon
 }

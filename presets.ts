@@ -247,7 +247,14 @@
     button: "-0.2px",
     textBase: "-0.24px",
   },
-  
+   safelist: [
+    { pattern: /text-+/ },
+    { pattern: /bg-+/ },
+    { pattern: /border-+/ },
+    { pattern: /shadow-+/ },
+    { pattern: /w-+/ },
+    { pattern: /!bg-+/ },
+  ],
 }
 
 export default theme;

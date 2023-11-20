@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 import { ValidationStatus } from "../../../types/validationStatus";
 import { handleStatus } from "../../../utils/handleValidationStatus";
 import { InputProps, InputTypesFigma } from "./Input.types";
+import Tooltip from "../../tooltips/universalComponents/Tooltip";
 
 const Input = ({
   value,
@@ -27,6 +28,14 @@ const Input = ({
   messageClassName,
   iconBoxClassName,
   phoneCodeClassName,
+  tooltipTextMainIcon,
+  tooltipClassNameMainIcon,
+  tooltipLocationMainIcon,
+  tooltipcontainerClassNameMainIcon,
+  tooltipTextExtraLeftIcon,
+  tooltipClassNameExtraLeftIcon,
+  tooltipLocationExtraLeftIcon,
+  tooltipcontainerClassNameExtraLeftIcon,
   ...rest
 }: InputProps) => {
 
@@ -103,14 +112,18 @@ const Input = ({
             ${iconBoxClassName ? iconBoxClassName : ""}`}
           >
             {extraLeftIcon && (
-              <button disabled={disabled} type="button" onClick={onExtraLeftIconClick}>
+               <Tooltip tooltipLocation={tooltipLocationExtraLeftIcon} tooltipClassName={tooltipClassNameExtraLeftIcon} textTooltip={tooltipTextExtraLeftIcon} containerClassName={tooltipcontainerClassNameExtraLeftIcon}>
+              <button tabIndex={tooltipTextExtraLeftIcon ? -1 : 0} disabled={disabled} type="button" onClick={onExtraLeftIconClick}>
                 {extraLeftIcon}
-              </button>
+                </button>
+                </Tooltip>
             )}
             {mainIcon && (
-              <button disabled={disabled} type="button" onClick={onMainIconClick}>
+              <Tooltip tooltipLocation={tooltipLocationMainIcon} tooltipClassName={tooltipClassNameMainIcon} textTooltip={tooltipTextMainIcon} containerClassName={tooltipcontainerClassNameMainIcon}>
+              <button  tabIndex={tooltipTextMainIcon ? -1 : 0} disabled={disabled} type="button" onClick={onMainIconClick}>
                 {mainIcon}
-              </button>
+                </button>
+                </Tooltip>
             )}
           </div>
         )}

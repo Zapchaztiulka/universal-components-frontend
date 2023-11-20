@@ -11,6 +11,9 @@ import {
 } from "../icons";
 import { InputTypes, InputTypesFigma } from "./universalComponents/Input.types";
 import { changePhoneNumber } from "../../utils/changePhoneNumber";
+import Tooltip from "../tooltips/universalComponents/Tooltip";
+import ArrowTooltipDownIcon from "../icons/universalComponents/ArrowTooltipDownIcon";
+import { TooltipLocation } from "../tooltips/universalComponents/Tooltip.types";
 
 export const Inputs = () => {
   const [displayPassword, setDisplayPassword] = useState(false);
@@ -66,6 +69,8 @@ export const Inputs = () => {
             }
             handleChange={getPassword}
             message="message"
+            tooltipTextMainIcon='teeeeeeest'
+            tooltipLocationMainIcon={TooltipLocation.Right}
           />
         }
         componentName="Password"
@@ -90,13 +95,19 @@ export const Inputs = () => {
             extraLeftIcon={<MenuIcon />}
             onMainIconClick={clickOnIcon}
             onExtraLeftIconClick={clickOnIcon}
+            tooltipTextMainIcon='teeeeeeest'
+            tooltipLocationMainIcon={TooltipLocation.BottomRight}
           />
         }
         componentName="TextField"
         width={500}
         description="2"
-      />
-
+          />
+      <div className="w-[100px] border-1 border-borderDefaultBlue">
+      <Tooltip tooltipLocation={TooltipLocation.BottomLeft} textTooltip="iconnnn" tooltipClassName=''>      <ArrowTooltipDownIcon />
+</Tooltip></div>  
+      
+  
       <ShowContainer
         component={
           <Input
@@ -212,3 +223,5 @@ export const Inputs = () => {
     </div>
   );
 };
+
+// <Tooltip iconLocation={IconLocation.Left} tooltipClassName='w-[200px] bg-borderHover' text='testrrrrrrrrfffffffffff fffff ffffff'>
