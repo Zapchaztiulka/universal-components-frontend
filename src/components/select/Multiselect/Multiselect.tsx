@@ -13,6 +13,7 @@ type MultiselectProps = {
     isError?: boolean;
     isSuccess?: boolean;
     isDisabled?: boolean;
+    width?: number;
     onChange: (value: string[]) => void;
 };
 const Multiselect: FC<MultiselectProps> = ({
@@ -23,6 +24,7 @@ const Multiselect: FC<MultiselectProps> = ({
     isDisabled = false,
     isSuccess = false,
     isError = false,
+    width = 343,
     onChange,
 }) => {
     const [value, setValue] = useState(choseOption);
@@ -60,7 +62,7 @@ const Multiselect: FC<MultiselectProps> = ({
     };
 
     return (
-        <div className="relative w-[343px] transition transition-all duration-500 leading-6">
+        <div className="relative transition transition-all duration-500 leading-6">
             <input
                 type="hidden"
                 name={name}
@@ -73,6 +75,7 @@ const Multiselect: FC<MultiselectProps> = ({
                 isDisabled={isDisabled}
                 isError={isError}
                 isSuccess={isSuccess}
+                width={width}
             >
                 <span className="flex items-center">
                     <span
@@ -86,7 +89,7 @@ const Multiselect: FC<MultiselectProps> = ({
             </PickerButtonWrapper>
 
             {showOptions && (
-                <PickerOptionsWrapper>
+                <PickerOptionsWrapper width={width}>
                     {options.map((option, idx) => (
                         <SelectOption
                             key={idx}

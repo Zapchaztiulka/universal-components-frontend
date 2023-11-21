@@ -27,24 +27,26 @@ const Dropdown: FC<SelectProps> = ({
     isError = false,
     width = 343,
     onChange,
-    
 }) => {
     const [value, setValue] = useState(choseOption);
     const [showOptions, setShowOptions] = useState(false);
 
-    const handleOpenPicker = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
-      e.preventDefault();
-      setShowOptions(!showOptions);
-  },[showOptions]);
+    const handleOpenPicker = useCallback(
+        (e: React.MouseEvent<HTMLButtonElement>) => {
+            e.preventDefault();
+            setShowOptions(!showOptions);
+        },
+        [showOptions],
+    );
 
     const updateValue = (value: string) => {
-      setShowOptions(false);
-      setValue(value);
-      onChange(value);
+        setShowOptions(false);
+        setValue(value);
+        onChange(value);
     };
 
     return (
-        <div className={`relative w-[${width}px] transition transition-all duration-500 leading-6`}>
+        <div className={`relative transition transition-all duration-500 leading-6`}>
             <input
                 type="hidden"
                 name={name}
@@ -67,8 +69,8 @@ const Dropdown: FC<SelectProps> = ({
                         {value || placeholder}
                     </span>
                 </span>
-        </PickerButtonWrapper>
-        
+            </PickerButtonWrapper>
+
             {showOptions && (
                 <PickerOptionsWrapper width={width}>
                     {options.map((option, idx) => (

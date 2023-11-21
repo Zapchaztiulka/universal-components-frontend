@@ -14,6 +14,7 @@ type ComboboxProps = {
     isError?: boolean;
     isSuccess?: boolean;
     isDisabled?: boolean;
+    width?: number;
     onChange: (value: string) => void;
     onCreate?: (newOption: string) => void;
 };
@@ -26,6 +27,7 @@ const Combobox: FC<ComboboxProps> = ({
     isDisabled = false,
     isSuccess = false,
     isError = false,
+    width = 343,
     onChange,
     onCreate,
 }) => {
@@ -61,13 +63,14 @@ const Combobox: FC<ComboboxProps> = ({
     const filteredOptions = options.filter((option) => option.includes(search));
 
     return (
-        <div className="relative w-[343px] transition transition-all duration-500 leading-6">
+        <div className="relative transition transition-all duration-500 leading-6">
             <PickerButtonWrapper
                 onClick={handleOpenPicker}
                 isOpen={showOptions}
                 isDisabled={isDisabled}
                 isError={isError}
                 isSuccess={isSuccess}
+                width={width}
             >
                 {showOptions ? (
                     <input
@@ -93,7 +96,7 @@ const Combobox: FC<ComboboxProps> = ({
             </PickerButtonWrapper>
 
             {showOptions && (
-                <PickerOptionsWrapper>
+                <PickerOptionsWrapper width={width}>
                     {filteredOptions.map((option, idx) => (
                         <SelectOption
                             key={idx}
