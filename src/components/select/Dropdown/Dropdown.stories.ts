@@ -48,3 +48,17 @@ export const DropdownDisabled: Story = {
       isDisabled: true,
   },
 };
+export const DropdownSuccess: Story = {
+  args: {
+      options: optionsDropdown,
+      placeholder: 'Оберіть значення..',
+      isSuccess: true,
+  },
+};
+export const DropdownError: Story = {
+  args: {
+      options: optionsDropdown,
+      placeholder: 'Оберіть значення..',
+      isError: true,
+  },
+};

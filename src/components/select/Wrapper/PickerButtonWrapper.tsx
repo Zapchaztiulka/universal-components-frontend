@@ -10,14 +10,15 @@ interface PickerButtonWrapperProps {
     children?: ReactNode;
     isError?: boolean;
     isSuccess?: boolean;
+    width?: number;
 }
 
-const PickerButtonWrapper: React.FC<PickerButtonWrapperProps> = ({ onClick, isOpen, isDisabled, isError=false, isSuccess=false, children }) => {
+const PickerButtonWrapper: React.FC<PickerButtonWrapperProps> = ({ onClick, isOpen, isDisabled, isError=false, isSuccess=false, children, width }) => {
     return (
         <button
             type="button"
             className={cn(
-                'text-textInputDefault relative w-full bg-bgWhite text-left cursor-default overflow-hidden border-1 border-solid rounded-minimal active:bg-bgPressedGrey active:border-borderActive hover:text-textInputActive focus:focus:shadow-btFocus',
+                `w-[${width}px]  text-textInputDefault relative w-full bg-bgWhite text-left cursor-default overflow-hidden border-1 border-solid rounded-minimal active:bg-bgPressedGrey active:border-borderActive hover:text-textInputActive hover:bg-bgHoverGrey focus:focus:shadow-btFocus disabled:bg-bgDisable`,
                 { 'text-textInputActive border-borderActive': isOpen },
                 { 'border-borderDefault': !isOpen },
                 { 'border-borderError': isError },

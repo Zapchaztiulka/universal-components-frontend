@@ -37,7 +37,7 @@ export const ComboboxWithLabel: Story = {
 };
 
 export const ComboboxWithRequiredLabel: Story = {
-    render: ({ label,isRequired, ...rest }) => {
+    render: ({ label, isRequired, ...rest }) => {
         return (
             <FormField
                 label={label}
@@ -59,7 +59,25 @@ export const ComboboxWithRequiredLabel: Story = {
 };
 
 export const ComboboxWithLabelAndDisabled: Story = {
-    render: ({ label,isRequired, ...rest }) => {
+    render: ({ label, ...rest }) => {
+        return (
+            <FormField label={label}>
+                <Combobox
+                    {...rest}
+                    {...ComboboxDisabled.args}
+                    onChange={() => {}}
+                />
+            </FormField>
+        );
+    },
+    args: {
+        label: 'Назва',
+        children: '',
+    },
+};
+
+export const ComboboxWithRequiredLabelAndDisabled: Story = {
+    render: ({ label, isRequired, ...rest }) => {
         return (
             <FormField
                 label={label}
@@ -68,7 +86,6 @@ export const ComboboxWithLabelAndDisabled: Story = {
                 <Combobox
                     {...rest}
                     {...ComboboxDisabled.args}
-                   
                     onChange={() => {}}
                 />
             </FormField>
@@ -81,7 +98,7 @@ export const ComboboxWithLabelAndDisabled: Story = {
     },
 };
 
-export const ComboboxWithError: Story = {
+export const ComboboxErrorWithRequiredLabel: Story = {
     render: ({ label, isRequired, isError, message, isMessage, ...rest }) => {
         return (
             <FormField
@@ -110,7 +127,35 @@ export const ComboboxWithError: Story = {
     },
 };
 
-export const ComboboxWithSuccess: Story = {
+export const ComboboxErrorWithLabel: Story = {
+    render: ({ label, isError, message, isMessage, ...rest }) => {
+        return (
+            <FormField
+                label={label}
+                isError={isError}
+                isMessage={isMessage}
+                message={message}
+            >
+                <Combobox
+                    {...rest}
+                    {...ComboboxComponent.args}
+                    isError={isError}
+                    onChange={() => {}}
+                />
+            </FormField>
+        );
+    },
+    args: {
+        label: 'Назва',
+
+        isError: true,
+        isMessage: true,
+        message: 'Error message',
+        children: '',
+    },
+};
+
+export const ComboboxSuccessWithRequiredLabel: Story = {
     render: ({ label, isRequired, isSuccess, message, isMessage, ...rest }) => {
         return (
             <FormField
@@ -132,6 +177,32 @@ export const ComboboxWithSuccess: Story = {
     args: {
         label: 'Назва',
         isRequired: true,
+        isSuccess: true,
+        isMessage: true,
+        message: 'Success message',
+        children: '',
+    },
+};
+export const ComboboxSuccessWithLabel: Story = {
+    render: ({ label, isSuccess, message, isMessage, ...rest }) => {
+        return (
+            <FormField
+                label={label}
+                isSuccess={isSuccess}
+                isMessage={isMessage}
+                message={message}
+            >
+                <Combobox
+                    {...rest}
+                    {...ComboboxComponent.args}
+                    isSuccess={isSuccess}
+                    onChange={() => {}}
+                />
+            </FormField>
+        );
+    },
+    args: {
+        label: 'Назва',
         isSuccess: true,
         isMessage: true,
         message: 'Success message',

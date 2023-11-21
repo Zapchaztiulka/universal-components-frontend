@@ -49,3 +49,17 @@ export const ComboboxAddOption: StoryCombobox = {
     },
 };
 
+export const ComboboxSuccess: StoryCombobox = {
+    args: {
+        options: optionsMulti,
+        placeholder: 'Оберіть значення..',
+        isSuccess: true,
+    },
+};
+export const ComboboxError: StoryCombobox = {
+    args: {
+        options: optionsMulti,
+        placeholder: 'Оберіть значення..',
+        isError: true,
+    },
+};

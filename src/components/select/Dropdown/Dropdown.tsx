@@ -13,6 +13,7 @@ type SelectProps = {
     isError?: boolean;
     isSuccess?: boolean;
     isDisabled?: boolean;
+    width?: number;
     onChange: (value: string) => void;
 };
 
@@ -24,6 +25,7 @@ const Dropdown: FC<SelectProps> = ({
     isDisabled = false,
     isSuccess = false,
     isError = false,
+    width = 343,
     onChange,
     
 }) => {
@@ -42,7 +44,7 @@ const Dropdown: FC<SelectProps> = ({
     };
 
     return (
-        <div className="relative w-[343px] transition transition-all duration-500 leading-6">
+        <div className={`relative w-[${width}px] transition transition-all duration-500 leading-6`}>
             <input
                 type="hidden"
                 name={name}
@@ -54,6 +56,7 @@ const Dropdown: FC<SelectProps> = ({
                 isDisabled={isDisabled}
                 isError={isError}
                 isSuccess={isSuccess}
+                width={width}
             >
                 <span className="flex items-center">
                     <span
@@ -67,7 +70,7 @@ const Dropdown: FC<SelectProps> = ({
         </PickerButtonWrapper>
         
             {showOptions && (
-                <PickerOptionsWrapper>
+                <PickerOptionsWrapper width={width}>
                     {options.map((option, idx) => (
                         <SelectOption
                             key={idx}

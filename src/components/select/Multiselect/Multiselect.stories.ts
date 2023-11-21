@@ -40,4 +40,17 @@ export const MultiselectDisabled: Story = {
       isDisabled: true,
   },
 };
-
+export const MultiselectSuccess: Story = {
+  args: {
+      options: optionsMulti,
+      placeholder: 'Оберіть значення..',
+      isSuccess: true,
+  },
+};
+export const MultiselectError: Story = {
+  args: {
+      options: optionsMulti,
+      placeholder: 'Оберіть значення..',
+      isError: true,
+  },
+};

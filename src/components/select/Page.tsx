@@ -14,7 +14,7 @@ export const Page = () => {
             <header className="w-full bg-brand-900 text-bgWhite font-600 text-heading1 p-xl4">
                 Dropdown & Multiselect & Combo-box / Components
             </header>
-            <div className="flex mt-[160px] ml-[60px] flex-col">
+            <div className="flex my-[160px] mx-[60px] flex-col">
                 <div className="flex">
                     <div className="">
                         <Dropdown
@@ -69,12 +69,27 @@ export const Page = () => {
                         >
                             <Combobox
                                 placeholder="Оберіть значення.."
-                                options={optionsThird}
+                                options={optionsSecond}
                                 onChange={() => {}}
                             />
                         </FormField>
                     </div>
                     <div className=" ml-[114px]">
+                        <FormField
+                            label="Назва"
+                            isRequired={true}
+                        >
+                            <Combobox
+                                placeholder="Оберіть значення.."
+                                options={optionsThird}
+                                onCreate ={() => {}}
+                                onChange={() => {}}
+                            />
+                        </FormField>
+                    </div>
+                </div>
+                <div className="flex my-[100px]">
+                    <div>
                         <FormField
                             label="Назва"
                             isRequired={true}
@@ -90,9 +105,7 @@ export const Page = () => {
                             />
                         </FormField>
                     </div>
-                </div>
-                <div className="flex my-[100px]">
-                    <div>
+                    <div className=" ml-[114px]">
                         <FormField
                             label="Назва"
                             isRequired={true}
@@ -118,6 +131,7 @@ export const Page = () => {
                             <Dropdown
                                 placeholder="штук"
                                 options={optionsSecond}
+                                width={150}
                                 onChange={() => {}}
                             />
                         </FormField>

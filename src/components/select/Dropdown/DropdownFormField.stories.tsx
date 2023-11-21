@@ -58,6 +58,25 @@ export const DropdownWithRequiredLabel: Story = {
 };
 
 export const DropdownDisabledWithLabel: Story = {
+    render: ({ label, ...rest }) => {
+        return (
+            <FormField label={label}>
+                <Dropdown
+                    {...rest}
+                    {...DropdownDisabled.args}
+                    onChange={() => {}}
+                />
+            </FormField>
+        );
+    },
+    args: {
+        label: 'Назва',
+
+        children: '',
+    },
+};
+
+export const DropdownDisabledWithRequiredLabel: Story = {
     render: ({ label, isRequired, ...rest }) => {
         return (
             <FormField
@@ -79,7 +98,7 @@ export const DropdownDisabledWithLabel: Story = {
     },
 };
 
-export const DropdownWithError: Story = {
+export const DropdownErrorWithRequiredLabel: Story = {
     render: ({ label, isRequired, isError, message, isMessage, ...rest }) => {
         return (
             <FormField
@@ -107,8 +126,34 @@ export const DropdownWithError: Story = {
         children: '',
     },
 };
+export const DropdownErrorWithLabel: Story = {
+    render: ({ label, isError, message, isMessage, ...rest }) => {
+        return (
+            <FormField
+                label={label}
+                isError={isError}
+                isMessage={isMessage}
+                message={message}
+            >
+                <Dropdown
+                    {...rest}
+                    {...DropdownComponent.args}
+                    isError={isError}
+                    onChange={() => {}}
+                />
+            </FormField>
+        );
+    },
+    args: {
+        label: 'Назва',
+        isError: true,
+        isMessage: true,
+        message: 'Error message',
+        children: '',
+    },
+};
 
-export const DropdownWithSuccess: Story = {
+export const DropdownSuccessWithRequiredLabel: Story = {
     render: ({ label, isRequired, isSuccess, message, isMessage, ...rest }) => {
         return (
             <FormField
@@ -130,6 +175,32 @@ export const DropdownWithSuccess: Story = {
     args: {
         label: 'Назва',
         isRequired: true,
+        isSuccess: true,
+        isMessage: true,
+        message: 'Success message',
+        children: '',
+    },
+};
+export const DropdownSuccessWithLabel: Story = {
+    render: ({ label, isSuccess, message, isMessage, ...rest }) => {
+        return (
+            <FormField
+                label={label}
+                isSuccess={isSuccess}
+                isMessage={isMessage}
+                message={message}
+            >
+                <Dropdown
+                    {...rest}
+                    {...DropdownComponent.args}
+                    isSuccess={isSuccess}
+                    onChange={() => {}}
+                />
+            </FormField>
+        );
+    },
+    args: {
+        label: 'Назва',
         isSuccess: true,
         isMessage: true,
         message: 'Success message',
