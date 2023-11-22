@@ -149,6 +149,28 @@ export const DropdownErrorWithLabel: Story = {
         children: '',
     },
 };
+export const DropdownErrorNoLabel: Story = {
+    render: ({  message, hasMessage, ...rest }) => {
+        return (
+            <FormField
+                status={FormField.STATUS.ERROR}
+                hasMessage={hasMessage}
+                message={message}
+            >
+                <Dropdown
+                    {...rest}
+                    {...DropdownError.args}
+                    onChange={() => {}}
+                />
+            </FormField>
+        );
+    },
+    args: {
+        hasMessage: true,
+        message: 'Error message',
+        children: '',
+    },
+};
 
 export const DropdownSuccessWithRequiredLabel: Story = {
     render: ({ label, isRequired,  message, hasMessage, ...rest }) => {
@@ -195,6 +217,29 @@ export const DropdownSuccessWithLabel: Story = {
     },
     args: {
         label: 'Назва',
+        hasMessage: true,
+        message: 'Success message',
+        children: '',
+    },
+};
+export const DropdownSuccessNoLabel: Story = {
+    render: ({ message, hasMessage, ...rest }) => {
+        return (
+            <FormField
+              
+                status={FormField.STATUS.SUCCESS}
+                hasMessage={hasMessage}
+                message={message}
+            >
+                <Dropdown
+                    {...rest}
+                    {...DropdownSuccess.args}
+                    onChange={() => {}}
+                />
+            </FormField>
+        );
+    },
+    args: {
         hasMessage: true,
         message: 'Success message',
         children: '',

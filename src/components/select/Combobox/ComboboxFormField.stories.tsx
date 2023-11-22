@@ -149,6 +149,28 @@ export const ComboboxErrorWithLabel: Story = {
         children: '',
     },
 };
+export const ComboboxErrorNoLabel: Story = {
+    render: ({ message, hasMessage , ...rest }) => {
+        return (
+            <FormField
+                status={FormField.STATUS.ERROR}
+                hasMessage ={hasMessage }
+                message={message}
+            >
+                <Combobox
+                    {...rest}
+                    {...ComboboxError.args}
+                    onChange={() => {}}
+                />
+            </FormField>
+        );
+    },
+    args: {
+        hasMessage : true,
+        message: 'Error message',
+        children: '',
+    },
+};
 
 export const ComboboxSuccessWithRequiredLabel: Story = {
     render: ({ label, isRequired, message, hasMessage , ...rest }) => {
@@ -197,6 +219,28 @@ export const ComboboxSuccessWithLabel: Story = {
     },
     args: {
         label: 'Назва',
+        hasMessage : true,
+        message: 'Success message',
+        children: '',
+    },
+};
+export const ComboboxSuccessNoLabel: Story = {
+    render: ({ message, hasMessage , ...rest }) => {
+        return (
+            <FormField
+                status={FormField.STATUS.SUCCESS}
+                hasMessage ={hasMessage }
+                message={message}
+            >
+                <Combobox
+                    {...rest}
+                    {...ComboboxSuccess.args}
+                    onChange={() => {}}
+                />
+            </FormField>
+        );
+    },
+    args: {
         hasMessage : true,
         message: 'Success message',
         children: '',

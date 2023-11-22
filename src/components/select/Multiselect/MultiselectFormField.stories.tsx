@@ -149,6 +149,28 @@ export const MultiselectErrorWithLabel: Story = {
         children: '',
     },
 };
+export const MultiselectErrorNoLabel: Story = {
+    render: ({ message, hasMessage, ...rest }) => {
+        return (
+            <FormField
+                status={FormField.STATUS.ERROR}
+                hasMessage={hasMessage}
+                message={message}
+            >
+                <Multiselect
+                    {...rest}
+                    {...MultiselectError.args}
+                    onChange={() => {}}
+                />
+            </FormField>
+        );
+    },
+    args: {
+        hasMessage: true,
+        message: 'Error message',
+        children: '',
+    },
+};
 
 export const MultiselectSuccessWithRequiredLabel: Story = {
     render: ({ label, isRequired, message, hasMessage, ...rest }) => {
@@ -197,6 +219,28 @@ export const MultiselectSuccessWithLabel: Story = {
     args: {
         label: 'Назва',
 
+        hasMessage: true,
+        message: 'Success message',
+        children: '',
+    },
+};
+export const MultiselectSuccessNoLabel: Story = {
+    render: ({ message, hasMessage, ...rest }) => {
+        return (
+            <FormField
+                status={FormField.STATUS.SUCCESS}
+                hasMessage={hasMessage}
+                message={message}
+            >
+                <Multiselect
+                    {...rest}
+                    {...MultiselectSuccess.args}
+                    onChange={() => {}}
+                />
+            </FormField>
+        );
+    },
+    args: {
         hasMessage: true,
         message: 'Success message',
         children: '',

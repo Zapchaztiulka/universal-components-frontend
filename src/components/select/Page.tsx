@@ -27,7 +27,7 @@ export const Page = () => {
                 >
                     <Dropdown
                         placeholder="Оберіть значення.."
-                        options={optionsFirst}
+                        options={optionsSecond}
                         onChange={() => {}}
                     />
                 </FormField>
@@ -78,11 +78,11 @@ export const Page = () => {
                     />
                 </FormField>
 
-                <div className="min-w-[350px]">
+                <div className="w-[343px]">
                     <FormField
                         label="Label"
                         isRequired={true}
-                        className="flex gap-xs"
+                        className="flex gap-xs2"
                     >
                         <Input placeholder="12" />
                         <Dropdown
