@@ -1,7 +1,7 @@
 import theme from "../../../../presets"
 
 const ArrowDownIcon = ({
-    color = theme.colors.iconPrimary, //"#2E3238"
+    color = theme.colors.iconPrimary,
     size = "24",
     className
 }: {

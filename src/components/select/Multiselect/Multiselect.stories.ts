@@ -14,7 +14,7 @@ const meta = {
   },
 } satisfies Meta<typeof Multiselect>;
 
-const optionsMulti = ['Варіант 1','Варіант 2','Варіант 3','Варіант 4']
+const optionsMulti = ['Варіант 1', 'Варіант 2', 'Варіант 3', 'Варіант 4']
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -24,33 +24,33 @@ export const MultiselectComponent: Story = {
     options: optionsMulti,
     placeholder: "Оберіть значення..."
   },
-}; 
+};
 export const MultiselectWithDefault: Story = {
   args: {
-      options: optionsMulti,
-      onChange: () => {},
-      choseOption: [optionsMulti[1], optionsMulti[2]],
+    options: optionsMulti,
+    onChange: () => { },
+    chosenOption: [optionsMulti[1], optionsMulti[2]],
   },
 };
 
 export const MultiselectDisabled: Story = {
   args: {
-      options: optionsMulti,
-      placeholder: 'Оберіть значення..',
-      isDisabled: true,
+    options: optionsMulti,
+    placeholder: 'Оберіть значення..',
+    isDisabled: true,
   },
 };
 export const MultiselectSuccess: Story = {
   args: {
-      options: optionsMulti,
-      placeholder: 'Оберіть значення..',
-      isSuccess: true,
+    options: optionsMulti,
+    placeholder: 'Оберіть значення..',
+    isSuccess: true,
   },
 };
 export const MultiselectError: Story = {
   args: {
-      options: optionsMulti,
-      placeholder: 'Оберіть значення..',
-      isError: true,
+    options: optionsMulti,
+    placeholder: 'Оберіть значення..',
+    isError: true,
   },
 };

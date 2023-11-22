@@ -97,9 +97,9 @@ export const Page = () => {
                 <FormField
                     label="Назва"
                     isRequired={true}
-                    isMessage={true}
+                    hasMessage={true}
                     message="Success message"
-                    isSuccess={true}
+                    status={FormField.STATUS.SUCCESS}
                 >
                     <Combobox
                         placeholder="Оберіть значення.."
@@ -113,8 +113,8 @@ export const Page = () => {
                     label="Назва"
                     isRequired={true}
                     message="Error message"
-                    isMessage={true}
-                    isError={true}
+                    hasMessage={true}
+                    status={FormField.STATUS.ERROR}
                 >
                     <Combobox
                         placeholder="Оберіть значення.."

@@ -34,31 +34,31 @@ export const DropdownComponent: Story = {
 
 export const DropdownWithDefault: Story = {
   args: {
-      options: optionsDropdown,
-      label: 'Назва',
-      onChange: () => {},
-      choseOption: optionsDropdown[1],
+    options: optionsDropdown,
+    label: 'Назва',
+    onChange: () => { },
+    chosenOption: optionsDropdown[1],
   },
 };
 
 export const DropdownDisabled: Story = {
   args: {
-      options: optionsDropdown,
-      placeholder: 'Оберіть значення..',
-      isDisabled: true,
+    options: optionsDropdown,
+    placeholder: 'Оберіть значення..',
+    isDisabled: true,
   },
 };
 export const DropdownSuccess: Story = {
   args: {
-      options: optionsDropdown,
-      placeholder: 'Оберіть значення..',
-      isSuccess: true,
+    options: optionsDropdown,
+    placeholder: 'Оберіть значення..',
+    isSuccess: true,
   },
 };
 export const DropdownError: Story = {
   args: {
-      options: optionsDropdown,
-      placeholder: 'Оберіть значення..',
-      isError: true,
+    options: optionsDropdown,
+    placeholder: 'Оберіть значення..',
+    isError: true,
   },
 };
