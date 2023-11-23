@@ -9,7 +9,7 @@ type MultiselectProps = {
     name?: string;
     placeholder?: string;
     options?: string[];
-    choseOption?: string[];
+    chosenOption?: string[];
     isError?: boolean;
     isSuccess?: boolean;
     isDisabled?: boolean;
@@ -20,14 +20,14 @@ const Multiselect: FC<MultiselectProps> = ({
     name = 'customSelect',
     placeholder = 'Оберіть значення...',
     options = [],
-    choseOption = [],
+    chosenOption = [],
     isDisabled = false,
     isSuccess = false,
     isError = false,
     width = 343,
     onChange,
 }) => {
-    const [value, setValue] = useState(choseOption);
+    const [value, setValue] = useState(chosenOption);
     const [showOptions, setShowOptions] = useState(false);
 
     const handleOpenPicker = useCallback(
@@ -90,9 +90,9 @@ const Multiselect: FC<MultiselectProps> = ({
 
             {showOptions && (
                 <PickerOptionsWrapper width={width}>
-                    {options.map((option, idx) => (
+                    {options.map((option) => (
                         <SelectOption
-                            key={idx}
+                            key={option}
                             option={option}
                             multiple={true}
                             active={value.includes(option)}

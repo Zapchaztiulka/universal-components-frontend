@@ -21,7 +21,6 @@ export const ComboboxComponent: StoryCombobox = {
     args: {
         options: optionsMulti,
         placeholder: 'Оберіть значення..',
-
     },
 };
 
@@ -29,7 +28,7 @@ export const ComboboxWithDefault: StoryCombobox = {
     args: {
         options: optionsMulti,
         onChange: () => {},
-        choseOption: optionsMulti[1],
+        chosenOption: optionsMulti[1],
     },
 };
 
@@ -45,7 +44,9 @@ export const ComboboxAddOption: StoryCombobox = {
     args: {
         options: optionsMulti,
         placeholder: 'Оберіть значення..',
-        onCreate: (option) => { alert(option) }
+        onCreate: (option) => {
+            alert(option);
+        },
     },
 };
 

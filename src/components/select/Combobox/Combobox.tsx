@@ -9,7 +9,7 @@ import EmptyState from './EmptyState/EmptyState';
 type ComboboxProps = {
     name?: string;
     placeholder?: string;
-    choseOption?: string;
+    chosenOption?: string;
     options?: string[];
     isError?: boolean;
     isSuccess?: boolean;
@@ -21,7 +21,7 @@ type ComboboxProps = {
 
 const Combobox: FC<ComboboxProps> = ({
     name = 'customSelect',
-    choseOption = '',
+    chosenOption = '',
     placeholder = 'Оберіть значення...',
     options = [],
     isDisabled = false,
@@ -31,16 +31,19 @@ const Combobox: FC<ComboboxProps> = ({
     onChange,
     onCreate,
 }) => {
-    const [value, setValue] = useState(choseOption);
+    const [value, setValue] = useState(chosenOption);
     const [showOptions, setShowOptions] = useState(false);
     const [search, setSearch] = useState('');
 
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const handleOpenPicker = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
-        e.preventDefault();
-        setShowOptions(!showOptions);
-    },[showOptions]);
+    const handleOpenPicker = useCallback(
+        (e: React.MouseEvent<HTMLButtonElement>) => {
+            e.preventDefault();
+            setShowOptions(!showOptions);
+        },
+        [showOptions],
+    );
 
     const handleSelectOption = useCallback(
         (val: string) => {
@@ -63,6 +66,7 @@ const Combobox: FC<ComboboxProps> = ({
     const filteredOptions = options.filter((option) => option.includes(search));
 
     return (
+        
         <div className="relative transition transition-all duration-500 leading-6">
             <PickerButtonWrapper
                 onClick={handleOpenPicker}
@@ -97,15 +101,20 @@ const Combobox: FC<ComboboxProps> = ({
 
             {showOptions && (
                 <PickerOptionsWrapper width={width}>
-                    {filteredOptions.map((option, idx) => (
+                    {filteredOptions.map((option) => (
                         <SelectOption
-                            key={idx}
+                            key={option}
                             option={option}
                             active={value === option}
                             updateValue={handleSelectOption}
                         />
                     ))}
-                    {!filteredOptions.length && <EmptyState search={search} onCreate={ onCreate} />}
+                    {!filteredOptions.length && (
+                        <EmptyState
+                            search={search}
+                            onCreate={onCreate}
+                        />
+                    )}
                 </PickerOptionsWrapper>
             )}
         </div>

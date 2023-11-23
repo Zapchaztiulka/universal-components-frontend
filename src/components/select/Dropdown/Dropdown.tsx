@@ -7,7 +7,7 @@ import PickerOptionsWrapper from '../Wrapper/PickerOptionsWrapper';
 type SelectProps = {
     name?: string;
     label?: string;
-    choseOption?: string;
+    chosenOption?: string;
     placeholder?: string;
     options?: string[];
     isError?: boolean;
@@ -19,7 +19,7 @@ type SelectProps = {
 
 const Dropdown: FC<SelectProps> = ({
     name = 'customSelect',
-    choseOption = '',
+    chosenOption = '',
     placeholder = 'Оберіть значення...',
     options = [],
     isDisabled = false,
@@ -28,7 +28,7 @@ const Dropdown: FC<SelectProps> = ({
     width = 343,
     onChange,
 }) => {
-    const [value, setValue] = useState(choseOption);
+    const [value, setValue] = useState(chosenOption);
     const [showOptions, setShowOptions] = useState(false);
 
     const handleOpenPicker = useCallback(
@@ -73,9 +73,9 @@ const Dropdown: FC<SelectProps> = ({
 
             {showOptions && (
                 <PickerOptionsWrapper width={width}>
-                    {options.map((option, idx) => (
+                    {options.map((option) => (
                         <SelectOption
-                            key={idx}
+                            key={option}
                             option={option}
                             active={value === option}
                             updateValue={updateValue}
