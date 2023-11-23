@@ -6,7 +6,7 @@ import {
     Inputs,
     Loader,
     Notifications,
-    Selects,
+    Dropdown,
     Tooltips,
     Modals
 } from "../components/index.ts";
@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: TypesOfComponents.selects,
-                element: <Selects />,
+                element: <Dropdown />,
             },
             {
                 path: TypesOfComponents.tooltips,
