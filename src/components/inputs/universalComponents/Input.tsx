@@ -36,6 +36,7 @@ const Input = ({
   tooltipClassNameExtraLeftIcon,
   tooltipLocationExtraLeftIcon,
   tooltipcontainerClassNameExtraLeftIcon,
+  tooltipWrapContainerRef,
   ...rest
 }: InputProps) => {
 
@@ -107,19 +108,19 @@ const Input = ({
         {(extraLeftIcon || mainIcon) && (
           <div
             className={`absolute flex gap-xs2
-            ${inputTypesFigma === InputTypesFigma.TextField ? "bottom-xs right-xs" : "" }
+ ${inputTypesFigma === InputTypesFigma.TextField ? "bottom-xs right-xs" : "" }
             ${inputTypesFigma === InputTypesFigma.Password ? "bottom-s right-s" : ""}
             ${iconBoxClassName ? iconBoxClassName : ""}`}
           >
             {extraLeftIcon && (
-               <Tooltip tooltipLocation={tooltipLocationExtraLeftIcon} tooltipClassName={tooltipClassNameExtraLeftIcon} textTooltip={tooltipTextExtraLeftIcon} containerClassName={tooltipcontainerClassNameExtraLeftIcon}>
+              <Tooltip wrapContainerRef={tooltipWrapContainerRef} tooltipLocationProps={tooltipLocationExtraLeftIcon} tooltipClassName={tooltipClassNameExtraLeftIcon} textTooltip={tooltipTextExtraLeftIcon} containerClassName={tooltipcontainerClassNameExtraLeftIcon}>
               <button tabIndex={tooltipTextExtraLeftIcon ? -1 : 0} disabled={disabled} type="button" onClick={onExtraLeftIconClick}>
                 {extraLeftIcon}
                 </button>
                 </Tooltip>
             )}
             {mainIcon && (
-              <Tooltip tooltipLocation={tooltipLocationMainIcon} tooltipClassName={tooltipClassNameMainIcon} textTooltip={tooltipTextMainIcon} containerClassName={tooltipcontainerClassNameMainIcon}>
+              <Tooltip wrapContainerRef={tooltipWrapContainerRef} tooltipLocationProps={tooltipLocationMainIcon} tooltipClassName={tooltipClassNameMainIcon} textTooltip={tooltipTextMainIcon} containerClassName={tooltipcontainerClassNameMainIcon}>
               <button  tabIndex={tooltipTextMainIcon ? -1 : 0} disabled={disabled} type="button" onClick={onMainIconClick}>
                 {mainIcon}
                 </button>
@@ -128,8 +129,8 @@ const Input = ({
           </div>
         )}
       </div>
-   
-      {message && (
+
+          {message && (
         <p aria-disabled={disabled}
           className={`mt-xs3  text-[14px] font-400 leading-[1.4] aria-disabled:text-textDisabled
                     ${

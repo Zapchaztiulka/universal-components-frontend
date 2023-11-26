@@ -47,5 +47,6 @@ export type InputProps = {
   tooltipTextExtraLeftIcon?: string;
   tooltipClassNameExtraLeftIcon?: string;
   tooltipLocationExtraLeftIcon?: TooltipLocation;
-  tooltipcontainerClassNameExtraLeftIcon?:string;
+  tooltipcontainerClassNameExtraLeftIcon?: string;
+  tooltipWrapContainerRef?: React.RefObject<HTMLElement>;
 } & InputHTMLAttributes<HTMLInputElement>;

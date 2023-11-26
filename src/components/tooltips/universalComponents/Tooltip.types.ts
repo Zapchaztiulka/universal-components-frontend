@@ -1,6 +1,6 @@
 export enum TooltipLocation {
   TopLeft = "TopLeft",
-  TopRight = "opRight",
+  TopRight = "TopRight",
   TopCenter = "TopCenter",
   BottomRight = "BottomRight",
   BottomLeft = "BottomLeft",
@@ -13,5 +13,6 @@ export type TooltipProps = {
   textTooltip?: string;
   containerClassName?: string;
   tooltipClassName?: string;
-  tooltipLocation?: TooltipLocation;
+  tooltipLocationProps?: TooltipLocation;
+  wrapContainerRef?: React.RefObject<HTMLElement>;
 };

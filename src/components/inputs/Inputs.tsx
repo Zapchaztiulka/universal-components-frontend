@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Input, Textarea } from ".";
 import { ValidationStatus } from "../../types/validationStatus";
 import { ShowContainer } from "../showContainer";
@@ -23,7 +23,8 @@ export const Inputs = () => {
   const [price, setPrice] = useState("0");
   const [query, setQuery] = useState("");
   const [textarea, setTextarea] = useState("");
-
+  const wrapContainerRefTop = useRef(null);
+  const wrapContainerRefBottom = useRef(null);
   const toogleDisplayPassword = () => {
     setDisplayPassword((prev) => !prev);
   };
@@ -55,11 +56,9 @@ export const Inputs = () => {
   };
   return (
     <div>
-      <p>All inputs</p>
-
-      <ShowContainer
-        component={
-          <Input
+      {/* <div>
+        
+         <Input
             value={password}
             inputTypesFigma={InputTypesFigma.Password}
             type={displayPassword ? InputTypes.Text : InputTypes.Password}
@@ -70,13 +69,54 @@ export const Inputs = () => {
             handleChange={getPassword}
             message="message"
             tooltipTextMainIcon='teeeeeeest'
-            tooltipLocationMainIcon={TooltipLocation.Right}
-          />
-        }
-        componentName="Password"
-        width={500}
-        description="1"
+              tooltipLocationMainIcon={TooltipLocation.Right}
+          tooltipWrapContainerRef={wrapContainerRefTop}
+          inputBoxClassName='mb-[30px]'
       />
+       <Input
+            value={password}
+            inputTypesFigma={InputTypesFigma.Password}
+            type={displayPassword ? InputTypes.Text : InputTypes.Password}
+            onMainIconClick={toogleDisplayPassword}
+            mainIcon={
+              displayPassword ? <EyeIcon size="16" /> : <EyeOffIcon size="16" />
+            }
+            handleChange={getPassword}
+            message="message message message messagemessagemessagemessage message message message message messagemessage message"
+            tooltipTextMainIcon='teeeeeeest'
+              tooltipLocationMainIcon={TooltipLocation.Right}
+              tooltipWrapContainerRef={wrapContainerRefTop}
+          />
+</div> */}
+
+      <p>All inputs</p>
+      <div ref={wrapContainerRefTop} className="bg-bgBrandLight1 inline-block">
+        <ShowContainer
+          component={
+            <Input
+              value={password}
+              inputTypesFigma={InputTypesFigma.Password}
+              type={displayPassword ? InputTypes.Text : InputTypes.Password}
+              onMainIconClick={toogleDisplayPassword}
+              mainIcon={
+                displayPassword ? (
+                  <EyeIcon size="16" />
+                ) : (
+                  <EyeOffIcon size="16" />
+                )
+              }
+              handleChange={getPassword}
+              message="message"
+              // tooltipTextMainIcon="teeeeeeest"
+              // tooltipLocationMainIcon={TooltipLocation.Right}
+              // tooltipWrapContainerRef={wrapContainerRefTop}
+            />
+          }
+          componentName="Password"
+          width={500}
+          description="1"
+        />
+      </div>
       <ShowContainer
         component={
           <Input
@@ -95,19 +135,31 @@ export const Inputs = () => {
             extraLeftIcon={<MenuIcon />}
             onMainIconClick={clickOnIcon}
             onExtraLeftIconClick={clickOnIcon}
-            tooltipTextMainIcon='teeeeeeest'
-            tooltipLocationMainIcon={TooltipLocation.BottomRight}
+            // tooltipTextMainIcon="teeeeeeest"
+            // tooltipLocationMainIcon={TooltipLocation.BottomCenter}
           />
         }
         componentName="TextField"
         width={500}
         description="2"
-          />
-      <div className="w-[100px] border-1 border-borderDefaultBlue">
-      <Tooltip tooltipLocation={TooltipLocation.BottomLeft} textTooltip="iconnnn" tooltipClassName=''>      <ArrowTooltipDownIcon />
-</Tooltip></div>  
-      
-  
+      />
+    
+      <div
+        ref={wrapContainerRefBottom}
+        className=" inline-block w-[250px] h-[130px] p-[40px] pl-[100px] pb-[70px] border-1 border-borderDefaultBlue">
+        <Tooltip
+          wrapContainerRef={wrapContainerRefBottom}
+          tooltipLocationProps={TooltipLocation.TopLeft}
+          textTooltip="iconnnn11111"
+     
+        >
+          <div className="inline-block w-[40px] h-[40px]  border-1 border-borderDefaultBlue">
+            
+            <ArrowTooltipDownIcon />
+          </div>
+        </Tooltip>
+      </div>
+
       <ShowContainer
         component={
           <Input
