@@ -15,10 +15,10 @@ const Tooltip = ({
   tooltipLocationProps = TooltipLocation.BottomLeft,
   wrapContainerRef,
 }: TooltipProps) => {
-  const [isShowToolTip, setShowToolTip] = useState(false);
   const refSetTimeout = useRef<NodeJS.Timeout>();
   const targetElementRef = useRef(null);
   const tooltipElementRef = useRef(null);
+  const [isShowToolTip, setShowToolTip] = useState(false);
   const [tooltipLocation, setTooltipLocation] = useState(tooltipLocationProps);
 
   const isTop =
@@ -29,37 +29,38 @@ const Tooltip = ({
     tooltipLocation === TooltipLocation.BottomLeft ||
     tooltipLocation === TooltipLocation.BottomRight ||
     tooltipLocation === TooltipLocation.BottomCenter;
+  const heightArrowPlusPadding = 12;
 
   const IconLocationStyles = {
-    [TooltipLocation.BottomRight]: "top-[-8px] right-[16px]",
-    [TooltipLocation.BottomLeft]: "top-[-8px] left-[16px]",
+    [TooltipLocation.BottomRight]: "-top-xs2 right-s",
+    [TooltipLocation.BottomLeft]: "-top-xs2 left-s",
     [TooltipLocation.BottomCenter]:
-      "top-[-8px] left-1/2 transform -translate-x-1/2",
-    [TooltipLocation.TopLeft]: "bottom-[-8px] left-[16px]",
-    [TooltipLocation.TopRight]: "bottom-[-8px] right-[16px]",
+      "-top-xs2 left-1/2 transform -translate-x-1/2",
+    [TooltipLocation.TopLeft]: "-bottom-xs2 left-s",
+    [TooltipLocation.TopRight]: "-bottom-xs2 right-s",
     [TooltipLocation.TopCenter]:
-      "bottom-[-8px] left-1/2 transform -translate-x-1/2",
-    [TooltipLocation.Right]: " left-[-8px] top-1/2 transform -translate-y-1/2",
-    [TooltipLocation.Left]: "right-[-8px] top-1/2 transform -translate-y-1/2 ",
+      "-bottom-xs2 left-1/2 transform -translate-x-1/2",
+    [TooltipLocation.Right]: " -left-xs2 top-1/2 transform -translate-y-1/2",
+    [TooltipLocation.Left]: "-right-xs2 top-1/2 transform -translate-y-1/2 ",
   };
 
   const TooltipLocationStyles = {
     [TooltipLocation.BottomRight]:
-      "top-full transform translate-y-[12px] right-[-16px]  ",
+      "top-full transform translate-y-xs -right-s  ",
     [TooltipLocation.BottomLeft]:
-      "top-full transform translate-y-[12px] left-[-16px]  ",
+      "top-full transform translate-y-xs -left-s  ",
     [TooltipLocation.BottomCenter]:
-      "left-1/2 transform -translate-x-1/2 top-full translate-y-[12px]",
+      "left-1/2 transform -translate-x-1/2 top-full translate-y-xs",
     [TooltipLocation.TopLeft]:
-      "bottom-full transform -translate-y-[12px] left-[-16px]",
+      "bottom-full transform -translate-y-xs -left-s",
     [TooltipLocation.TopRight]:
-      "bottom-full transform -translate-y-[12px] right-[-16px]",
+      "bottom-full transform -translate-y-xs -right-s",
     [TooltipLocation.TopCenter]:
-      "left-1/2 transform -translate-x-1/2 bottom-full -translate-y-[12px]",
+      "left-1/2 transform -translate-x-1/2 bottom-full -translate-y-xs",
     [TooltipLocation.Right]:
-      "top-1/2 transform -translate-y-1/2 left-full translate-x-[12px]",
+      "top-1/2 transform -translate-y-1/2 left-full translate-x-xs",
     [TooltipLocation.Left]:
-      "top-1/2 transform -translate-y-1/2 right-full -translate-x-[12px]",
+      "top-1/2 transform -translate-y-1/2 right-full -translate-x-xs",
   };
 
   const showTooltip = () => {
@@ -78,22 +79,22 @@ const Tooltip = ({
   const calculateTooltipPosition = useCallback(() => {
     if (!textTooltip || !targetElementRef.current || !tooltipElementRef.current)
       return;
+
     const targetElement = targetElementRef.current as HTMLElement;
     const tooltipElement = tooltipElementRef.current as HTMLElement;
     const targetRect = targetElement.getBoundingClientRect();
     const tooltipRect = tooltipElement.getBoundingClientRect();
-    const viewportWidth =
-      window.innerWidth || document.documentElement.clientWidth;
-    const viewportHeight =
-      window.innerHeight || document.documentElement.clientHeight;
-    const tooltipRectWidth = tooltipRect.width + 12;
-    const tooltipRectHeight = tooltipRect.height + 12;
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const tooltipRectWidth = tooltipRect.width + heightArrowPlusPadding;
+    const tooltipRectHeight = tooltipRect.height + heightArrowPlusPadding;
 
     let wrapContainerRect: DOMRect | undefined;
     let freeSpaceTop: number | undefined;
     let freeSpaceLeft: number | undefined;
     let freeSpaceRight: number | undefined;
     let freeSpaceBottom: number | undefined;
+
     if (wrapContainerRef && wrapContainerRef.current) {
       wrapContainerRect = wrapContainerRef.current.getBoundingClientRect();
       freeSpaceTop = targetRect.top - wrapContainerRect.top;
@@ -101,6 +102,8 @@ const Tooltip = ({
       freeSpaceRight = wrapContainerRect.right - targetRect.right;
       freeSpaceBottom = wrapContainerRect.bottom - targetRect.bottom;
     }
+
+    // check if there is enough space for the tooltip
 
     if (
       tooltipLocation === TooltipLocation.Right &&
@@ -116,23 +119,20 @@ const Tooltip = ({
     )
       return;
     if (
-      (tooltipLocation === TooltipLocation.TopCenter ||
-        tooltipLocation === TooltipLocation.TopRight ||
-        tooltipLocation === TooltipLocation.TopLeft) &&
+      isTop &&
       targetRect.top - tooltipRectHeight >= 0 &&
       (freeSpaceTop ? freeSpaceTop >= tooltipRectHeight : true)
     )
       return;
 
     if (
-      (tooltipLocation === TooltipLocation.BottomCenter ||
-        tooltipLocation === TooltipLocation.BottomLeft ||
-        tooltipLocation === TooltipLocation.BottomRight) &&
+      isBottom &&
       targetRect.bottom + tooltipRectHeight <= viewportHeight &&
       (freeSpaceBottom ? freeSpaceBottom >= tooltipRect.height : true)
     )
       return;
 
+  // changes the location of the tooltip
     if (
       tooltipLocation === TooltipLocation.Right ||
       tooltipLocation === TooltipLocation.Left
@@ -166,10 +166,7 @@ const Tooltip = ({
       }
     }
     // Adaptive Tooltip for Top/Bottom
-    const changeLocationTopBottom = (
-      top: TooltipLocation,
-      bottom: TooltipLocation
-    ) => {
+    const changeLocationTopBottom = (top: TooltipLocation, bottom: TooltipLocation) => {
       if (
         targetRect.bottom + tooltipRectHeight <= viewportHeight &&
         (freeSpaceBottom ? freeSpaceBottom >= tooltipRectHeight : true)
@@ -184,36 +181,28 @@ const Tooltip = ({
         setTooltipLocation(tooltipLocationProps);
       }
     };
+
     if (
       tooltipLocation === TooltipLocation.TopCenter ||
       tooltipLocation === TooltipLocation.BottomCenter
     ) {
-      changeLocationTopBottom(
-        TooltipLocation.TopCenter,
-        TooltipLocation.BottomCenter
-      );
+      changeLocationTopBottom(TooltipLocation.TopCenter,TooltipLocation.BottomCenter);
     }
 
     if (
       tooltipLocation === TooltipLocation.TopRight ||
       tooltipLocation === TooltipLocation.BottomRight
     ) {
-      changeLocationTopBottom(
-        TooltipLocation.TopRight,
-        TooltipLocation.BottomRight
-      );
+      changeLocationTopBottom(TooltipLocation.TopRight,TooltipLocation.BottomRight);
     }
 
     if (
       tooltipLocation === TooltipLocation.TopLeft ||
       tooltipLocation === TooltipLocation.BottomLeft
     ) {
-      changeLocationTopBottom(
-        TooltipLocation.TopLeft,
-        TooltipLocation.BottomLeft
-      );
+      changeLocationTopBottom(TooltipLocation.TopLeft, TooltipLocation.BottomLeft);
     }
-  }, [textTooltip, tooltipLocationProps, wrapContainerRef, tooltipLocation]);
+  }, [textTooltip, tooltipLocationProps, wrapContainerRef, tooltipLocation, isBottom, isTop]);
 
   useEffect(() => {
     window.addEventListener("resize", calculateTooltipPosition);
@@ -277,7 +266,7 @@ const Tooltip = ({
       {isShowToolTip && textTooltip && (
         <div
           ref={tooltipElementRef}
-          className={`absolute  p-xs2 z-[5000] min-w-max  bg-bgGreyDark ${
+          className={`absolute  p-xs2 z-[5000] min-w-max bg-bgGreyDark ${
             TooltipLocationStyles[tooltipLocation]
           }
           rounded-[8px] text-center text-textContrast text-[14px] leading-[1.4] 

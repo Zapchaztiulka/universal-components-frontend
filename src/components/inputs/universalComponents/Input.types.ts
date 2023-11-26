@@ -43,10 +43,10 @@ export type InputProps = {
   tooltipTextMainIcon?: string;
   tooltipClassNameMainIcon?: string;
   tooltipLocationMainIcon?: TooltipLocation;
-  tooltipcontainerClassNameMainIcon?:string;
+  tooltipСontainerClassNameMainIcon?:string;
   tooltipTextExtraLeftIcon?: string;
   tooltipClassNameExtraLeftIcon?: string;
   tooltipLocationExtraLeftIcon?: TooltipLocation;
-  tooltipcontainerClassNameExtraLeftIcon?: string;
+  tooltipСontainerClassNameExtraLeftIcon?: string;
   tooltipWrapContainerRef?: React.RefObject<HTMLElement>;
 } & InputHTMLAttributes<HTMLInputElement>;

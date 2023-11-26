@@ -31,11 +31,11 @@ const Input = ({
   tooltipTextMainIcon,
   tooltipClassNameMainIcon,
   tooltipLocationMainIcon,
-  tooltipcontainerClassNameMainIcon,
+  tooltipСontainerClassNameMainIcon,
   tooltipTextExtraLeftIcon,
   tooltipClassNameExtraLeftIcon,
   tooltipLocationExtraLeftIcon,
-  tooltipcontainerClassNameExtraLeftIcon,
+  tooltipСontainerClassNameExtraLeftIcon,
   tooltipWrapContainerRef,
   ...rest
 }: InputProps) => {
@@ -113,14 +113,14 @@ const Input = ({
             ${iconBoxClassName ? iconBoxClassName : ""}`}
           >
             {extraLeftIcon && (
-              <Tooltip wrapContainerRef={tooltipWrapContainerRef} tooltipLocationProps={tooltipLocationExtraLeftIcon} tooltipClassName={tooltipClassNameExtraLeftIcon} textTooltip={tooltipTextExtraLeftIcon} containerClassName={tooltipcontainerClassNameExtraLeftIcon}>
+              <Tooltip wrapContainerRef={tooltipWrapContainerRef} tooltipLocationProps={tooltipLocationExtraLeftIcon} tooltipClassName={tooltipClassNameExtraLeftIcon} textTooltip={tooltipTextExtraLeftIcon} containerClassName={tooltipСontainerClassNameExtraLeftIcon}>
               <button tabIndex={tooltipTextExtraLeftIcon ? -1 : 0} disabled={disabled} type="button" onClick={onExtraLeftIconClick}>
                 {extraLeftIcon}
                 </button>
                 </Tooltip>
             )}
             {mainIcon && (
-              <Tooltip wrapContainerRef={tooltipWrapContainerRef} tooltipLocationProps={tooltipLocationMainIcon} tooltipClassName={tooltipClassNameMainIcon} textTooltip={tooltipTextMainIcon} containerClassName={tooltipcontainerClassNameMainIcon}>
+              <Tooltip wrapContainerRef={tooltipWrapContainerRef} tooltipLocationProps={tooltipLocationMainIcon} tooltipClassName={tooltipClassNameMainIcon} textTooltip={tooltipTextMainIcon} containerClassName={tooltipСontainerClassNameMainIcon}>
               <button  tabIndex={tooltipTextMainIcon ? -1 : 0} disabled={disabled} type="button" onClick={onMainIconClick}>
                 {mainIcon}
                 </button>

@@ -56,40 +56,7 @@ export const Inputs = () => {
   };
   return (
     <div>
-      {/* <div>
-        
-         <Input
-            value={password}
-            inputTypesFigma={InputTypesFigma.Password}
-            type={displayPassword ? InputTypes.Text : InputTypes.Password}
-            onMainIconClick={toogleDisplayPassword}
-            mainIcon={
-              displayPassword ? <EyeIcon size="16" /> : <EyeOffIcon size="16" />
-            }
-            handleChange={getPassword}
-            message="message"
-            tooltipTextMainIcon='teeeeeeest'
-              tooltipLocationMainIcon={TooltipLocation.Right}
-          tooltipWrapContainerRef={wrapContainerRefTop}
-          inputBoxClassName='mb-[30px]'
-      />
-       <Input
-            value={password}
-            inputTypesFigma={InputTypesFigma.Password}
-            type={displayPassword ? InputTypes.Text : InputTypes.Password}
-            onMainIconClick={toogleDisplayPassword}
-            mainIcon={
-              displayPassword ? <EyeIcon size="16" /> : <EyeOffIcon size="16" />
-            }
-            handleChange={getPassword}
-            message="message message message messagemessagemessagemessage message message message message messagemessage message"
-            tooltipTextMainIcon='teeeeeeest'
-              tooltipLocationMainIcon={TooltipLocation.Right}
-              tooltipWrapContainerRef={wrapContainerRefTop}
-          />
-</div> */}
-
-      <p>All inputs</p>
+           <p>All inputs</p>
       <div ref={wrapContainerRefTop} className="bg-bgBrandLight1 inline-block">
         <ShowContainer
           component={
@@ -107,9 +74,9 @@ export const Inputs = () => {
               }
               handleChange={getPassword}
               message="message"
-              // tooltipTextMainIcon="teeeeeeest"
-              // tooltipLocationMainIcon={TooltipLocation.Right}
-              // tooltipWrapContainerRef={wrapContainerRefTop}
+              tooltipTextMainIcon="teeeeeeest"
+              tooltipLocationMainIcon={TooltipLocation.Right}
+              tooltipWrapContainerRef={wrapContainerRefTop}
             />
           }
           componentName="Password"
@@ -135,8 +102,8 @@ export const Inputs = () => {
             extraLeftIcon={<MenuIcon />}
             onMainIconClick={clickOnIcon}
             onExtraLeftIconClick={clickOnIcon}
-            // tooltipTextMainIcon="teeeeeeest"
-            // tooltipLocationMainIcon={TooltipLocation.BottomCenter}
+            tooltipTextMainIcon="teeeeeeest"
+            tooltipLocationMainIcon={TooltipLocation.BottomCenter}
           />
         }
         componentName="TextField"
@@ -276,4 +243,3 @@ export const Inputs = () => {
   );
 };
 
-// <Tooltip iconLocation={IconLocation.Left} tooltipClassName='w-[200px] bg-borderHover' text='testrrrrrrrrfffffffffff fffff ffffff'>
