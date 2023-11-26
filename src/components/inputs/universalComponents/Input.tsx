@@ -77,8 +77,8 @@ const Input = ({
           maxLength={maxLength}
           className={`        
         block w-[100%] ${(inputTypesFigma === InputTypesFigma.Price) ? "w-[115px]" : ''}
-        p-xs border-1 border-solid rounded-minimal bg-bgWhite outline-0 text-[16px] text-textInputActive font-400 leading-[1.5]
-        hover:bg-bgHoverGrey disabled:bg-bgDisable disabled:border-borderDisabled
+        p-xs outline-1 outline outline-borderDefault -outline-offset-1 rounded-minimal bg-bgWhite text-[16px] text-textInputActive font-400 leading-[1.5]
+        hover:bg-bgHoverGrey disabled:bg-bgDisable disabled:outline-borderDisabled
         disabled:text-textDisabled placeholder:hover:text-textInputActive placeholder:focus:text-textInputActive placeholder:disabled:text-textDisabled 
        
         ${(inputTypesFigma === InputTypesFigma.SearchField) ? "rounded-tr-zero rounded-br-zero" : ''}
@@ -89,9 +89,9 @@ const Input = ({
 
         ${handleStatus({
           status,
-          error: "border-borderError",
-          success: "border-borderSuccess",
-          defaultBorder: "focus:border-borderActive",
+          error: "outline-borderError",
+          success: "outline-borderSuccess",
+          defaultBorder: "focus:outline-borderActive",
         })}
     ${inputClassName ? inputClassName : ""}
                 `}

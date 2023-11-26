@@ -50,15 +50,15 @@ const Textarea = ({
           rows={rows}
           cols={cols}
           className={`        
-        block w-[100%] py-s px-xs  border-1 border-solid rounded-minimal resize-none bg-bgWhite outline-0 text-[16px] text-textInputActive font-400 
-        leading-[1.5] hover:bg-bgHoverGrey disabled:bg-bgDisable disabled:border-borderDisabled disabled:text-textDisabled placeholder:hover:text-textInputActive
+        block w-[100%] py-s px-xs outline-1 outline outline-borderDefault -outline-offset-1 rounded-minimal resize-none bg-bgWhite  text-[16px] text-textInputActive font-400 
+        leading-[1.5] hover:bg-bgHoverGrey disabled:bg-bgDisable disabled:outline-borderDisabled disabled:text-textDisabled placeholder:hover:text-textInputActive
         placeholder:focus:text-textInputActive placeholder:disabled:text-textDisabled 
   
         ${handleStatus({
           status,
-          error: "border-borderError",
-          success: "border-borderSuccess",
-          defaultBorder: "focus:border-borderActive",
+          error: "outline-borderError",
+          success: "outline-borderSuccess",
+          defaultBorder: "focus:outline-borderActive",
         })}
     ${textareaClassName ? textareaClassName : ""}
                 `}

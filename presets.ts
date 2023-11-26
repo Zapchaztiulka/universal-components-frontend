@@ -254,6 +254,7 @@
     { pattern: /shadow-+/ },
     { pattern: /w-+/ },
     { pattern: /!bg-+/ },
+    {pattern : /outline-+/ },
   ],
 }
 

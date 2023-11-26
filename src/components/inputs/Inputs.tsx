@@ -73,6 +73,8 @@ export const Inputs = () => {
                 )
               }
               handleChange={getPassword}
+              // disabled={true}
+              // status={ValidationStatus.error}
               message="message"
               tooltipTextMainIcon="teeeeeeest"
               tooltipLocationMainIcon={TooltipLocation.Right}
