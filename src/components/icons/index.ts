@@ -69,10 +69,20 @@ import NumberListIcon from "./universalComponents/admin/NumberListIcon";
 import ProfileIcon from "./universalComponents/admin/ProfileIcon";
 import StatisticsIcon from "./universalComponents/admin/StatisticsIcon";
 import UnderlinedIcon from "./universalComponents/admin/UnderlinedIcon";
+
 import ArrowTooltipRightIcon from "./universalComponents/ArrowTooltipRightIcon";
 import ArrowTooltipDownIcon from "./universalComponents/ArrowTooltipDownIcon";
 import ArrowTooltipLeftIcon from "./universalComponents/ArrowTooltipLeftIcon";
 import ArrowTooltipUpIcon from "./universalComponents/ArrowTooltipUpIcon";
+
+import IconWithBg from "./universalComponents/IconWithBg";
+import ChatCountIcon from "./universalComponents/admin/ChatCountIcon";
+import ChainIcon from "./universalComponents/admin/ChainIcon";
+import BearingIcon from "./universalComponents/admin/BearingIcon";
+import TractorIcon from "./universalComponents/TractorIcon";
+import OtherToolsIcon from "./universalComponents/admin/OtherToolsIcon";
+import DownloadIcon from "./universalComponents/DownloadIcon";
+
 
 export {
     LogoIcon,
@@ -146,8 +156,18 @@ export {
     ProfileIcon,
     StatisticsIcon,
     UnderlinedIcon,
+
     ArrowTooltipUpIcon,
     ArrowTooltipDownIcon,
     ArrowTooltipRightIcon,
     ArrowTooltipLeftIcon
+
+    IconWithBg,
+    ChatCountIcon,
+    ChainIcon,
+    BearingIcon,
+    TractorIcon,
+    DownloadIcon,
+    OtherToolsIcon
+
 }

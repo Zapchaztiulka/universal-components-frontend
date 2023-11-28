@@ -16,6 +16,7 @@ export enum BUTTON_TYPES {
 type IconType = {
     color?: string;
     size?: string;
+    className?: string;
 };
 
 export enum BUTTON_SIZES {

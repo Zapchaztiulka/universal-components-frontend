@@ -1,4 +1,4 @@
-import { BasketIcon, LogoIcon, LogoIconWithText, ArrowLeftIcon, ArrowRightIcon, ArrowDownIcon, ArrowUpIcon, ChevronsLeftIcon, ChevronsRightIcon, CloseIcon, CheckIcon, PlusIcon, MinusIcon, EllipseIcon, EyeIcon, EyeOffIcon, MailIcon, TrashIcon, UploadIcon, QuestionIcon, ZoomInIcon, ZoomOutIcon, AlertIcon, NumberIcon, EmptyImageIcon, LoadingIcon, BasketCountIcon, LoaderIcon, IconButton, OrdersCountIcon, OrdersIcon, UserImageIcon } from "."
+import { BasketIcon, LogoIcon, LogoIconWithText, ArrowLeftIcon, ArrowRightIcon, ArrowDownIcon, ArrowUpIcon, ChevronsLeftIcon, ChevronsRightIcon, CloseIcon, CheckIcon, PlusIcon, MinusIcon, EllipseIcon, EyeIcon, EyeOffIcon, MailIcon, TrashIcon, UploadIcon, QuestionIcon, ZoomInIcon, ZoomOutIcon, AlertIcon, NumberIcon, EmptyImageIcon, LoadingIcon, BasketCountIcon, LoaderIcon, IconButton, OrdersCountIcon, OrdersIcon, UserImageIcon, IconWithBg } from "."
 import theme from "../../../presets"
 import { ShowContainer } from "../showContainer"
 
@@ -217,6 +217,12 @@ export const Icons = () => {
             componentName="IconButton"
             width={100}
             description="active"
+        />
+        <ShowContainer
+            component={<IconWithBg variant="success"><PlusIcon /></IconWithBg>}
+            componentName="IconWithBg"
+            width={100}
+            description="variant='success'"
         />
         <ShowContainer
             component={<OrdersCountIcon />}

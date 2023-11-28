@@ -5,11 +5,13 @@ const UserImageIcon = ({
     size = "36",
     text = "",
     imgSrc = "",
+    className
 }: {
     color?: string;
     size?: string;
     text?: string;
     imgSrc?: string;
+    className?: string;
 }) => {
 
     let icon: React.ReactNode;
@@ -41,7 +43,7 @@ const UserImageIcon = ({
     }
 
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 36 36" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 36 36" fill="none" className={className}>
             {icon}
         </svg>
     );

@@ -3,9 +3,11 @@ import theme from "../../../../presets"
 const LoaderIcon = ({
     color = theme.colors.iconContrast,
     size = "64",
+    className
 }: {
     color?: string;
     size?: string;
+    className?: string;
     }) => {
     return (
         <svg
@@ -14,6 +16,7 @@ const LoaderIcon = ({
             height={+size / 4}
             viewBox="0 0 64 16"
             fill="none"
+            className={className}
         >
             <circle
                 opacity="0.2"
