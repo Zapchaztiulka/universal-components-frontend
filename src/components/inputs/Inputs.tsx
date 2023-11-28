@@ -229,7 +229,7 @@ export const Inputs = () => {
             label="Label"
             asterisk={true}
             // status={ValidationStatus.success}
-            rows={1}
+            rows={5}
             // disabled={true}
             maxLength={200}
             lettersCounter={true}

@@ -12,7 +12,7 @@ const Textarea = ({
   status,
   disabled,
   maxLength,
-  rows=4,
+  rows=5,
   cols,
   lettersCounter,
   handleChange,

@@ -53,7 +53,7 @@ export const TextArea: Story = {
     asterisk: true,
     disabled: false,
     handleChange: () => {},
-    rows: 4,
+    rows: 5,
     maxLength: 200,
     lettersCounter: true,
     value: "value",

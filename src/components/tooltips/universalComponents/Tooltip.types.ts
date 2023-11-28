@@ -9,7 +9,7 @@ export enum TooltipLocation {
   Left = "Left",
 }
 export type TooltipProps = {
-  children: React.ReactNode;
+  children?: React.ReactElement;
   textTooltip?: string;
   containerClassName?: string;
   tooltipClassName?: string;
