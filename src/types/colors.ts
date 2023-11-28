@@ -27,7 +27,17 @@ export interface BackgroundColors {
 }
 
 export interface IconColors {
-    
+    iconWhite: string,
+    iconPrimary: string,
+    iconSecondary: string,
+    iconTertiary: string,
+    iconContrast: string,
+    iconBrand: string,
+    iconBrandDark: string,
+    iconError: string,
+    iconSuccess: string,
+    iconWarning: string,
+    iconDisabled: string,
 }
 
 export interface TextColors {
@@ -41,3 +51,5 @@ export interface BorderColors {
 export interface StaticColors {
     
 }
+
+export type BackgroundColorsType = keyof BackgroundColors

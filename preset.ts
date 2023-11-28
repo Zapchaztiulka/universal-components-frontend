@@ -172,6 +172,7 @@ const myPreset = {
     width: {
       fit: "fit-content",
       full: "100%",
+      screen: "100vw",
     },
 
     borderRadius: {
