@@ -4,13 +4,15 @@ import { TooltipLocation } from "./universalComponents/Tooltip.types";
 import { EyeOffIcon } from "../icons";
 
 const meta: Meta<typeof Tooltip> = {
-    title: "Tooltip/Tooltip",
+  title: "Tooltip/Tooltip",
   component: Tooltip,
   decorators: [
     (Story) => (
-      <div style={{
-        margin: '50px',
-            }}>
+      <div
+        style={{
+          margin: "50px",
+        }}
+      >
         <Story />
       </div>
     ),
@@ -20,7 +22,6 @@ const meta: Meta<typeof Tooltip> = {
   },
   tags: ["autodocs"],
   argTypes: {
-
     textTooltip: {
       description: 'Example: textTooltip="Показати пароль"',
     },
@@ -28,8 +29,8 @@ const meta: Meta<typeof Tooltip> = {
     tooltipLocationProps: {
       description: "Example: tooltipLocationProps={TooltipLocation.TopCenter}",
     },
-    },
-}
+  },
+};
 export default meta;
 
 type Story = StoryObj<typeof Tooltip>;
@@ -38,59 +39,58 @@ export const Default: Story = {
   args: {
     textTooltip: "Показати пароль",
     children: <EyeOffIcon />,
-      },
-  };
+  },
+};
 
 export const TooltipTopRight: Story = {
   args: {
-  ...Default.args,
+    ...Default.args,
     tooltipLocationProps: TooltipLocation.TopRight,
-  }
+  },
 };
 
 export const TooltipTopCenter: Story = {
-    args: {
+  args: {
     ...Default.args,
-     tooltipLocationProps: TooltipLocation.TopCenter,
-  }
+    tooltipLocationProps: TooltipLocation.TopCenter,
+  },
 };
 export const TooltipTopLeft: Story = {
-    args: {
+  args: {
     ...Default.args,
-     tooltipLocationProps: TooltipLocation.TopLeft,
-  }
+    tooltipLocationProps: TooltipLocation.TopLeft,
+  },
 };
 
 export const TooltipBottomRight: Story = {
   args: {
-  ...Default.args,
+    ...Default.args,
     tooltipLocationProps: TooltipLocation.BottomRight,
-  }
+  },
 };
 
 export const TooltipBottomCenter: Story = {
-    args: {
+  args: {
     ...Default.args,
-     tooltipLocationProps: TooltipLocation.BottomCenter,
-  }
+    tooltipLocationProps: TooltipLocation.BottomCenter,
+  },
 };
 export const TooltipBottomLeft: Story = {
-    args: {
+  args: {
     ...Default.args,
-     tooltipLocationProps: TooltipLocation.BottomLeft,
-  }
+    tooltipLocationProps: TooltipLocation.BottomLeft,
+  },
 };
 
 export const TooltipRight: Story = {
-    args: {
+  args: {
     ...Default.args,
-     tooltipLocationProps: TooltipLocation.Right,
-  }
+    tooltipLocationProps: TooltipLocation.Right,
+  },
 };
 export const TooltipLeft: Story = {
-    args: {
+  args: {
     ...Default.args,
-     tooltipLocationProps: TooltipLocation.Left,
-  }
+    tooltipLocationProps: TooltipLocation.Left,
+  },
 };
-

@@ -4,16 +4,16 @@ const ArrowTooltipRightIcon = ({
   color = theme.colors.iconPrimary,
   width = "8",
   height = "16",
-  iconClassName
+  className,
 }: {
   color?: string;
   width?: string;
-    height?: string;
-  iconClassName?: string;
+  height?: string;
+  className?: string;
 }) => {
   return (
     <svg
-      className={` ${iconClassName ? iconClassName : ""}` }
+      className={` ${className ? className : ""}`}
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}

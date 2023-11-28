@@ -223,27 +223,27 @@ const Tooltip = ({
         {isTop && (
           <ArrowTooltipDownIcon
             color="#F79009"
-            iconClassName={`absolute ${IconLocationStyles[tooltipLocation]} `}
+            className={`absolute ${IconLocationStyles[tooltipLocation]} `}
           />
         )}
 
         {isBottom && (
           <ArrowTooltipUpIcon
             color="#F79009"
-            iconClassName={`absolute ${IconLocationStyles[tooltipLocation]} `}
+            className={`absolute ${IconLocationStyles[tooltipLocation]} `}
           />
         )}
 
         {tooltipLocation === TooltipLocation.Right && (
           <ArrowTooltipLeftIcon
             color="#F79009"
-            iconClassName={`absolute ${IconLocationStyles[tooltipLocation]} `}
+            className={`absolute ${IconLocationStyles[tooltipLocation]} `}
           />
         )}
         {tooltipLocation === TooltipLocation.Left && (
           <ArrowTooltipRightIcon
             color="#F79009"
-            iconClassName={`absolute ${IconLocationStyles[tooltipLocation]} `}
+            className={`absolute ${IconLocationStyles[tooltipLocation]} `}
           />
         )}
       </>
