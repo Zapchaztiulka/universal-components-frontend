@@ -4,7 +4,7 @@ import { Inputs } from "./inputs/Inputs";
 import { Loader } from "./loader/Loader";
 import { Notifications } from "./notifications/Notifications";
 import { Dropdown } from "./select/Dropdown";
-import { Tooltips } from "./tooltips/Tooltips";
+import { Tooltip } from "./tooltips";
 import { Link } from "./link/index";
 
 export {
@@ -14,6 +14,6 @@ export {
     Loader,
     Notifications,
     Dropdown,
-    Tooltips,
+    Tooltip,
     Link
 }
