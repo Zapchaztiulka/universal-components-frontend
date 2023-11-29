@@ -160,7 +160,7 @@ export {
     ArrowTooltipUpIcon,
     ArrowTooltipDownIcon,
     ArrowTooltipRightIcon,
-    ArrowTooltipLeftIcon
+    ArrowTooltipLeftIcon,
 
     IconWithBg,
     ChatCountIcon,
