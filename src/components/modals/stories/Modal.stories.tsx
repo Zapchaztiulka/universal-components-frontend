@@ -56,8 +56,10 @@ export const Neutral = {
         description: 'Залиште заявку і наш менеджер зв’яжеться з вами!',
         icon: <LightningIcon />,
         children: <>
-            <Input type={InputTypes.Phone} phoneCode="+38" inputTypesFigma={InputTypesFigma.PhoneNumber}
-                label="Номер телефону" inputBoxClassName="mb-s" inputClassName="w-[313px] tablet1024:w-[404px] mb-s" />
+            <div>
+                <Input type={InputTypes.Phone} phoneCode="+38" inputTypesFigma={InputTypesFigma.PhoneNumber}
+                    label="Номер телефону" inputBoxClassName="mb-s" inputClassName="w-[313px] tablet1024:w-[404px] mb-s" />
+            </div>
             <Button text='Відправити' className="w-[313px] tablet1024:mb-m tablet1024:w-[404px]" />
         </>
     },
@@ -96,8 +98,10 @@ export const Negative = {
         description: 'Введіть адресу своєї пошти і як тільки товар з’явиться, вам прийде лист',
         icon: <CloseIcon />,
         children: <>
-            <Input type={InputTypes.Text} inputTypesFigma={InputTypesFigma.TextField}
-                label="Електронна пошта" inputClassName="w-[313px] tablet1024:w-[404px] mb-s" />
+            <div>
+                <Input type={InputTypes.Text} inputTypesFigma={InputTypesFigma.TextField}
+                    label="Електронна пошта" inputClassName="w-[313px] tablet1024:w-[404px] mb-s" />
+            </div>
             <Button text='Відправити' className="w-[313px] tablet1024:mb-m tablet1024:w-[404px]" />
         </>
     },
