@@ -1,5 +1,6 @@
 import { InputHTMLAttributes } from "react";
 import { ValidationStatus } from "../../../types/validationStatus";
+import { TooltipLocation } from "../../tooltips/universalComponents/Tooltip.types";
 
 export enum InputTypes {
   Text = "text",
@@ -39,4 +40,13 @@ export type InputProps = {
   messageClassName?: string;
   iconBoxClassName?: string;
   phoneCodeClassName?: string;
+  tooltipTextMainIcon?: string;
+  tooltipClassNameMainIcon?: string;
+  tooltipLocationMainIcon?: TooltipLocation;
+  tooltipСontainerClassNameMainIcon?:string;
+  tooltipTextExtraLeftIcon?: string;
+  tooltipClassNameExtraLeftIcon?: string;
+  tooltipLocationExtraLeftIcon?: TooltipLocation;
+  tooltipСontainerClassNameExtraLeftIcon?: string;
+  tooltipWrapContainerRef?: React.RefObject<HTMLElement>;
 } & InputHTMLAttributes<HTMLInputElement>;

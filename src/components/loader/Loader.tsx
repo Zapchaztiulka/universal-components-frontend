@@ -1,10 +1,28 @@
+import { BackgroundColorsType } from '../../types/colors';
+import { LoaderIcon } from '../icons';
+import theme from "./../../../presets";
 
-export const Loader = () => {
-    return <div>
-        Loader
-        <div>
-            <p><b>Name</b> description</p>
-            &#8249; Component &#8250;
+export type Props = {
+    color?: string;
+    bgColor?: BackgroundColorsType;
+    className?: string;
+    size?: string;
+};
+
+const Loader = ({ color = theme.colors.iconBrand, size = '96', bgColor, className = '' }: Props) => {
+
+    const backgroundClassName = bgColor ? `bg-${bgColor}` : 'bg-transparent';
+
+    return (
+        <div className={`w-screen h-screen flex justify-center items-center ${backgroundClassName} ${className}`}>
+            <div>
+                <LoaderIcon
+                    color={color}
+                    size={size}
+                />
+            </div>
         </div>
-    </div>
-}
+    );
+};
+
+export default Loader;

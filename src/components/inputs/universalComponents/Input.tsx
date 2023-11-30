@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 import { ValidationStatus } from "../../../types/validationStatus";
 import { handleStatus } from "../../../utils/handleValidationStatus";
 import { InputProps, InputTypesFigma } from "./Input.types";
+import Tooltip from "../../tooltips/universalComponents/Tooltip";
 
 const Input = ({
   value,
@@ -27,6 +28,15 @@ const Input = ({
   messageClassName,
   iconBoxClassName,
   phoneCodeClassName,
+  tooltipTextMainIcon,
+  tooltipClassNameMainIcon,
+  tooltipLocationMainIcon,
+  tooltipСontainerClassNameMainIcon,
+  tooltipTextExtraLeftIcon,
+  tooltipClassNameExtraLeftIcon,
+  tooltipLocationExtraLeftIcon,
+  tooltipСontainerClassNameExtraLeftIcon,
+  tooltipWrapContainerRef,
   ...rest
 }: InputProps) => {
 
@@ -67,8 +77,8 @@ const Input = ({
           maxLength={maxLength}
           className={`        
         block w-[100%] ${(inputTypesFigma === InputTypesFigma.Price) ? "w-[115px]" : ''}
-        p-xs border-1 border-solid rounded-minimal bg-bgWhite outline-0 text-[16px] text-textInputActive font-400 leading-[1.5]
-        hover:bg-bgHoverGrey disabled:bg-bgDisable disabled:border-borderDisabled
+        p-xs outline-1 outline outline-borderDefault -outline-offset-1 rounded-minimal bg-bgWhite text-[16px] text-textInputActive font-400 leading-[1.5]
+        hover:bg-bgHoverGrey disabled:bg-bgDisable disabled:outline-borderDisabled
         disabled:text-textDisabled placeholder:hover:text-textInputActive placeholder:focus:text-textInputActive placeholder:disabled:text-textDisabled 
        
         ${(inputTypesFigma === InputTypesFigma.SearchField) ? "rounded-tr-zero rounded-br-zero" : ''}
@@ -79,9 +89,9 @@ const Input = ({
 
         ${handleStatus({
           status,
-          error: "border-borderError",
-          success: "border-borderSuccess",
-          defaultBorder: "focus:border-borderActive",
+          error: "outline-borderError",
+          success: "outline-borderSuccess",
+          defaultBorder: "focus:outline-borderActive",
         })}
     ${inputClassName ? inputClassName : ""}
                 `}
@@ -98,25 +108,29 @@ const Input = ({
         {(extraLeftIcon || mainIcon) && (
           <div
             className={`absolute flex gap-xs2
-            ${inputTypesFigma === InputTypesFigma.TextField ? "bottom-xs right-xs" : "" }
+ ${inputTypesFigma === InputTypesFigma.TextField ? "bottom-xs right-xs" : "" }
             ${inputTypesFigma === InputTypesFigma.Password ? "bottom-s right-s" : ""}
             ${iconBoxClassName ? iconBoxClassName : ""}`}
           >
             {extraLeftIcon && (
-              <button disabled={disabled} type="button" onClick={onExtraLeftIconClick}>
+              <Tooltip wrapContainerRef={tooltipWrapContainerRef} tooltipLocationProps={tooltipLocationExtraLeftIcon} tooltipClassName={tooltipClassNameExtraLeftIcon} textTooltip={tooltipTextExtraLeftIcon} containerClassName={tooltipСontainerClassNameExtraLeftIcon}>
+              <button tabIndex={tooltipTextExtraLeftIcon ? -1 : 0} disabled={disabled} type="button" onClick={onExtraLeftIconClick}>
                 {extraLeftIcon}
-              </button>
+                </button>
+                </Tooltip>
             )}
             {mainIcon && (
-              <button disabled={disabled} type="button" onClick={onMainIconClick}>
+              <Tooltip wrapContainerRef={tooltipWrapContainerRef} tooltipLocationProps={tooltipLocationMainIcon} tooltipClassName={tooltipClassNameMainIcon} textTooltip={tooltipTextMainIcon} containerClassName={tooltipСontainerClassNameMainIcon}>
+              <button  tabIndex={tooltipTextMainIcon ? -1 : 0} disabled={disabled} type="button" onClick={onMainIconClick}>
                 {mainIcon}
-              </button>
+                </button>
+                </Tooltip>
             )}
           </div>
         )}
       </div>
-   
-      {message && (
+
+          {message && (
         <p aria-disabled={disabled}
           className={`mt-xs3  text-[14px] font-400 leading-[1.4] aria-disabled:text-textDisabled
                     ${

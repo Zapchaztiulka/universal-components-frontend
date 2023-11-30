@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Input, Textarea } from ".";
 import { ValidationStatus } from "../../types/validationStatus";
 import { ShowContainer } from "../showContainer";
@@ -11,6 +11,9 @@ import {
 } from "../icons";
 import { InputTypes, InputTypesFigma } from "./universalComponents/Input.types";
 import { changePhoneNumber } from "../../utils/changePhoneNumber";
+import Tooltip from "../tooltips/universalComponents/Tooltip";
+import ArrowTooltipDownIcon from "../icons/universalComponents/ArrowTooltipDownIcon";
+import { TooltipLocation } from "../tooltips/universalComponents/Tooltip.types";
 
 export const Inputs = () => {
   const [displayPassword, setDisplayPassword] = useState(false);
@@ -20,7 +23,8 @@ export const Inputs = () => {
   const [price, setPrice] = useState("0");
   const [query, setQuery] = useState("");
   const [textarea, setTextarea] = useState("");
-
+  const wrapContainerRefTop = useRef(null);
+  const wrapContainerRefBottom = useRef(null);
   const toogleDisplayPassword = () => {
     setDisplayPassword((prev) => !prev);
   };
@@ -52,26 +56,36 @@ export const Inputs = () => {
   };
   return (
     <div>
-      <p>All inputs</p>
-
-      <ShowContainer
-        component={
-          <Input
-            value={password}
-            inputTypesFigma={InputTypesFigma.Password}
-            type={displayPassword ? InputTypes.Text : InputTypes.Password}
-            onMainIconClick={toogleDisplayPassword}
-            mainIcon={
-              displayPassword ? <EyeIcon size="16" /> : <EyeOffIcon size="16" />
-            }
-            handleChange={getPassword}
-            message="message"
-          />
-        }
-        componentName="Password"
-        width={500}
-        description="1"
-      />
+           <p>All inputs</p>
+      <div ref={wrapContainerRefTop} className="bg-bgBrandLight1 inline-block">
+        <ShowContainer
+          component={
+            <Input
+              value={password}
+              inputTypesFigma={InputTypesFigma.Password}
+              type={displayPassword ? InputTypes.Text : InputTypes.Password}
+              onMainIconClick={toogleDisplayPassword}
+              mainIcon={
+                displayPassword ? (
+                  <EyeIcon size="16" />
+                ) : (
+                  <EyeOffIcon size="16" />
+                )
+              }
+              handleChange={getPassword}
+              // disabled={true}
+              // status={ValidationStatus.error}
+              message="message"
+              tooltipTextMainIcon="teeeeeeest"
+              tooltipLocationMainIcon={TooltipLocation.Right}
+              tooltipWrapContainerRef={wrapContainerRefTop}
+            />
+          }
+          componentName="Password"
+          width={500}
+          description="1"
+        />
+      </div>
       <ShowContainer
         component={
           <Input
@@ -90,12 +104,30 @@ export const Inputs = () => {
             extraLeftIcon={<MenuIcon />}
             onMainIconClick={clickOnIcon}
             onExtraLeftIconClick={clickOnIcon}
+            tooltipTextMainIcon="teeeeeeest"
+            tooltipLocationMainIcon={TooltipLocation.BottomCenter}
           />
         }
         componentName="TextField"
         width={500}
         description="2"
       />
+    
+      <div
+        ref={wrapContainerRefBottom}
+        className=" inline-block w-[250px] h-[130px] p-[40px] pl-[100px] pb-[70px] border-1 border-borderDefaultBlue">
+        <Tooltip
+          wrapContainerRef={wrapContainerRefBottom}
+          tooltipLocationProps={TooltipLocation.TopLeft}
+          textTooltip="iconnnn11111"
+     
+        >
+          <div className="inline-block w-[40px] h-[40px]  border-1 border-borderDefaultBlue">
+            
+            <ArrowTooltipDownIcon />
+          </div>
+        </Tooltip>
+      </div>
 
       <ShowContainer
         component={
@@ -197,7 +229,7 @@ export const Inputs = () => {
             label="Label"
             asterisk={true}
             // status={ValidationStatus.success}
-            rows={1}
+            rows={5}
             // disabled={true}
             maxLength={200}
             lettersCounter={true}
@@ -212,3 +244,4 @@ export const Inputs = () => {
     </div>
   );
 };
+

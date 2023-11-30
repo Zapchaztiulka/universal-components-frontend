@@ -7,7 +7,7 @@ import {
     Loader,
     Notifications,
     Dropdown,
-    Tooltips,
+    Tooltip,
     Modals
 } from "../components/index.ts";
 
@@ -38,7 +38,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: TypesOfComponents.tooltips,
-                element: <Tooltips />,
+                element: <Tooltip />,
             },
             {
                 path: TypesOfComponents.modals,

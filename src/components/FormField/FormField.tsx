@@ -1,48 +1,53 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, FC } from 'react';
 import cn from 'clsx';
 
 interface FormFieldProps {
-    label: string;
+    label?: string;
     message?: string;
-    isMessage?: boolean;
+    hasMessage?: boolean;
+    status?: FIELD_STATUS;
     isRequired?: boolean;
-    isError?: boolean;
-    isSuccess?: boolean;
-    isInfo?: boolean;
     className?: string;
     children: ReactNode;
 }
 
-const FormField: React.FC<FormFieldProps> = ({
+export interface FormFieldComponent<T> extends FC<T> {
+    STATUS: typeof FIELD_STATUS;
+}
+
+export enum FIELD_STATUS {
+    INFO = 'info',
+    ERROR = 'error',
+    SUCCESS = 'success',
+}
+
+const statusPropToClasses = {
+    [FIELD_STATUS.INFO]: 'text-textPrimary',
+    [FIELD_STATUS.ERROR]: 'text-textError',
+    [FIELD_STATUS.SUCCESS]: 'text-textSuccess',
+};
+
+const FormField = ({
     label,
     isRequired,
     message,
-    isMessage,
-    isInfo,
-    isSuccess,
-    isError,
+    hasMessage,
+    status = FIELD_STATUS.INFO,
     className,
     children,
-}) => {
+}: FormFieldProps) => {
     return (
         <div>
             <div>
-                <label className="text-textSecondary">{label}</label>
+                {label ? <label className="text-textSecondary">{label}</label> : ''}
                 {isRequired ? <span className="text-textError">*</span> : ''}
             </div>
             <div className={className}>{children}</div>
-            <div
-                className={cn(
-                    'my-xs3 text-sm',
-                    { 'text-textError': isError },
-                    { 'text-textSuccess': isSuccess },
-                    { 'text-textPrimary': isInfo },
-                )}
-            >
-                {isMessage && message}
-            </div>
+            <div className={cn('my-xs3 text-sm', statusPropToClasses[status])}>{hasMessage && message}</div>
         </div>
     );
 };
 
-export default FormField;
+FormField.STATUS = FIELD_STATUS;
+
+export default FormField as FormFieldComponent<FormFieldProps>;

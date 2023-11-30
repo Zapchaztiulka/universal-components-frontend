@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import FormField from '../../FormField/FormField';
-import { MultiselectComponent, MultiselectDisabled } from './Multiselect.stories';
+import { MultiselectComponent, MultiselectDisabled, MultiselectError, MultiselectSuccess } from './Multiselect.stories';
 import Multiselect from './Multiselect';
 
 const meta = {
@@ -98,19 +98,18 @@ export const MultiselectDisabledWithRequiredLabel: Story = {
 };
 
 export const MultiselectErrorWithRequiredLabel: Story = {
-    render: ({ label, isRequired, isError, message, isMessage, ...rest }) => {
+    render: ({ label, isRequired, message, hasMessage, ...rest }) => {
         return (
             <FormField
                 label={label}
                 isRequired={isRequired}
-                isError={isError}
-                isMessage={isMessage}
+                status={FormField.STATUS.ERROR}
+                hasMessage={hasMessage}
                 message={message}
             >
                 <Multiselect
                     {...rest}
-                    {...MultiselectComponent.args}
-                    isError={isError}
+                    {...MultiselectError.args}
                     onChange={() => {}}
                 />
             </FormField>
@@ -119,26 +118,24 @@ export const MultiselectErrorWithRequiredLabel: Story = {
     args: {
         label: 'Назва',
         isRequired: true,
-        isError: true,
-        isMessage: true,
+
+        hasMessage: true,
         message: 'Error message',
         children: '',
     },
 };
 export const MultiselectErrorWithLabel: Story = {
-    render: ({ label,  isError, message, isMessage, ...rest }) => {
+    render: ({ label, message, hasMessage, ...rest }) => {
         return (
             <FormField
                 label={label}
-                
-                isError={isError}
-                isMessage={isMessage}
+                status={FormField.STATUS.ERROR}
+                hasMessage={hasMessage}
                 message={message}
             >
                 <Multiselect
                     {...rest}
-                    {...MultiselectComponent.args}
-                    isError={isError}
+                    {...MultiselectError.args}
                     onChange={() => {}}
                 />
             </FormField>
@@ -146,27 +143,48 @@ export const MultiselectErrorWithLabel: Story = {
     },
     args: {
         label: 'Назва',
-        isError: true,
-        isMessage: true,
+
+        hasMessage: true,
+        message: 'Error message',
+        children: '',
+    },
+};
+export const MultiselectErrorNoLabel: Story = {
+    render: ({ message, hasMessage, ...rest }) => {
+        return (
+            <FormField
+                status={FormField.STATUS.ERROR}
+                hasMessage={hasMessage}
+                message={message}
+            >
+                <Multiselect
+                    {...rest}
+                    {...MultiselectError.args}
+                    onChange={() => {}}
+                />
+            </FormField>
+        );
+    },
+    args: {
+        hasMessage: true,
         message: 'Error message',
         children: '',
     },
 };
 
 export const MultiselectSuccessWithRequiredLabel: Story = {
-    render: ({ label, isRequired, isSuccess, message, isMessage, ...rest }) => {
+    render: ({ label, isRequired, message, hasMessage, ...rest }) => {
         return (
             <FormField
                 label={label}
                 isRequired={isRequired}
-                isSuccess={isSuccess}
-                isMessage={isMessage}
+                status={FormField.STATUS.SUCCESS}
+                hasMessage={hasMessage}
                 message={message}
             >
                 <Multiselect
                     {...rest}
-                    {...MultiselectComponent.args}
-                    isSuccess={isSuccess}
+                    {...MultiselectSuccess.args}
                     onChange={() => {}}
                 />
             </FormField>
@@ -175,26 +193,24 @@ export const MultiselectSuccessWithRequiredLabel: Story = {
     args: {
         label: 'Назва',
         isRequired: true,
-        isSuccess: true,
-        isMessage: true,
+
+        hasMessage: true,
         message: 'Success message',
         children: '',
     },
 };
 export const MultiselectSuccessWithLabel: Story = {
-    render: ({ label, isSuccess, message, isMessage, ...rest }) => {
+    render: ({ label, message, hasMessage, ...rest }) => {
         return (
             <FormField
                 label={label}
-            
-                isSuccess={isSuccess}
-                isMessage={isMessage}
+                status={FormField.STATUS.SUCCESS}
+                hasMessage={hasMessage}
                 message={message}
             >
                 <Multiselect
                     {...rest}
-                    {...MultiselectComponent.args}
-                    isSuccess={isSuccess}
+                    {...MultiselectSuccess.args}
                     onChange={() => {}}
                 />
             </FormField>
@@ -202,8 +218,30 @@ export const MultiselectSuccessWithLabel: Story = {
     },
     args: {
         label: 'Назва',
-        isSuccess: true,
-        isMessage: true,
+
+        hasMessage: true,
+        message: 'Success message',
+        children: '',
+    },
+};
+export const MultiselectSuccessNoLabel: Story = {
+    render: ({ message, hasMessage, ...rest }) => {
+        return (
+            <FormField
+                status={FormField.STATUS.SUCCESS}
+                hasMessage={hasMessage}
+                message={message}
+            >
+                <Multiselect
+                    {...rest}
+                    {...MultiselectSuccess.args}
+                    onChange={() => {}}
+                />
+            </FormField>
+        );
+    },
+    args: {
+        hasMessage: true,
         message: 'Success message',
         children: '',
     },
