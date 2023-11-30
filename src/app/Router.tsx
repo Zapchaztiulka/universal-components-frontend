@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: TypesOfComponents.selects,
-                element: <Dropdown />,
+                element: <Dropdown onChange={()=>{}} />,
             },
             {
                 path: TypesOfComponents.tooltips,
