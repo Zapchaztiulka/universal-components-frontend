@@ -4,7 +4,8 @@ enum TypesOfComponents {
     loader = "loader",
     notifications = "notifications",
     selects = "selects",
-    tooltips = "tooltips"
+    tooltips = "tooltips",
+    modals = "modals",
 }
 
 export default TypesOfComponents;
