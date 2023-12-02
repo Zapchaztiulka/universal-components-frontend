@@ -40,9 +40,9 @@ const Notification: FC<NotificationProps> =
 
         return (
             <div className={`w-fit ${className} fixed bottom-[24px] left-[50%] -translate-x-[50%]`}>
-                <div className={`inline-block ${sizeStyle} border-1 border-${borderColor} bg-${bgColor} text-${textColor} rounded-medium px-[16px] py-[12px]`}>
-                    <InfoIcon color={iconColor} className="inline-block mr-[3px]" />
-                    <p className="inline-block relative -bottom-[2px]">
+                <div className={`inline-block ${sizeStyle} border-1 border-${borderColor} bg-${bgColor} text-${textColor} rounded-medium px-s py-xs`}>
+                    <p className="inline-block relative">
+                        <InfoIcon color={iconColor} className="inline-block mr-[3px] relative -top-xs4" />
                         <span className="capitalize">{state}: </span>
                         <span>{message}</span>
                     </p>
