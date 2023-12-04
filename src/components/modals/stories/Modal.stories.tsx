@@ -78,7 +78,7 @@ export const Warning = {
 export const Destructive = {
     ...ModalTemplate,
     args: {
-        type: "destructive",
+        type: "negative",
         title: "Видалити товар",
         description: 'Ви впевнені, що хочете видалити товар? Відмініти цю дію неможливо.',
         icon: <LightningIcon />,
