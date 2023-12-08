@@ -40,7 +40,6 @@ export const Default = {
         type: "neutral",
         title: "Title",
         description: 'Modal Description',
-        icon: <AlertIcon />,
         children: <>
             <p>Modal Children</p>
         </>
@@ -79,7 +78,7 @@ export const Warning = {
 export const Destructive = {
     ...ModalTemplate,
     args: {
-        type: "destructive",
+        type: "negative",
         title: "Видалити товар",
         description: 'Ви впевнені, що хочете видалити товар? Відмініти цю дію неможливо.',
         icon: <LightningIcon />,
@@ -110,7 +109,7 @@ export const Negative = {
 export const Success = {
     ...ModalTemplate,
     args: {
-        showClose: false,
+        showCloseButton: false,
         type: 'success',
         title: 'Замовлення успішне!',
         description: 'Очікуйте дзвінка нашого менеджера протягом 5 хвилин.',
