@@ -8,6 +8,7 @@ import PickerOptionsWrapper from '../Wrapper/PickerOptionsWrapper';
 type MultiselectProps = {
     name?: string;
     placeholder?: string;
+    className?: string;
     options?: string[];
     chosenOption?: string[];
     isError?: boolean;
@@ -19,6 +20,7 @@ type MultiselectProps = {
 const Multiselect: FC<MultiselectProps> = ({
     name = 'customSelect',
     placeholder = 'Оберіть значення...',
+    className = '',
     options = [],
     chosenOption = [],
     isDisabled = false,
@@ -62,7 +64,7 @@ const Multiselect: FC<MultiselectProps> = ({
     };
 
     return (
-        <div className="relative transition transition-all duration-500 leading-6">
+        <div className={`relative transition transition-all duration-500 leading-6 ${className}`}>
             <input
                 type="hidden"
                 name={name}

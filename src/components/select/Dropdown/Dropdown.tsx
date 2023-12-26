@@ -8,6 +8,7 @@ type SelectProps = {
     name?: string;
     label?: string;
     chosenOption?: string;
+    className?: string;
     placeholder?: string;
     options?: string[];
     isError?: boolean;
@@ -20,6 +21,7 @@ type SelectProps = {
 const Dropdown: FC<SelectProps> = ({
     name = 'customSelect',
     chosenOption = '',
+    className= '',
     placeholder = 'Оберіть значення...',
     options = [],
     isDisabled = false,
@@ -46,7 +48,7 @@ const Dropdown: FC<SelectProps> = ({
     };
 
     return (
-        <div className={`relative transition transition-all duration-500 leading-6`}>
+        <div className={`relative transition transition-all duration-500 leading-6 ${className}`}>
             <input
                 type="hidden"
                 name={name}
