@@ -39,11 +39,11 @@ const Modal: FC<ModalProps> = (props: ModalProps) => {
                         {showCloseButton && <IconButton className="self-end !w-[44px] h-[44px] flex items-center justify-center" onClick={onClose}>
                             <CloseIcon />
                         </IconButton>}
-                        <IconWithBg variant={variant} className="self-center mb-s">
+                        <IconWithBg variant={variant} className="self-center mb-s tablet1024:mb-xs">
                             {icon}
                         </IconWithBg>
-                        <h2 className="text-heading3 text-center mb-xs">{title}</h2>
-                        <p className="text-center mb-m">{description}</p>
+                        <h2 className="text-center text-heading3 mb-xs tablet1024:text-heading2 tablet1024:mb-2xs !leading-[1.2]">{title}</h2>
+                        <p className="text-center text-mobileBody tablet1024:text-body mb-m !leading-[1.4] tablet1024:!leading-6">{description}</p>
                         {children}
                     </div>
                 </div>

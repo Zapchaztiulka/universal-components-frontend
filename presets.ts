@@ -220,6 +220,11 @@
       letterSpacing: '-0.24px',
       fontWeight: '400',
     }],
+    mobileBody: ['15px', {
+      lineHeight: '1.4',
+      letterSpacing: '-0.22px',
+      fontWeight: 400
+    }],
     button: ['16px', {
       lineHeight: '1.4',
       letterSpacing: '-0.24px',

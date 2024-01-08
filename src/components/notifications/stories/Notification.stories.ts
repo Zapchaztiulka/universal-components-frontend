@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Notification } from ".."
-import { Sizes, States } from '../universalComponents/Notification';
 
 const meta = {
     title: 'Notifications/Notification',
@@ -20,24 +19,23 @@ export const Default: Story = {
     },
 };
 
-export const Small: Story = {
+export const WithCloseButton: Story = {
     args: {
         ...Default.args,
-        size: Sizes.Small,
+        showCloseButton: true
     },
 };
 
 export const Negative: Story = {
     args: {
         ...Default.args,
-        state: States.Error,
+        state: "error",
     },
 };
 
-export const NegativeSmall: Story = {
+export const Info: Story = {
     args: {
         ...Default.args,
-        state: States.Error,
-        size: Sizes.Small
+        state: "information",
     },
 };
