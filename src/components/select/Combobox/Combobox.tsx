@@ -10,6 +10,7 @@ type ComboboxProps = {
     name?: string;
     placeholder?: string;
     chosenOption?: string;
+    className?: string;
     options?: string[];
     isError?: boolean;
     isSuccess?: boolean;
@@ -22,6 +23,7 @@ type ComboboxProps = {
 const Combobox: FC<ComboboxProps> = ({
     name = 'customSelect',
     chosenOption = '',
+    className = '',
     placeholder = 'Оберіть значення...',
     options = [],
     isDisabled = false,
@@ -67,7 +69,7 @@ const Combobox: FC<ComboboxProps> = ({
 
     return (
         
-        <div className="relative transition transition-all duration-500 leading-6">
+        <div className={`relative transition transition-all duration-500 leading-6 ${className}`}>
             <PickerButtonWrapper
                 onClick={handleOpenPicker}
                 isOpen={showOptions}

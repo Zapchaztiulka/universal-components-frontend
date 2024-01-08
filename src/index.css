@@ -102,3 +102,25 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+::-webkit-scrollbar-track {
+  border: 4px solid rgba(0, 0, 0, 0);
+  background: #FFF;
+  border-radius: 9999px;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 4px solid rgba(0, 0, 0, 0);
+  background: #C6CACD;
+  border-radius: 9999px;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar {
+  width:  14px;
+}
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #C6CACD #FFF;
+}
