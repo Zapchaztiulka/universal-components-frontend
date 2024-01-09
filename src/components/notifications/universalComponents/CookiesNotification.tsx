@@ -1,18 +1,13 @@
 import { FC } from "react"
-import { Sizes } from './Notification'
 
 interface CookiesNotificationProps {
-    size?: Sizes;
     className?: string;
 }
 
 const CookiesNotification: FC<CookiesNotificationProps> =
-    ({ size = Sizes.Big, className = "" }: CookiesNotificationProps) => {
+    ({ className = "" }: CookiesNotificationProps) => {
 
-        let sizeStyle = "w-[495px]";
-        if (size == Sizes.Small) {
-            sizeStyle = "w-[300px]"
-        }
+        let sizeStyle = "w-[300px] tablet1024:w-[495px]";
 
         return (
             <div className={`fixed bottom-[24px] left-[50%] -translate-x-[50%] w-fit border-1 border-bgBrandDark rounded-medium3 px-s py-xs ${className}`}>

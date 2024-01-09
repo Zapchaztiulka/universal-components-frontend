@@ -4,7 +4,8 @@ export const Notifications = () => {
     return (<div>
         All Notifications
         <div>
-            <Notification message="message" />
+            <Notification state="information" message="message" showCloseButton />
+            <Notification state="success" message="message" showCloseButton />
         </div>
     </div>)
 }
