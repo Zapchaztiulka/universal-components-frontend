@@ -12,7 +12,7 @@ const meta = {
     argTypes: {},
 } satisfies Meta<typeof Combobox>;
 
-export const optionsMulti = ['Варіант 1', 'Варіант 2', 'Варіант 3', 'Варіант 4'];
+const optionsMulti = ['Варіант 1', 'Варіант 2', 'Варіант 3', 'Варіант 4'];
 
 export default meta;
 type StoryCombobox = StoryObj<typeof meta>;
@@ -28,7 +28,7 @@ export const ComboboxWithDefault: StoryCombobox = {
     args: {
         options: optionsMulti,
         onChange: () => {},
-        chosenOption: optionsMulti[1],
+        chosenOption: '1',
     },
 };
 
