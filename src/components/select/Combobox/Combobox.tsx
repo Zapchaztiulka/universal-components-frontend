@@ -67,8 +67,9 @@ const Combobox: FC<ComboboxProps> = ({
 
     const filteredOptions = options.filter((option) => option.includes(search));
 
+    const textInputValue = value ? options[+value] : placeholder;
+
     return (
-        
         <div className={`relative transition transition-all duration-500 leading-6 ${className}`}>
             <PickerButtonWrapper
                 onClick={handleOpenPicker}
@@ -92,10 +93,10 @@ const Combobox: FC<ComboboxProps> = ({
                     <span className="flex items-center">
                         <span
                             className={cn('ml-3 block truncate p-xs', {
-                                'text-textInputActive': showOptions || value,
+                                'text-textInputActive': showOptions || options[+value],
                             })}
                         >
-                            {value || placeholder}
+                            {textInputValue}
                         </span>
                     </span>
                 )}
@@ -103,11 +104,12 @@ const Combobox: FC<ComboboxProps> = ({
 
             {showOptions && (
                 <PickerOptionsWrapper width={width}>
-                    {filteredOptions.map((option) => (
+                    {filteredOptions.map((option, index) => (
                         <SelectOption
-                            key={option}
+                            key={index}
+                            value={String(index)}
                             option={option}
-                            active={value === option}
+                            active={value === String(index)}
                             updateValue={handleSelectOption}
                         />
                     ))}

@@ -37,7 +37,7 @@ export const DropdownWithDefault: Story = {
     options: optionsDropdown,
     label: 'Назва',
     onChange: () => { },
-    chosenOption: optionsDropdown[1],
+    chosenOption: '1',
   },
 };
 

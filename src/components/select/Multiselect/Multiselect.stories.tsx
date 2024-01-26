@@ -29,7 +29,7 @@ export const MultiselectWithDefault: Story = {
   args: {
     options: optionsMulti,
     onChange: () => { },
-    chosenOption: [optionsMulti[1], optionsMulti[2]],
+    chosenOption: ['1', '2'],
   },
 };
 

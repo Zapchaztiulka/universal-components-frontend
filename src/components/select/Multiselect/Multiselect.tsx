@@ -29,7 +29,7 @@ const Multiselect: FC<MultiselectProps> = ({
     width = 343,
     onChange,
 }) => {
-    const [value, setValue] = useState(chosenOption);
+    const [value, setValue] = useState<string[]>(chosenOption);
     const [showOptions, setShowOptions] = useState(false);
 
     const handleOpenPicker = useCallback(
@@ -57,7 +57,7 @@ const Multiselect: FC<MultiselectProps> = ({
         if (len == 0) {
             return placeholder;
         } else if (len < 3) {
-            return value.join('; ');
+            return options.filter((_, i) => value.includes(String(i))).join('; ');
         } else {
             return `Обрано ${len} елементи`;
         }
@@ -82,7 +82,7 @@ const Multiselect: FC<MultiselectProps> = ({
                 <span className="flex items-center">
                     <span
                         className={cn('ml-3 block truncate flex gap-xs3 p-xs hover:text-textInputActive', {
-                            'text-textInputActive': showOptions || value,
+                            'text-textInputActive': showOptions || value.length,
                         })}
                     >
                         {optionPlaceholder()}
@@ -92,12 +92,13 @@ const Multiselect: FC<MultiselectProps> = ({
 
             {showOptions && (
                 <PickerOptionsWrapper width={width}>
-                    {options.map((option) => (
+                    {options.map((option, index) => (
                         <SelectOption
-                            key={option}
+                            key={index}
+                            value={String(index)}
                             option={option}
                             multiple={true}
-                            active={value.includes(option)}
+                            active={value.includes(String(index))}
                             updateValue={updateValue}
                         />
                     ))}

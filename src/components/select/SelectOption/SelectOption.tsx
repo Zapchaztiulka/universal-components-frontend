@@ -4,16 +4,24 @@ import cn from 'clsx';
 
 type SelectOptionProps = {
     option: string;
+    value: string;
     active?: boolean;
     multiple?: boolean;
     updateValue: (id: string) => void;
     icon?: ReactElement;
 };
 
-const SelectOption: FC<SelectOptionProps> = ({ option, active = false, multiple = false, updateValue, icon }) => {
+const SelectOption: FC<SelectOptionProps> = ({
+    option,
+    value,
+    active = false,
+    multiple = false,
+    updateValue,
+    icon,
+}) => {
     const handleChange = (e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault();
-        updateValue(option);
+        updateValue(value);
     };
 
     if (!icon) icon = <CheckIcon />;

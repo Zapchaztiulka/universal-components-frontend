@@ -47,6 +47,8 @@ const Dropdown: FC<SelectProps> = ({
         onChange(value);
     };
 
+    const textInputValue = value ? options[+value] : placeholder;
+
     return (
         <div className={`relative transition transition-all duration-500 leading-6 ${className}`}>
             <input
@@ -68,18 +70,19 @@ const Dropdown: FC<SelectProps> = ({
                             'text-textInputActive': showOptions || value,
                         })}
                     >
-                        {value || placeholder}
+                        {textInputValue}
                     </span>
                 </span>
             </PickerButtonWrapper>
 
             {showOptions && (
                 <PickerOptionsWrapper width={width}>
-                    {options.map((option) => (
+                    {options.map((option, index) => (
                         <SelectOption
-                            key={option}
+                            key={index}
+                            value={String(index)}
                             option={option}
-                            active={value === option}
+                            active={value === String(index)}
                             updateValue={updateValue}
                         />
                     ))}
