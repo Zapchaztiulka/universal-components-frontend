@@ -9,10 +9,11 @@ interface NotificationProps {
     showCloseButton?: boolean;
     onClose?: () => void;
     index?: number;
+    topRightCornerPosition?: boolean;
 }
 
 const Notification: FC<NotificationProps> =
-    ({ message = "", state = "success", className = "", showCloseButton = false, onClose, index = 1 }: NotificationProps) => {
+    ({ message = "", state = "success", className = "", showCloseButton = false, onClose, index = 1, topRightCornerPosition }: NotificationProps) => {
 
         const [isShowing, setIsShowing] = useState(true);
 
@@ -31,9 +32,9 @@ const Notification: FC<NotificationProps> =
             return () => {
                 clearTimeout(timer);
             }
-        }, [index]);
+        }, [index, showCloseButton]);
 
-        let bottomStyle = index == 1 ? 'bottom-[24px]' : '';
+        const bottomStyle = index == 1 ? 'bottom-[24px]' : '';
         let textColor = 'textSuccess';
         let borderColor = 'borderSuccess';
         let bgColor = 'bgSuccessLight';
@@ -51,7 +52,6 @@ const Notification: FC<NotificationProps> =
             iconColor = theme.colors.iconError;
             icon = <AlertIcon color={theme.colors.iconError} className={iconClassname} />
         } else if (state == "information") {
-            showCloseButton = true;
             desktopSizeStyle = "";
             desktopMarginStyle = "";
             iconColor = theme.colors.iconBrand;
@@ -59,7 +59,11 @@ const Notification: FC<NotificationProps> =
             borderColor = 'borderDefaultBlue';
             bgColor = 'bgBrandLight1';
             icon = <InfoIcon color={theme.colors.iconBrand} className={iconClassname} />
+        }
+
+        if(topRightCornerPosition) {
             placementStyle = "right-[24px] top-[24px] max-mobile375:top-auto max-mobile375:right-auto max-mobile375:bottom-[24px] max-mobile375:left-[50%] max-mobile375:-translate-x-[50%]";
+
         }
 
         return (isShowing && <div id={`notification-${index}`} className={`w-fit ${className} fixed ${placementStyle}`}>

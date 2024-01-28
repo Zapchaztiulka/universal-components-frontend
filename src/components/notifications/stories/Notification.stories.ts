@@ -37,5 +37,6 @@ export const Info: Story = {
     args: {
         ...Default.args,
         state: "information",
+        showCloseButton: true
     },
 };
