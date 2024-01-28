@@ -10,10 +10,12 @@ interface NotificationProps {
     onClose?: () => void;
     index?: number;
     topRightCornerPosition?: boolean;
+    width?: string;
+    height?: string;
 }
 
 const Notification: FC<NotificationProps> =
-    ({ message = "", state = "success", className = "", showCloseButton = false, onClose, index = 1, topRightCornerPosition }: NotificationProps) => {
+    ({ message = "", state = "success", className = "", showCloseButton = false, onClose, index = 1, topRightCornerPosition, width = "343px", height }: NotificationProps) => {
 
         const [isShowing, setIsShowing] = useState(true);
 
@@ -63,11 +65,10 @@ const Notification: FC<NotificationProps> =
 
         if(topRightCornerPosition) {
             placementStyle = "right-[24px] top-[24px] max-mobile375:top-auto max-mobile375:right-auto max-mobile375:bottom-[24px] max-mobile375:left-[50%] max-mobile375:-translate-x-[50%]";
-
         }
 
         return (isShowing && <div id={`notification-${index}`} className={`w-fit ${className} fixed ${placementStyle}`}>
-            <div className={`inline-block w-[343px] ${desktopSizeStyle} border-1 border-${borderColor} bg-${bgColor} text-${textColor} rounded-medium px-s py-xs`}>
+            <div className={`w-[${width}] ${height ? `h-[${height}]`:""} ${desktopSizeStyle} border-1 border-${borderColor} bg-${bgColor} text-${textColor} rounded-medium px-s py-xs`}>
                 <div className="grid grid-cols-12 grid-flow-col justify-items-start relative">
                     {icon}
                     <div className={`col-span-10 relative top-[3px] ml-xs3 ${desktopMarginStyle}`}>
