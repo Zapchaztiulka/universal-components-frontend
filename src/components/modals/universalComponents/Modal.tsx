@@ -9,6 +9,7 @@ type ModalProps = {
     description?: string;
     className?: string;
     icon?: React.ReactElement;
+    isIcon?: boolean;
     showCloseButton?: boolean;
     onClose?: () => void;
     children?: React.ReactElement | React.ReactElement[];
@@ -17,7 +18,7 @@ type ModalProps = {
 
 const Modal: FC<ModalProps> = (props: ModalProps) => {
 
-    const { type, title, description, zIndex = 0, isOpen = false, icon = <AlertIcon />, className, showCloseButton = true, onClose, children } = props;
+    const { type, title, description, zIndex = 0, isOpen = false, icon = <AlertIcon />, isIcon =true, className, showCloseButton = true, onClose, children } = props;
 
     const root = document.getElementById('root') ?? document.body;
 
@@ -40,9 +41,10 @@ const Modal: FC<ModalProps> = (props: ModalProps) => {
                         {showCloseButton && <IconButton className="self-end !w-[44px] h-[44px] flex items-center justify-center cursor-pointer" onClick={onClose} >
                             <CloseIcon />
                         </IconButton>}
-                        <IconWithBg variant={variant} className="self-center mb-s tablet1024:mb-xs">
+                        {isIcon && (<IconWithBg variant={variant} className="self-center mb-s tablet1024:mb-xs">
                             {icon}
-                        </IconWithBg>
+                        </IconWithBg>)}
+                        
                         <h2 className="text-center text-heading3 mb-xs tablet1024:text-heading2 tablet1024:mb-2xs !leading-[1.2]">{title}</h2>
                         <p className="text-center text-mobileBody tablet1024:text-body mb-m !leading-[1.4] tablet1024:!leading-6">{description}</p>
                         {children}
