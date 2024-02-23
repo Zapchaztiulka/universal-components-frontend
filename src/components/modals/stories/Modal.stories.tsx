@@ -40,6 +40,7 @@ export const Default = {
         type: "neutral",
         title: "Title",
         description: 'Modal Description',
+        zIndex: 10,
         children: <>
             <p>Modal Children</p>
         </>
