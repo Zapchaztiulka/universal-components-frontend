@@ -82,7 +82,7 @@ import BearingIcon from "./universalComponents/admin/BearingIcon";
 import TractorIcon from "./universalComponents/TractorIcon";
 import OtherToolsIcon from "./universalComponents/admin/OtherToolsIcon";
 import DownloadIcon from "./universalComponents/DownloadIcon";
-
+import PriceIcon from "./universalComponents/PriceIcon";
 
 export {
     LogoIcon,
@@ -114,6 +114,7 @@ export {
     PhoneIcon,
     PinIcon,
     PlusIcon,
+    PriceIcon,
     MinusIcon,
     SaveIcon,
     SearchIcon,
